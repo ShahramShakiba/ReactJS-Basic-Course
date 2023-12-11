@@ -41,7 +41,6 @@ function App() {
             {CORE_CONCEPTS.map((conceptItem) => (
               <CoreConcept key={conceptItem.title} {...conceptItem} />
             ))}
-            {/* output a list of data */}
             {/* key-> should be a value that uniquely identifies a list of items to render and update the list  */}
           </ul>
         </section>
