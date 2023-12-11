@@ -38,21 +38,11 @@ function App() {
           <h2>Core Concepts</h2>
 
           <ul>
-            {/*Components*/}
-            <CoreConcept
-              title={CORE_CONCEPTS[0].title}
-              description={CORE_CONCEPTS[0].description}
-              image={CORE_CONCEPTS[0].image}
-            />
-
-            {/*JSX*/}
-            <CoreConcept {...CORE_CONCEPTS[1]} />
-
-            {/*Props*/}
-            <CoreConcept {...CORE_CONCEPTS[2]} />
-
-            {/*State*/}
-            <CoreConcept {...CORE_CONCEPTS[3]} />
+            {CORE_CONCEPTS.map((conceptItem) => (
+              <CoreConcept key={conceptItem.title} {...conceptItem} />
+            ))}
+            {/* output a list of data */}
+            {/* key-> should be a value that uniquely identifies a list of items to render and update the list  */}
           </ul>
         </section>
 
