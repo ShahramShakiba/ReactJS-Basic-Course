@@ -15,9 +15,9 @@ header h1 {
   font-size: 5rem;
   background: linear-gradient(40deg, #ea00ff, #ea00ff, #03d5ff, #03d5ff);
 
-  -webkit-background-clip: text;  /* the background gradient will only appear within the text itself, rather than behind it or around it. */
+  -webkit-background-clip: text; /* the background gradient will only appear within the text itself, rather than behind it or around it. */
   -webkit-text-fill-color: transparent; /* This allows the background gradient to show through the text, creating the illusion that the text is filled with the gradient. */
-  
+
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
 }
 
