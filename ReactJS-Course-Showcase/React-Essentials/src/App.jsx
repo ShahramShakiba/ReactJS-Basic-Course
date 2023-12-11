@@ -5,12 +5,28 @@ import TabButton from './components/TabButton.jsx';
 import { useState } from 'react';
 
 function App() {
-  const [selectedTopic, setSelectedTopic] = useState('components');
+  const [selectedTopic, setSelectedTopic] = useState('');
 
   const handleSelect = (selectedButton) => {
     //=> selectedButton: 'components', 'jsx', 'props', 'state'
     setSelectedTopic(selectedButton);
   };
+
+  let tabContent = <p>Please select a topic.</p>;
+
+  if (selectedTopic) {
+    tabContent = (
+      <div id="tab-content">
+        <h3>{EXAMPLES[selectedTopic].title}</h3>
+
+        <p>{EXAMPLES[selectedTopic].description}</p>
+
+        <pre>
+          <code>{EXAMPLES[selectedTopic].code}</code>
+        </pre>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -43,6 +59,7 @@ function App() {
         {/*--------- Examples ---------*/}
         <section id="examples">
           <h2>Examples</h2>
+
           <menu>
             <TabButton onSelect={() => handleSelect('components')}>
               Components
@@ -52,16 +69,8 @@ function App() {
             <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
           </menu>
 
-          {/* TAB-CONTENT */}
-          <div id="tab-content">
-            <h3>{EXAMPLES[selectedTopic].title}</h3>
-
-            <p>{EXAMPLES[selectedTopic].description}</p>
-
-            <pre>
-              <code>{EXAMPLES[selectedTopic].code}</code>
-            </pre>
-          </div>
+          {/*----- TAB-CONTENT - approach-3 ------*/}
+          {tabContent}
         </section>
       </main>
     </div>
@@ -69,3 +78,42 @@ function App() {
 }
 
 export default App;
+
+/* Extra Explanation
+
+==>> TAB-CONTENT 
+---> approach 1 - Ternary Operator <---
+
+{!selectedTopic ? (
+  <p>Please select a topic.</p>
+) : (
+  <div id="tab-content">
+    <h3>{EXAMPLES[selectedTopic].title}</h3>
+
+    <p>{EXAMPLES[selectedTopic].description}</p>
+
+    <pre>
+      <code>{EXAMPLES[selectedTopic].code}</code>
+    </pre>
+  </div>
+)}
+
+------------------------------------------------------
+---> approach 2 - && Operator <--- 
+
+{!selectedTopic && <p>Please select a topic.</p>}
+
+{selectedTopic && (
+  <div id="tab-content">
+    <h3>{EXAMPLES[selectedTopic].title}</h3>
+
+    <p>{EXAMPLES[selectedTopic].description}</p>
+
+     <pre>
+    <code>{EXAMPLES[selectedTopic].code}</code>
+    </pre>
+  </div>
+)}
+  && Operator: will output the value that comes after it if condition in front of it yields true 
+
+*/
