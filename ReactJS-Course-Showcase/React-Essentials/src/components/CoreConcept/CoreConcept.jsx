@@ -1,3 +1,5 @@
+import './CoreConcept.css';
+
 //==>> Core-Concept ================
 function CoreConcept({ title, description, image }) {
   return (

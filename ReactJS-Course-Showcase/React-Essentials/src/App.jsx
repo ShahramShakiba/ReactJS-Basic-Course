@@ -1,7 +1,7 @@
 import Header from './components/Header/Header.jsx';
-import CoreConcept from './components/CoreConcept.jsx';
+import CoreConcept from './components/CoreConcept/CoreConcept.jsx';
 import { CORE_CONCEPTS, EXAMPLES } from './data.js';
-import TabButton from './components/TabButton.jsx';
+import TabButton from './components/Examples/TabButton.jsx';
 import { useState } from 'react';
 
 function App() {
