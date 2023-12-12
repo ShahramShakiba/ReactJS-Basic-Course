@@ -1,4 +1,4 @@
-# ReactJS Course Showcase   <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" height="40" width="36"  />
+#  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" /> &nbsp; ReactJS Course Showcase   <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" height="40" width="36"  />
 
 ## 🚧 Under Maintenance <br/><br/>
 <!----------------------------------------- Description ---------------------------------------->
