@@ -11,8 +11,8 @@
 <br/>
 
  ### _List of projects :_ 
- > ✅ React Essentials &nbsp;&nbsp;&nbsp; ✅ ... <br/>
- 
+ > ✅ React Essentials &nbsp;&nbsp;&nbsp; ✅ Tic Tac Toe <br/>
+ > ✅ ... &nbsp;&nbsp;&nbsp; 
     
 <br/>
 
@@ -37,6 +37,26 @@
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Clapper%20Board.webp" alt="Clapper Board" width="35" />
 
 https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/8442b840-a18c-4dbe-829d-c4fbfc7e8de6
+
+  <br/> 
+
+ ***
+ <!--=====================  Tic Tac Toe =============================-->
+### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" height="30"  /> &nbsp; Tic Tac Toe <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" width="20"  />
+- Tic Tac Toe is a classic game that has been enjoyed by people of all ages for generations. It is a two-player game where each player takes turns marking a 3x3 grid with their symbol (either X or O) until one player successfully places three of their symbols in a row, column, or diagonal.
+- Overall, this Tic Tac Toe application is a fun and interactive way to experience the classic game while also demonstrating my proficiency in React development.
+
+
+<!-------- try it live -------->
+ ### Give it a go in real-time and give me a Star <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Dizzy.webp" alt="Dizzy" width="35" />
+ <a href="" target="_blank">
+   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Light%20Bulb.webp" alt="Light Bulb" width="25" height="25" /> 
+</a> <br/><br/>
+  
+<!--------- Video --------->
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Clapper%20Board.webp" alt="Clapper Board" width="35" />
+
+
 
   <br/> 
 
