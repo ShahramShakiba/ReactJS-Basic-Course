@@ -2,6 +2,7 @@ import { EXAMPLES } from '../../data.js';
 import { useState } from 'react';
 import TabButton from './TabButton.jsx';
 import Section from '../Section.jsx';
+import Tabs from '../Tabs.jsx';
 
 function Examples() {
   const [selectedTopic, setSelectedTopic] = useState('');
@@ -29,38 +30,42 @@ function Examples() {
 
   return (
     <Section title="Examples" id="examples">
-      <menu>
-        <TabButton
-          isSelected={selectedTopic === 'components'}
-          onClick={() => handleSelect('components')}
-        >
-          Components
-        </TabButton>
+      <Tabs
+        buttons={
+          <>
+            <TabButton
+              isSelected={selectedTopic === 'components'}
+              onClick={() => handleSelect('components')}
+            >
+              Components
+            </TabButton>
 
-        <TabButton
-          isSelected={selectedTopic === 'jsx'}
-          onClick={() => handleSelect('jsx')}
-        >
-          JSX
-        </TabButton>
+            <TabButton
+              isSelected={selectedTopic === 'jsx'}
+              onClick={() => handleSelect('jsx')}
+            >
+              JSX
+            </TabButton>
 
-        <TabButton
-          isSelected={selectedTopic === 'props'}
-          onClick={() => handleSelect('props')}
-        >
-          Props
-        </TabButton>
+            <TabButton
+              isSelected={selectedTopic === 'props'}
+              onClick={() => handleSelect('props')}
+            >
+              Props
+            </TabButton>
 
-        <TabButton
-          isSelected={selectedTopic === 'state'}
-          onClick={() => handleSelect('state')}
-        >
-          State
-        </TabButton>
-      </menu>
-
-      {/*----- TAB-CONTENT - approach-3 ------*/}
-      {tabContent}
+            <TabButton
+              isSelected={selectedTopic === 'state'}
+              onClick={() => handleSelect('state')}
+            >
+              State
+            </TabButton>
+          </>
+        }
+      >
+        {/*TAB-CONTENT - approach-3*/}
+        {tabContent}
+      </Tabs>
     </Section>
   );
 }
@@ -101,5 +106,10 @@ export default Examples;
   </div>
 )}
   && Operator: will output the value that comes after it if condition in front of it yields true 
+
+-------------------------------------------------------
+
+-> Working with JSX Slots(position-place):
+
 
 */
