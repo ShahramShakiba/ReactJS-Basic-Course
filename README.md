@@ -21,8 +21,10 @@
 - In this project, I have utilized the fundamental concepts of ReactJS such as `Components`, `JSX`, `Props`, and `State`. The aim of this project is to demonstrate how these concepts can be effectively used in building a functional application.
 
 - The project showcases the dynamic rendering of content and images, with separate components like Header and CoreConcept being extracted from the main App component.
-- Additionally, I have incorporated hooks like useState and passed custom arguments to Event Functions for better functionality.
-
+- Furthermore, to enhance the flexibility of my components, I have utilized Forwarding Props (or Proxy Props) to pass down props to child components without having to manually specify each one.
+- I have also implemented two JSX Slots in my components to allow for dynamic content insertion.
+- Additionally, I have experimented with setting component types dynamically.
+- Lastly, I have leveraged hooks like useState and passed custom arguments to Event Functions to optimize the functionality of my components.
 > Overall, this project serves as a simple yet effective demonstration of the essential concepts of ReactJS. Feel free to explore the code and learn from it!
 
 <!-------- try it live -------->
