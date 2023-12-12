@@ -1,6 +1,7 @@
 import { EXAMPLES } from '../../data.js';
 import { useState } from 'react';
 import TabButton from './TabButton.jsx';
+import Section from '../Section.jsx';
 
 function Examples() {
   const [selectedTopic, setSelectedTopic] = useState('');
@@ -27,34 +28,32 @@ function Examples() {
   }
 
   return (
-    <section id="examples">
-      <h2>Examples</h2>
-
+    <Section title="Examples" id="examples">
       <menu>
         <TabButton
           isSelected={selectedTopic === 'components'}
-          onSelect={() => handleSelect('components')}
+          onClick={() => handleSelect('components')}
         >
           Components
         </TabButton>
 
         <TabButton
           isSelected={selectedTopic === 'jsx'}
-          onSelect={() => handleSelect('jsx')}
+          onClick={() => handleSelect('jsx')}
         >
           JSX
         </TabButton>
 
         <TabButton
           isSelected={selectedTopic === 'props'}
-          onSelect={() => handleSelect('props')}
+          onClick={() => handleSelect('props')}
         >
           Props
         </TabButton>
 
         <TabButton
           isSelected={selectedTopic === 'state'}
-          onSelect={() => handleSelect('state')}
+          onClick={() => handleSelect('state')}
         >
           State
         </TabButton>
@@ -62,16 +61,14 @@ function Examples() {
 
       {/*----- TAB-CONTENT - approach-3 ------*/}
       {tabContent}
-    </section>
+    </Section>
   );
 }
 
 export default Examples;
 
-/* Extra Explanation
-
-==>> TAB-CONTENT 
----> approach 1 - Ternary Operator <---
+/* Extra Explanation: TAB-CONTENT
+--> approach 1 - Ternary Operator <---
 
 {!selectedTopic ? (
   <p>Please select a topic.</p>
