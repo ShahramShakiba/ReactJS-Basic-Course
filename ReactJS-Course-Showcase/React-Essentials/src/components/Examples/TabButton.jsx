@@ -14,7 +14,7 @@ export default TabButton;
 
 /* Extra information:
 
-01. for BUTTONS:
+* 01. for BUTTONS:
 ==>> The "children" Prop (props.children or {children})
  The "children" prop is a special prop in React that allows you to pass child elements, like this: 
  <TabButton> Components </TabButton>   <== component-composition
@@ -23,7 +23,7 @@ export default TabButton;
  <TabButton label="Components" />
 
 -----------------------------------------------------------------
- 02. instead of using "onClick={onSelect}" on the button and destructuring "onSelect" as an argument, we can use __Forwarded Props__ :
+ * 02. instead of using "onClick={onSelect}" on the button and destructuring "onSelect" as an argument, we can use __Forwarded Props__ :
 
 destructuring-> ...props
 setting on button-> {...props}

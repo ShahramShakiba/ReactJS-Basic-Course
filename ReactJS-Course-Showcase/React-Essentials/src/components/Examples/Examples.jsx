@@ -72,7 +72,46 @@ function Examples() {
 
 export default Examples;
 
-/* Extra Explanation: TAB-CONTENT
+/* Extra Explanation 
+
+* Approach for "SMALLER APPLICATION":
+<section>
+  <menu>
+    <TabButton
+      isSelected={selectedTopic === 'components'}
+      onClick={() => handleSelect('components')}
+    >
+      Components
+    </TabButton>
+
+    <TabButton
+      isSelected={selectedTopic === 'jsx'}
+      onClick={() => handleSelect('jsx')}
+    >
+      JSX
+    </TabButton>
+
+    <TabButton
+      isSelected={selectedTopic === 'props'}
+      onClick={() => handleSelect('props')}
+    >
+      Props
+    </TabButton>
+
+    <TabButton
+      isSelected={selectedTopic === 'state'}
+      onClick={() => handleSelect('state')}
+    >
+      State
+    </TabButton>
+  </menu>
+
+  {tabContent}
+</section>
+
+-----------------------------------------------------------
+
+* TAB-CONTENT
 --> approach 1 - Ternary Operator <---
 
 {!selectedTopic ? (
@@ -109,7 +148,7 @@ export default Examples;
 
 -------------------------------------------------------
 
--> Working with JSX Slots(position-place):
+*-> Working with JSX Slots(position-place):
 
 ** if we want to add <TabButton ...>...</TabButton> to Tabs.jsx component, we will have the problem to handle "onClick" and "isSelected" because then we need to add Extra Props there(in Tabs.jsx) and adding these extra props makes Tabs.jsx less reuseable, THEREFORE -> we set an extra prop on Tabs.jsx and after that we can set this prop on Tabs component in Examples.jsx
 
@@ -117,15 +156,13 @@ export default Examples;
 
 ------------------------------------------------------
 
--> Setting Component types dynamically:
+*-> Setting Component types dynamically:
 it must start with "Uppercase" character
 
-ButtonsContainer = {Section} -> custom component must be passed as a dynamic value
+==>> <Tabs ButtonsContainer = {Section}>...</Tabs> || custom component must be passed as a dynamic value
 
-ButtonsContainer = "menu" -> for built-in elements we shouldn't use {menu} because that would look for variable named menu and we don't have variable named menu in our code, THEREFORE we simply pass the identifier as a string""
+==>> <Tabs ButtonsContainer = "menu">...</Tabs> || for built-in elements we simply pass the identifier as a string""
 
-** ButtonsContainer = "menu" -> by setting this we're now able to dynamically set the "wrapper" that should be used around these "buttons" when we're using Tabs.jsx component
-
-==>> we can use this as default prop values -> therefore we omit this prop in this component and then try to give ButtonsContainer = "menu" as default value to Tabs.jsx component
+==>> we can use this as default prop values -> therefore we omit this prop in this component and then try to give (ButtonsContainer = "menu") as default value to Tabs.jsx component
 
 */
