@@ -12,6 +12,11 @@ export default Tabs;
 
 /* Extra information:
 
+* children prop
+so that we can use our Tabs-component as a wrapper around the actual "TabContent" that should go below the title, because then we can use this children prop to output here below the title
+
+-----------------------------------------------------
+
 *-> Working with JSX Slots(position-place):
 
  main-content slot (tabContent)-> is set with help of "children"
@@ -28,9 +33,6 @@ export default Tabs;
 it must start with "Uppercase" character
 
 * ButtonsContainer = "menu" -> by setting this we're now able to dynamically set the "wrapper" that should be used around these "buttons" when we're using Tabs.jsx component
-
-==> Even we can use this prop as default prop values like -> 
-ButtonsContainer = 'menu' just in this component
 
 for built-in elements -> ButtonsContainer = 'menu' 
 for custom component -> ButtonsContainer = Section <- we would have to import this Section component here as well
