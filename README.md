@@ -28,7 +28,7 @@
 > Overall, this project serves as a simple yet effective demonstration of the essential concepts of ReactJS. Feel free to explore the code and learn from it!
 
 <!-------- try it live -------->
- ### Give it a go in real-time and give me a Star <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Dizzy.webp" alt="Dizzy" width="35" />
+ ### Give it a go in real-time and give me a Star <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Glowing%20Star.png" alt="Glowing Star" width="35"  />
  <a href="https://react-essentials-shahram.netlify.app" target="_blank">
    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Light%20Bulb.webp" alt="Light Bulb" width="25" height="25" /> React Essentials
 </a> <br/><br/>
