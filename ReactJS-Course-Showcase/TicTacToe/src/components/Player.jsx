@@ -1,17 +1,24 @@
 import { useState } from 'react';
 
-function Player({ name, symbol }) {
+function Player({ initialName, symbol }) {
+  const [playerName, setPlayerName] = useState(initialName);
   const [isEditing, setIsEditing] = useState(false);
 
   const handleEdiClick = () => {
     setIsEditing((editing) => !editing);
   };
 
-  let playerName = <span className="player-name">{name}</span>;
+  const handleChange = (e) => {
+    setPlayerName(e.target.value);
+  };
+
+  let editablePlayerName = <span className="player-name">{playerName}</span>;
   // let btnCaption = 'Edit';
 
   if (isEditing) {
-    playerName = <input type="text" required value={name} />;
+    editablePlayerName = (
+      <input type="text" required value={playerName} onChange={handleChange} />
+    );
 
     // btnCaption = 'Save';
   }
@@ -19,7 +26,7 @@ function Player({ name, symbol }) {
   return (
     <li>
       <span className="player">
-        {playerName}
+        {editablePlayerName}
 
         <span className="player-symbol">{symbol}</span>
       </span>
@@ -33,7 +40,6 @@ function Player({ name, symbol }) {
 export default Player;
 
 /* EXTRA information
-
 ---> If Your Updating State Based On Previous State Value <---
 
 *❌ setIsEditing(!isEditing) => schedule a state-update to true, but does not immediately change that state ❌
