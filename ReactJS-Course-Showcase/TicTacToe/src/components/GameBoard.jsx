@@ -6,7 +6,7 @@ const initialGameBoard = [
   [null, null, null],
 ];
 
-function GameBoard() {
+function GameBoard({ onSelectSquare, activePlayerSymbol }) {
   const [gameBoard, setGameBoard] = useState(initialGameBoard);
 
   //=> update the GameBoard based on the Previous state
@@ -16,10 +16,12 @@ function GameBoard() {
         ...prevGameBoard.map((innerArray) => [...innerArray]),
       ];
 
-      updatedBoard[rowIndex][colIndex] = 'X';
+      updatedBoard[rowIndex][colIndex] = activePlayerSymbol;
 
       return updatedBoard;
     });
+
+    onSelectSquare();
   };
 
   return (
@@ -66,7 +68,7 @@ export default GameBoard;
 ? colIndex -> which exact field was clicked; which null should be replaced with an "X" or an "O"
 
 ❌❌❌ NOT RECOMMENDED ❌❌❌
-? prevGameBoard[rowIndex][colIndex] = "X"; 
+?-> prevGameBoard[rowIndex][colIndex] = "X"; 
 [rowIndex]-> select on of 3 arrays
 [colIndex]-> select on of the elements inside of that inner arrays
 
