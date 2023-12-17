@@ -7,7 +7,7 @@ const initialGameBoard = [
 ];
 
 function GameBoard({ onSelectSquare, activePlayerSymbol }) {
-  const [gameBoard, setGameBoard] = useState(initialGameBoard);
+ /* const [gameBoard, setGameBoard] = useState(initialGameBoard);
 
   //=> update the GameBoard based on the Previous state
   const handleSelectSquare = (rowIndex, colIndex) => {
@@ -21,8 +21,9 @@ function GameBoard({ onSelectSquare, activePlayerSymbol }) {
       return updatedBoard;
     });
 
+    //-> call switch-turns function here
     onSelectSquare();
-  };
+  };  */
 
   return (
     <ol id="game-board">

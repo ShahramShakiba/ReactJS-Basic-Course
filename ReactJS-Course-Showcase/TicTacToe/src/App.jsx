@@ -1,13 +1,18 @@
-import { useState } from 'react';
 import './App.css';
-import GameBoard from './components/GameBoard';
 import Player from './components/Player';
+import GameBoard from './components/GameBoard';
+import Log from './components/Log';
+import { useState } from 'react';
 
 function App() {
   const [activePlayer, setActivePlayer] = useState('X');
+  const [gameTurns, setGameTurns] = useState([]);
 
+  //-> executed whenever we wanna switch-turns in "GameBoard"
   const handleSelectSquare = () => {
     setActivePlayer((curActivePlayer) => (curActivePlayer === 'X' ? 'O' : 'X'));
+
+    setGameTurns();
   };
 
   return (
@@ -31,7 +36,8 @@ function App() {
           activePlayerSymbol={activePlayer}
         />
       </div>
-      LOG
+
+      <Log />
     </main>
   );
 }
@@ -52,11 +58,9 @@ Having this isolation allows you to build super complex reusable components
 
 ----------------------------------------------------------------------
 
-* How to know "active-player" in both Player & GameBoard component?
+* How to Manage "active-player" in both Player & GameBoard component
 * Lifting State Up
 -> lift the state up to the closest ancestor components that has access to all components that need to work with that state
-
-* Manage "active-player" here
 
 ?-> GameBoard-Component: 
 we need the symbol of the active player

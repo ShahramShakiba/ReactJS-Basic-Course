@@ -47,6 +47,7 @@ h1 {
   color: #3f3b00;
 }
 
+/**=========================================**/
 #game-container {
   max-width: 45rem;
   margin: 3rem auto;
@@ -77,6 +78,21 @@ h1 {
 #players.highlight-player li.active {
   border-color: #f6e35a;
   animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    border-color: #f6e35a;
+    box-shadow: 0 0 0 0 rgba(246, 227, 90, 0.4);
+  }
+  50% {
+    border-color: #f8c031;
+    box-shadow: 0 0 0 0.5rem rgba(248, 165, 49, 0);
+  }
+  100% {
+    border-color: #f6e35a;
+    box-shadow: 0 0 0 0 rgba(246, 227, 90, 0);
+  }
 }
 
 #players.highlight-player li.active .player-name,
@@ -144,6 +160,7 @@ ol {
   padding: 0;
 }
 
+/**=========================================**/
 #pre-game {
   text-align: center;
 }
@@ -317,21 +334,6 @@ ol {
   }
   100% {
     transform: scale(1);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    border-color: #f6e35a;
-    box-shadow: 0 0 0 0 rgba(246, 227, 90, 0.4);
-  }
-  50% {
-    border-color: #f8c031;
-    box-shadow: 0 0 0 0.5rem rgba(248, 165, 49, 0);
-  }
-  100% {
-    border-color: #f6e35a;
-    box-shadow: 0 0 0 0 rgba(246, 227, 90, 0);
   }
 }
 
