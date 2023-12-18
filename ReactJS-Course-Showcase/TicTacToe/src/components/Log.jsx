@@ -1,7 +1,5 @@
 function Log() {
-  return <ol id="log">
-    log
-  </ol>;
+  return <ol id="log">log</ol>;
 }
 
 export default Log;
