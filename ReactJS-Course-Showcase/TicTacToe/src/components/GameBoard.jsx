@@ -4,24 +4,15 @@ const initialGameBoard = [
   [null, null, null],
 ];
 
-function GameBoard({ onSelectSquare }) {
-  /* const [gameBoard, setGameBoard] = useState(initialGameBoard);
+function GameBoard({ onSelectSquare, turns }) {
+  let gameBoard = initialGameBoard;
 
-  //=> update the GameBoard based on the Previous state
-  const handleSelectSquare = (rowIndex, colIndex) => {
-    setGameBoard((prevGameBoard) => {
-      const updatedBoard = [
-        ...prevGameBoard.map((innerArray) => [...innerArray]),
-      ];
+  for (const turn of turns) {
+    const { square, player } = turn;
+    const { row, col } = square;
 
-      updatedBoard[rowIndex][colIndex] = activePlayerSymbol;
-
-      return updatedBoard;
-    });
-
-    //-> call switch-turns function here
-    onSelectSquare();
-  };  */
+    gameBoard[row][col] = player;
+  }
 
   return (
     <ol id="game-board">
@@ -30,7 +21,9 @@ function GameBoard({ onSelectSquare }) {
           <ol>
             {row.map((playerSymbol, colIndex) => (
               <li key={colIndex}>
-                <button onClick={onSelectSquare}>{playerSymbol}</button>
+                <button onClick={() => onSelectSquare(rowIndex, colIndex)}>
+                  {playerSymbol}
+                </button>
               </li>
             ))}
           </ol>
@@ -82,7 +75,69 @@ const updatedBoard = [
 
 -> innerArray-> then we got inner-arrays inside of nested array, therefore we spreads the elements of that inner-array
 
+--------------------------------------------------------------
 
-? -> which symbol should be placed
+* Driving State from Props
+
+01-> let gameBoard = initialGameBoard; 
+
+  02-> for (const turn of turns) {
+    03->  const { square, player } = turn;
+    04->  const { row, col } = square;
+
+    05->  gameBoard[row][col] = player;
+    }
+
+? 01-> drive our gameBoard :
+  -> which still should be such ⬇️ an array ⬇️, array ful of array: 
+  [null, null, null],
+  [null, null, null],
+  [null, null, null],
+  -> from this "turns"⬇️ array :
+  function GameBoard({ onSelectSquare, turns }) {
+
+? 02-> overwrite this variable(gameBoard) :
+  -> with data derived from our "turns" ⬆️, if we have turns
+  -> if"turns is an empty array, we leave the "gameBoard" as it is
+  -> to achieve this we can add a "for" loop
+  -> if "turns" is an empty array, this loop won't execute without us doing anything 
+
+? 03-> extract the information about the turn that occurred :
+  -> from that "object" ⬇️ that we're storing in this turns array 
+?     { square: { row: rowIndex, col: colIndex }, player: currentPlayer, },
+
+     -> every turn in that turns array will be an object of this shape⬆️ 
+     -> therefore, we can destructure our turn to pull these two properties :
+        { square, player }
+        out of the "turn", we're currently looking at in this iteration
+     
+? 04-> "square" is a nested object :
+  -> where we have a "row" and a "col" property
+  -> we can pull this information out of this object as well
+  -> with that we then got the "player-symbol" and the "row" and the "col" that was selected by that player
+
+? 05-> gameBoard[row][col] = player;
+  -> we can go to our gameBoard and update the "row" and "column" with the "player-symbol"
+
+? THAT'S ALL ...
+
+* we don't need to manage any "state" here, instead, we're "deriving-state"
+*-> we are producing some derived state, some computed value
+*-> gameBoard is a -> Computed Value that is derived from "gameTurns" state, that is manage in "App Component"
+
+
+* ✅✅✅ you should manage as little state as needed and try to derive as much information and as many values as possible from that state ✅✅✅ 
+
+
+?  <button onClick={() => onSelectSquare(rowIndex, colIndex)}>
+?     {playerSymbol}
+?  </button>
+
+-> to make sure that we get this information about which button in which row and which column was clicked
+-> to have full control how handleSelectSquare in the end will be executed
+-> we pass "rowIndex, colIndex" as arguments to "onSelectSquare" function
+-> therefore in the end, to "handleSelectSquare" function, since that's the value for this "onSelectSquare" prop 
+-> with that we're making sure that "rowIndex, colIndex" data arrives ⬇️here⬇️ and is stored ⬇️here⬇️:
+?   { square: { row: rowIndex, col: colIndex }, player: currentPlayer, },
 
 */
