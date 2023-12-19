@@ -21,7 +21,10 @@ function GameBoard({ onSelectSquare, turns }) {
           <ol>
             {row.map((playerSymbol, colIndex) => (
               <li key={colIndex}>
-                <button onClick={() => onSelectSquare(rowIndex, colIndex)}>
+                <button
+                  onClick={() => onSelectSquare(rowIndex, colIndex)}
+                  disabled={playerSymbol !== null}
+                >
                   {playerSymbol}
                 </button>
               </li>
@@ -35,8 +38,7 @@ function GameBoard({ onSelectSquare, turns }) {
 
 export default GameBoard;
 
-/* EXTRA information
-
+/* first map()
 * first map()
 -> we have 3 nested arrays that they are the "items" in this outer array
 -> therefore, we'll get "row" in the end
@@ -49,9 +51,9 @@ export default GameBoard;
 * second map()
 -> to output these inner arrays(null) -> we need another list (ol) because we need a grid
 -> <button></button> -> to output the" user symbols (X or O or null)
+*/
 
-------------------------------------------------------------
-
+/* "handleSelectSquare" function
 * in "handleSelectSquare" function
 ? rowIndex -> on which row index we have; which inner array contains the field that should be updated
 
@@ -74,9 +76,9 @@ const updatedBoard = [
 -> map()-> since we're dealing with some nested arrays those should be copied as well before update anything, we can achieve this by calling map
 
 -> innerArray-> then we got inner-arrays inside of nested array, therefore we spreads the elements of that inner-array
+*/
 
---------------------------------------------------------------
-
+/* Driving State from Props
 * Driving State from Props
 
 01-> let gameBoard = initialGameBoard; 
@@ -139,5 +141,12 @@ const updatedBoard = [
 -> therefore in the end, to "handleSelectSquare" function, since that's the value for this "onSelectSquare" prop 
 -> with that we're making sure that "rowIndex, colIndex" data arrives ⬇️here⬇️ and is stored ⬇️here⬇️:
 ?   { square: { row: rowIndex, col: colIndex }, player: currentPlayer, },
+*/
 
+/* Disabling Buttons Conditionally
+-> disable button once it has been selected
+
+?-> disabled={playerSymbol !== null}
+
+-> set it to true if this button was already selected by a player and set it to false otherwise if it should still be enabled
 */
