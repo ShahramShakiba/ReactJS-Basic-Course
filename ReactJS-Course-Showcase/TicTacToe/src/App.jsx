@@ -4,21 +4,25 @@ import GameBoard from './components/GameBoard';
 import Log from './components/Log';
 import { useState } from 'react';
 
+function deriveActivePlayer(gameTurns) {
+  let currentPlayer = 'X';
+  if (gameTurns.length > 0 && gameTurns[0].player === 'X') {
+    currentPlayer = 'O';
+  }
+
+  return currentPlayer;
+}
+
 function App() {
-  const [activePlayer, setActivePlayer] = useState('X');
   const [gameTurns, setGameTurns] = useState([]);
+
+  const activePlayer = deriveActivePlayer(gameTurns);
 
   //-> executed whenever we wanna switch-turns in "GameBoard"
   const handleSelectSquare = (rowIndex, colIndex) => {
     //update based on the Previous state
-    setActivePlayer((curActivePlayer) => (curActivePlayer === 'X' ? 'O' : 'X'));
-
     setGameTurns((prevTurns) => {
-      let currentPlayer = 'X';
-      if (prevTurns.length > 0 && prevTurns[0].player === 'X') {
-        currentPlayer = 'O';
-        // console.log(prevTurns[0].player);
-      }
+      const currentPlayer = deriveActivePlayer(prevTurns);
 
       const updatedTurns = [
         {
@@ -58,20 +62,19 @@ function App() {
 
 export default App;
 
-/* EXTRA Information
-
-? Reusing Component:
+/* Reusing Component:
+* Reusing Component
 whenever you are using or reusing a component, React will basically create a new isolated instance, for instance:
 
 -> <Player name="Player 1" symbol="X" />
 -> <Player name="Player 2" symbol="O" />
 These two component work totally isolated from each other
 
-* important feature in React
+? important feature in React
 Having this isolation allows you to build super complex reusable components
+*/
 
-----------------------------------------------------------------------
-
+/* active-player:
 * How to Manage "active-player" in both Player & GameBoard component
 * Lifting State Up
 -> lift the state up to the closest ancestor components that has access to all components that need to work with that state
@@ -80,11 +83,10 @@ Having this isolation allows you to build super complex reusable components
 we need the symbol of the active player
 ?-> Player-Component:
 we want to add a "CSS class" dynamically
+*/
 
-----------------------------------------------------------------------
-
+/* Manage Game-State
 * Manage Game-State
-
 setGameTurns((prevTurns) => {
 02->  let currentPlayer = 'X';
       if (prevTurns.length > 0 && prevTurns[0].player === 'X') {
@@ -128,4 +130,48 @@ setGameTurns((prevTurns) => {
 
 
 * It is a state update function that makes sure that we update-state in an "immutable-way" and that we're not "merging different states"
+
+*/
+
+/* Reducing State Management
+* Identifying Unnecessary State
+
+-> we already have this "gameTurns-state" which changes whenever a box is selected
+-> so we don't need this activePlayer-state just to trigger a UI when that happens ⬇️
+?-> const [activePlayer, setActivePlayer] = useState('X);
+?-> function App() { 
+?->   setActivePlayer((curActivePlayer) => (
+?->      curActivePlayer === 'X' ? 'O' : 'X'));
+
+?->      {the rest of the code....}
+?->   }
+
+-> BUT, we need the information regarding which players is the "active-player"
+-> we can get this info from our gameTurns-state
+
+-> now, we can use a helper function which won't need any access to the state or any other data related to the component and also, shouldn't be recreated when the component function re-executes ⬇️
+
+?-> function deriveActivePlayer(gameTurns) {
+?->   let currentPlayer = 'X';
+?->   if (gameTurns.length > 0 && gameTurns[0].player === 'X') {
+?->     currentPlayer = 'O';
+?->    }
+
+?->   return currentPlayer;
+?->  }
+
+-> use the current-gameTurns-state
+
+-> back to our "App-Component", create a variable which holds the result of calling "derivedActivePlayer" ⬇️
+?-> const activePlayer = deriveActivePlayer(gameTurns);
+
+-> pass our state "gameTurns" as an argument to "deriveActivePlayer" so in there it is available
+
+-> THEN in state-updating-function "setGameTurns" -> set our currenPlayer by calling "deriveActivePlayer" ⬇️
+?-> const currentPlayer = deriveActivePlayer(prevTurns);
+
+-> with passing "prevTurns" as an argument
+
+* Manage as little state as possible and derive and compute as many values as needed
+
 */
