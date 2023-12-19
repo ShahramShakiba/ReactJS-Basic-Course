@@ -4,6 +4,7 @@ import Player from './components/Player';
 import GameBoard from './components/GameBoard';
 import Log from './components/Log';
 import WINNING_COMBINATIONS from './winning-combination';
+import GameOver from './components/GameOver';
 
 const initialGameBoard = [
   [null, null, null],
@@ -85,7 +86,7 @@ function App() {
           />
         </ol>
 
-        {winner && <p>You won, {winner}!</p>}
+        {winner && <GameOver winner={winner} />}
 
         <GameBoard onSelectSquare={handleSelectSquare} board={gameBoard} />
       </div>
