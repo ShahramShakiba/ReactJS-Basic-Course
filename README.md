@@ -49,8 +49,8 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/8442b
 
 <!-------- try it live -------->
  ### Give it a go in real-time and give me a Star <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Dizzy.webp" alt="Dizzy" width="35" />
- <a href="" target="_blank">
-   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Light%20Bulb.webp" alt="Light Bulb" width="25" height="25" /> 
+ <a href="https://tic-tac-toe-game-shahram.netlify.app/" target="_blank">
+   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Light%20Bulb.webp" alt="Light Bulb" width="25" height="25" /> Tic Tac Toe Game
 </a> <br/><br/>
   
 <!--------- Video --------->
