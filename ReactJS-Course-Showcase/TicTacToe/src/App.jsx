@@ -1,8 +1,9 @@
-import './App.css';
+import { useState } from 'react';
+
 import Player from './components/Player';
 import GameBoard from './components/GameBoard';
 import Log from './components/Log';
-import { useState } from 'react';
+import WINNING_COMBINATIONS from './winning-combination';
 
 function deriveActivePlayer(gameTurns) {
   let currentPlayer = 'X';
