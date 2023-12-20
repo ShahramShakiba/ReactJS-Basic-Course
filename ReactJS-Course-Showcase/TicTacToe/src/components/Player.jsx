@@ -43,8 +43,7 @@ function Player({ initialName, symbol, isActive, onChangeName }) {
 
 export default Player;
 
-/* EXTRA information
----> If Your Updating State Based On Previous State Value <---
+/* Updating State Based On Previous State Value
 
 *❌ setIsEditing(!isEditing) => schedule a state-update to true, but does not immediately change that state ❌
 if your New State Depends on Your Previous State value 

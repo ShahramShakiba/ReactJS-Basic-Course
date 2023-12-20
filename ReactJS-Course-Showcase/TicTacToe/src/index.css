@@ -23,7 +23,7 @@ body {
       rgba(241, 210, 70, 0.98),
       rgba(250, 176, 103, 0.87)
     ),
-    url('bg-pattern-dark.png');
+    url('./assets/bg-pattern-dark.png');
   background-repeat: repeat;
   background-size: 100% 100%, 30% 30%, 100% 100%;
   min-height: 110rem;
@@ -47,7 +47,6 @@ h1 {
   color: #3f3b00;
 }
 
-/**=========================================**/
 #game-container {
   max-width: 45rem;
   margin: 3rem auto;
@@ -58,6 +57,7 @@ h1 {
   position: relative;
 }
 
+/**=============== Player-section =================**/
 #players {
   list-style: none;
   padding: 0;
@@ -148,6 +148,18 @@ h1 {
   text-transform: uppercase;
 }
 
+@keyframes pulse-text {
+  0% {
+    color: #e1dec7;
+  }
+  50% {
+    color: #9f9d83;
+  }
+  100% {
+    color: #e1dec7;
+  }
+}
+
 .player-symbol {
   margin-left: 1rem;
   font-size: 1rem;
@@ -160,7 +172,7 @@ ol {
   padding: 0;
 }
 
-/**=========================================**/
+/**================= Game-Board ==================**/
 #pre-game {
   text-align: center;
 }
@@ -174,6 +186,19 @@ ol {
   font-size: 4rem;
   text-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
   animation: pulse-text-size 2s infinite ease-out;
+}
+
+/*==> Fancy animation for showing the "PlayerName" on editing */
+@keyframes pulse-text-size {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 #game-board {
@@ -207,6 +232,7 @@ ol {
   padding: 1rem;
 }
 
+/**================== Game-Over ===================**/
 #game-over {
   position: absolute;
   top: 0;
@@ -219,6 +245,21 @@ ol {
   align-items: center;
   background-color: rgba(40, 38, 23, 0.95);
   animation: pop-in 0.5s cubic-bezier(0.68, -0.55, 0.65, 0.52) forwards;
+}
+
+/*==> Fancy animation for showing the "Game Over" element */
+@keyframes pop-in {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 #game-over h2 {
@@ -256,6 +297,7 @@ ol {
   box-shadow: 0 0 20px rgba(255, 187, 0, 0.8);
 }
 
+/**================= Log-section ===================**/
 #log {
   max-width: 20rem;
   color: #3f3b00;
@@ -269,6 +311,17 @@ ol {
   border-radius: 4px;
   animation: slide-in-from-left 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
   margin: 0.75rem;
+}
+
+@keyframes slide-in-from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 #log li.highlighted {
@@ -300,54 +353,4 @@ ol {
   color: #23221f;
   font: inherit;
   margin-top: 1.5rem;
-}
-
-@keyframes slide-in-from-left {
-  0% {
-    opacity: 0;
-    transform: translateX(-30%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes pulse-text {
-  0% {
-    color: #e1dec7;
-  }
-  50% {
-    color: #9f9d83;
-  }
-  100% {
-    color: #e1dec7;
-  }
-}
-
-@keyframes pulse-text-size {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/*==> Fancy animation for showing the "Game Over" element */
-@keyframes pop-in {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  80% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
 }
