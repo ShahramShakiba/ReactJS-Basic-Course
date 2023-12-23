@@ -132,8 +132,8 @@ function App() {
 
 export default App;
 
-/* Reusing Component:
-* Reusing Component
+/* Reusing a Component - isolated instance:
+* Reusing a Component
 whenever you are using or reusing a component, React will basically create a new isolated instance, for instance:
 
 -> <Player name="Player 1" symbol="X" />
