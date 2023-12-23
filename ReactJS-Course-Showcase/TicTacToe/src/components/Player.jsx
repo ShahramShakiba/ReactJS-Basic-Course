@@ -17,14 +17,11 @@ function Player({ initialName, symbol, isActive, onChangeName }) {
   };
 
   let editablePlayerName = <span className="player-name">{playerName}</span>;
-  // let btnCaption = 'Edit';
 
   if (isEditing) {
     editablePlayerName = (
       <input type="text" required value={playerName} onChange={handleChange} />
     );
-
-    // btnCaption = 'Save';
   }
 
   return (
@@ -35,13 +32,14 @@ function Player({ initialName, symbol, isActive, onChangeName }) {
         <span className="player-symbol">{symbol}</span>
       </span>
 
-      {/* <button onClick={handleEdiClick}>{btnCaption}</button> */}
       <button onClick={handleEdiClick}>{isEditing ? 'Save' : 'Edit'}</button>
     </li>
   );
 }
 
 export default Player;
+
+//==========================================================
 
 /* Updating State Based On Previous State Value
 
@@ -51,7 +49,7 @@ if your New State Depends on Your Previous State value
 
 ?-> React is scheduling those state updating functions, so this state update here "is not performed instantly" instead, it's scheduled by React to be performed in the future; the future will probably be in 1 or 2 milliseconds, but it's not "instant"
 
-*✅ setIsEditing(wasEditing => !wadEditing) ✅
+*✅ setIsEditing(wasEditing => !wasEditing) ✅
 instead "Pass a Function" to your state updating function
 -> this function will automatically be called by React and will receive the Guaranteed Latest State Value.
 
