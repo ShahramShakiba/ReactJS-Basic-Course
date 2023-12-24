@@ -217,7 +217,7 @@ on this updatedBoard select one of these 3arrays - and then one of the elements 
 <!--? 08. switch between players | place the symbol of active-player  -->
 <!-- 
   we need to know about the currently active-player in both "PLayer-component" and in the "GameBoard-component" !
-  in "PLayer-component"-> add a css class to active-player
+  in "PLayer-component"-> add a active css class to active-player
   in "GameBoard-component"-> we need the symbol of active-player
 
   => These are two separated-component, how we can sure which player is currently active? Here we use:
@@ -240,8 +240,8 @@ function App() {
 
   return (
     <main>
-      <div id="...." className='highlight-player'>  👈
-        <ol id="players">
+      <div id="....">  
+        <ol id="players" className='highlight-player'>  👈
           <Player initialName="Player 1" symbol="X" />
           <Player initialName="Player 2" symbol="O" />
         </ol>
@@ -260,9 +260,8 @@ function App() {
 -> then pass the information of these two player-active to Player-component
 
 * onSelectSquare={handleSelectSquare} => 
--> pass down as props to GameBoard component
+-> pass down as props to GameBoard component -->
 
--->
 <!--?[GameBoard.jsx]-->
 <!-- 
  * function GameBoard({ onSelectSquare }) {   👈
@@ -285,7 +284,7 @@ function App() {
 
 <!--?[Player.jsx]-->
 <!-- 
-function Player({ initialName, symbol, isActive }) {  👈
+function Player({ initialName, symbol,  * isActive }) {  👈
   ......
 
   function handleEditing() {
@@ -323,12 +322,12 @@ function Player({ initialName, symbol, isActive }) {  👈
           <Player
             initialName="Player 1"
             symbol="X"
-            isActive={activePlayer === 'X'}   👈
+    *        isActive={activePlayer === 'X'}   👈
           />
           <Player
             initialName="Player 2"
             symbol="O"
-            isActive={activePlayer === 'O'}    👈
+    *        isActive={activePlayer === 'O'}    👈
           />
         </ol>
 
@@ -345,14 +344,14 @@ function Player({ initialName, symbol, isActive }) {  👈
    -->
 <!--?[GameBoard.jsx]-->
 <!-- 
-  function GameBoard({ onSelectSquare, activePlayerSymbol }) {  👈
+ * function GameBoard({ onSelectSquare, * activePlayerSymbol }) {  👈
   ......
 
   function handleSelectSquare(rowIndex, colIndex) {
     setGameBoard((prevGameBoard) => {
      ...... 
 
-      updatedBoard[rowIndex][colIndex] = activePlayerSymbol; 👈
+*      updatedBoard[rowIndex][colIndex] = activePlayerSymbol; 👈
       
       .....
     });
@@ -380,17 +379,76 @@ function Player({ initialName, symbol, isActive }) {  👈
           <Player
             initialName="Player 2"
             symbol="O"
-            isActive={activePlayer === 'O'}    👈
+            isActive={activePlayer === 'O'}    
           />
         </ol>
 
         <GameBoard
           onSelectSquare={handleSelectSquare}
-          activePlayerSymbol={activePlayer}     👈
+  *        activePlayerSymbol={activePlayer}     👈
         />
       </div>
     </main>
+
+? activePlayerSymbol={activePlayer} =>
+-> setting the prop to the component
   -->
 
 <!--======================================================-->
-<!--? 09.   -->
+<!--? 09. work on Log-component  -->
+<!-- At this point, we're on the edge of writing suboptimal React code, especially if we want to add more features -->
+
+<!-- 
+  output information about the different turns-> which turn  were taken by the different players whilst playing that game
+
+  -> that means, we need to manage some dynamic array of turns, an array that grows with every button click
+
+  -> that of course means that we can't manage that state in "Log.jsx" because that info which button was clicked is generated in the "GameBoar.jsx"
+
+  -> we need "lift state up" to the "App-component"
+  *-> AVOID adding a new-state to store the same information just with a little bit of extra data:
+  -> THEREFORE; we lift the state that manages the current information about the progress of our game up from the "GameBoar-component" to the "App-component"
+  -->
+
+  <!--? [in GameBoard.jsx] comment out or delete this state:
+ const [gameBoard, setGameBoard] = useState(initialGameBoard);
+
+  function handleSelectSquare(rowIndex, colIndex) {
+    setGameBoard((prevGameBoard) => {
+      / get new-array full of new-nested-arrays since we're dealing with reference-value and to avoid bugs
+      const updatedBoard = [
+        ...prevGameBoard.map((innerArray) => [...innerArray]),
+      ];
+
+      / Find the first empty square and place a "X" in it.
+      updatedBoard[rowIndex][colIndex] = activePlayerSymbol;
+      return updatedBoard;
+    });
+
+    onSelectSquare();
+  } -->
+  
+  <!--? [in App.jsx] add this state to manage info about different button clicks as a list and then derive both info we need for the "Log" and "GameBoard"
+  function App() {
+  const [gameTurns, setGameTurns] = useState([]);     👈
+  
+  .......
+
+  return (
+    <main>
+      <div id="game-container">
+        ......
+      </div>
+
+      <Log />
+    </main>
+  );
+}
+
+* useState([]) =>
+-> manage an array of turn-data
+-->
+
+
+<!--======================================================-->
+<!--? 10. working on the same button can't clicked multiple times  -->
