@@ -618,7 +618,7 @@ function GameBoard({ onSelectSquare }) {   👈
  -->
 
 <!--======================================================-->
-<!--? output gameTurns in Log-component-->
+<!--? 12. output gameTurns in Log-component-->
 <!--? [in Log.jsx]-->
 <!-- 
   -> pass turns as a prop->  <Log turns={gameTurns} />
@@ -629,11 +629,71 @@ function GameBoard({ onSelectSquare }) {   👈
     <ol id="log">
       {turns.map((turn) => (    👈
         <li key={`${turn.square.row}${turn.square.col}`}>   👈
-          Player-{turn.player} selected row: {turn.square.row} column:{' '}
-          {turn.square.col}  
+          Player {turn.player} selected: row({turn.square.row})-column(
+          {turn.square.col})  
         </li>
       ))}
     </ol>
   );
 }
  -->
+
+<!--======================================================-->
+<!--? 13. identifying unnecessary state -->
+<!-- 
+  we can compute activePlayer state:
+   * const [activePlayer, setActivePlayer] = useState('X');
+
+  -> we have gameTurns-state, which changes whenever a box is selected, so we don't need this "activePlayer" to trigger a UI update when that happens
+
+  -> BUT, we need information which player is the active-player
+
+ ?[in App.jsx]-> delete :
+  ->  const [activePlayer, setActivePlayer] = useState('X');
+
+  ->  setActivePlayer((currActivePlayer) =>
+       currActivePlayer === 'X' ? 'O' : 'X'
+      );
+
+  *-> instead we could use some derived-state:
+      we can create a helper-function outside the App-function
+      -> because this helper-fun will not need to access to the state or any other data related to the component and it shouldn't be re-created when the component function re-executes
+  
+      HELPER-function:
+  *    function deriveActivePlayer(gameTurns) {   👈
+        let currentPlayer = 'X';
+
+        if (gameTurns.length > 0 && gameTurns[0].player === 'X') {
+          currentPlayer = 'O';
+        }
+
+        return currentPlayer;
+      }
+
+
+      function App() {
+        const [gameTurns, setGameTurns] = useState([]);
+
+  *      const activePlayer = deriveActivePlayer(gameTurns);  👈
+
+        function handleSelectSquare(rowIndex, colIndex) {
+           setGameTurns((prevTurns) => {
+   *         const currentPlayer = deriveActivePlayer(prevTurns);  👈
+
+            .......
+           });
+        }
+
+        return (
+          <main>
+           .......
+          </main>
+        );
+      }
+
+
+  *-> You NEED to manage as little state as possible, and derive and compute as many values as needed.
+ -->
+
+ <!--======================================================-->
+<!--? 14. disable click the same button from multiple times click -->
