@@ -163,11 +163,12 @@ function GameBoard() {
 
 <!--======================================================-->
 <!--? 07. make this buttons work: <button>{playerSymbol}</button> -->
- 
+<!--? GameBoard.jsx  -->
+
 <!-- So, that it can change, then we update the UI and we place the "symbol" of the player who clicked a button
 
 then, replace the gameBoard with the new-gameBoard where one field will change from "null" to either an "X or O" depending on which player clicked the button -->
- 
+
 <!-- function GameBoard() {
 * const [gameBoard, setGameBoard] = useState(initialGameBoard);  👈
 
@@ -213,4 +214,183 @@ then, replace the gameBoard with the new-gameBoard where one field will change f
 on this updatedBoard select one of these 3arrays - and then one of the elements inside of that inner-array -->
 
 <!--======================================================-->
-<!--? 08.  -->
+<!--? 08. switch between players | place the symbol of active-player  -->
+<!-- 
+  we need to know about the currently active-player in both "PLayer-component" and in the "GameBoard-component" !
+  in "PLayer-component"-> add a css class to active-player
+  in "GameBoard-component"-> we need the symbol of active-player
+
+  => These are two separated-component, how we can sure which player is currently active? Here we use:
+  * Lifting State Up
+  -> instead of managing the info which player is active in the "GameBoard" or the "Player" component, we need to manage state in the "closest-ancestor-component" -> it means, here, in App-component
+ -->
+
+<!--? [App.jsx]-->
+<!-- 
+ import { useState } from 'react';   👈
+
+function App() {
+  const [activePlayer, setActivePlayer] = useState('X');   👈
+
+  function handleSelectSquare() {         👈
+    setActivePlayer((currActivePlayer) =>
+      currActivePlayer === 'X' ? 'O' : 'X'
+    );
+  }
+
+  return (
+    <main>
+      <div id="...." className='highlight-player'>  👈
+        <ol id="players">
+          <Player initialName="Player 1" symbol="X" />
+          <Player initialName="Player 2" symbol="O" />
+        </ol>
+
+        <GameBoard onSelectSquare={handleSelectSquare} />   👈
+      </div>
+    </main>
+  );
+}
+
+* function handleSelectSquare() =>
+-> switching the active-player
+
+* className='highlight-player' => 
+-> add a css class to the active-player
+-> then pass the information of these two player-active to Player-component
+
+* onSelectSquare={handleSelectSquare} => 
+-> pass down as props to GameBoard component
+
+-->
+<!--?[GameBoard.jsx]-->
+<!-- 
+ * function GameBoard({ onSelectSquare }) {   👈
+  ....
+
+  function handleSelectSquare(rowIndex, colIndex) {
+    setGameBoard((prevGameBoard) => {
+    .....
+    });
+
+ *   onSelectSquare();      👈
+  } 
+
+  return (
+    <ol id="game-board">
+      ....
+    </ol>
+  );
+} -->
+
+<!--?[Player.jsx]-->
+<!-- 
+function Player({ initialName, symbol, isActive }) {  👈
+  ......
+
+  function handleEditing() {
+    .....;
+  }
+
+  function handleChange(e) {
+   ......
+  }
+
+  let editablePlayerName = <span className="player-name">{playerName}</span>;
+  if (isEditing) {
+    ......
+  }
+
+  return (
+    <li className={isActive ? 'active' : undefined}>   👈
+      <span className="player">
+        {editablePlayerName}
+
+        <span className="player-symbol">{symbol}</span>
+      </span>
+
+      <button onClick={handleEditing}>{isEditing ? 'Save' : 'Edit'}</button>
+    </li>
+  );
+}-->
+
+<!--?[App.jsx]-->
+<!-- 
+  return (
+    <main>
+      <div id="game-container" className="highlight-player">
+        <ol id="players">
+          <Player
+            initialName="Player 1"
+            symbol="X"
+            isActive={activePlayer === 'X'}   👈
+          />
+          <Player
+            initialName="Player 2"
+            symbol="O"
+            isActive={activePlayer === 'O'}    👈
+          />
+        </ol>
+
+        <GameBoard onSelectSquare={handleSelectSquare} />
+      </div>
+    </main>
+
+* isActive={activePlayer === 'X'} =>
+-> this player is active if is equal to "X"
+  );-->
+
+<!-- 
+    IN THE END, we need to pass "activePLayer" to the "GameBoard" because activePlayer is the symbol of the player that's currently active and we need that "symbol" to place it on the "square that was clicked"
+   -->
+<!--?[GameBoard.jsx]-->
+<!-- 
+  function GameBoard({ onSelectSquare, activePlayerSymbol }) {  👈
+  ......
+
+  function handleSelectSquare(rowIndex, colIndex) {
+    setGameBoard((prevGameBoard) => {
+     ...... 
+
+      updatedBoard[rowIndex][colIndex] = activePlayerSymbol; 👈
+      
+      .....
+    });
+
+    onSelectSquare();
+  }
+
+  return (
+    <ol id="game-board">
+      ......
+    </ol>
+  );
+}-->
+
+<!--?[App.jsx]-->
+<!-- 
+  <main>
+      <div id="game-container">
+        <ol id="players" className="highlight-player">
+          <Player
+            initialName="Player 1"
+            symbol="X"
+            isActive={activePlayer === 'X'}
+          />
+          <Player
+            initialName="Player 2"
+            symbol="O"
+            isActive={activePlayer === 'O'}    👈
+          />
+        </ol>
+
+        <GameBoard
+          onSelectSquare={handleSelectSquare}
+          activePlayerSymbol={activePlayer}     👈
+        />
+      </div>
+    </main>
+  -->
+
+<!--======================================================-->
+<!--? 09.   -->
