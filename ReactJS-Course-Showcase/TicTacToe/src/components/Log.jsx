@@ -3,7 +3,8 @@ function Log({ turns }) {
     <ol id="log">
       {turns.map((turn) => (
         <li key={`${turn.square.row}${turn.square.col}`}>
-          {turn.player} selected {turn.square.row}, {turn.square.col}
+          Player {turn.player} selected: row({turn.square.row})-column(
+          {turn.square.col})
         </li>
       ))}
     </ol>
@@ -11,7 +12,6 @@ function Log({ turns }) {
 }
 
 export default Log;
-
 
 /* Extra information
 

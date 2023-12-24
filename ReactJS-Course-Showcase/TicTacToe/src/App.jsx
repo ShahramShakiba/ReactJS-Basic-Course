@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-import Player from './components/Player'; // 01-1
+import Player from './components/Player'; 
 import GameBoard from './components/GameBoard';
 import Log from './components/Log';
 import WINNING_COMBINATIONS from './winning-combination';
 import GameOver from './components/GameOver';
 
-const PLAYERS = { // 01-3
+const PLAYERS = {
   X: 'Player 1',
   O: 'Player 2',
 };
@@ -104,15 +104,15 @@ function App() {
     <main>
       <div id="game-container">
         <ol id="players" className="highlight-player">
-          <Player // 01-2
-            initialName={PLAYERS.X} // 01-4
-            symbol="X" // 01-5
+          <Player 
+            initialName={PLAYERS.X} 
+            symbol="X" 
             isActive={activePlayer === 'X'}
             onChangeName={handlePlayerNameChange}
           />
-          <Player // 01-2
-            initialName={PLAYERS.O} // 01-4
-            symbol="O" // 01-5
+          <Player 
+            initialName={PLAYERS.O} 
+            symbol="O" 
             isActive={activePlayer === 'O'}
             onChangeName={handlePlayerNameChange}
           />
@@ -245,5 +245,3 @@ setGameTurns((prevTurns) => {
 * Manage as little state as possible and derive and compute as many values as needed
 
 */
-
-

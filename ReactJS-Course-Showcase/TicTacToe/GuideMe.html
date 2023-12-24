@@ -619,3 +619,21 @@ function GameBoard({ onSelectSquare }) {   👈
 
 <!--======================================================-->
 <!--? output gameTurns in Log-component-->
+<!--? [in Log.jsx]-->
+<!-- 
+  -> pass turns as a prop->  <Log turns={gameTurns} />
+  -> map on turns prop to  list of list-items
+
+  function Log({ turns }) {    👈
+  return (
+    <ol id="log">
+      {turns.map((turn) => (    👈
+        <li key={`${turn.square.row}${turn.square.col}`}>   👈
+          Player-{turn.player} selected row: {turn.square.row} column:{' '}
+          {turn.square.col}  
+        </li>
+      ))}
+    </ol>
+  );
+}
+ -->
