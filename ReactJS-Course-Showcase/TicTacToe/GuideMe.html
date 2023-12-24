@@ -536,4 +536,86 @@ function GameBoard({ onSelectSquare }) {   👈
  -->
 
 <!--======================================================-->
-<!--? 11. Using gameTurns-state for both GameBoar and Log components  -->
+<!--? 11. Using gameTurns-state TO DERIVE for both GameBoard and Log components from that array of turns -->
+<!-- 
+  pass "gameTurns" as a prop to the GameBoard
+  ->  <GameBoard onSelectSquare={....} turns={gameTurns} />  👈
+
+  -> need to add some logic to derive our gameBoard, which still should be such an array:
+  const initialGameBoard = [
+  [null, null, null],
+  [null, null, null],
+  [null, null, null],
+];
+   FROM this "turns-array"-> function GameBoard({ onSelectSquare, turns }){}
+
+   *simply set gameBoard to initialGameBoard -> 
+    let gameBoard = initialGameBoard;
+
+    -> then overwrite this variable(gameBoard) with data derived from "turns" if we have turns
+
+    -> use a "for loop"-> if turns is an empty array this loop won't execute
+    -> in that loop-> extract info about the turns that occurred from that object that we're storing in this turns-array:
+        {
+          square: { row: rowIndex, col: colIndex },
+          player: currentPlayer,
+        },
+
+  ? [in GameBoard.jsx]
+      let gameBoard = initialGameBoard;      👈
+      for (const turn of turns) {         👈
+        const { square, player } = turn;
+        const { row, col } = square;
+      }
+
+      -> now we get the "player-symbol" and the "row&column" that was selected by that "player"
+
+      -> now we can update the gameBoard with the "row" and "column" with the "player-symbol"
+          * gameBoard[row][col] = player;
+
+
+    *->  so we don't need to manage any "state" here, instead we "DERIVING-STATE". we are producing some derived-state, some computed value, gameBoard is a computed-value that is derived from "gameTurns-state" that is manage in "App-component"
+
+
+    ! most probably we get an error
+    -> we're deriving our gameBoard based on the gameTurns
+
+    -> gameTurns-state updated in handleSelectSquare, which we're storing info about selected square with -rowIndex & colIndex-
+
+    -> which we get them as an input on handleSelectSquare
+
+    -> and handleSelectSquare passed as a value through the onSelectSquare prop to GameBoard
+
+    -> and there it has set as an value onClick
+
+    -> onClick does not give us -rowIndex & colIndex- data
+
+    -> to make sure the info about which row and which column was clicked
+
+    -> we should use onSelectSquare as a anonymous-function
+
+    -> so we get full control on how onSelectSquare will be executed
+
+    -> now we can pass rowIndex, colIndex as an argument to this function
+    *    <button onClick={() => onSelectSquare(rowIndex, colIndex)}>
+
+      -> so in the end, to this function "handleSelectSquare"
+      -> since that's the value for this on select square prop
+
+
+
+  * now we're updating this game state based on gameTurns-state by having this computed value here:
+          let gameBoard = initialGameBoard;
+          for (const turn of turns) {
+            const { square, player } = turn;
+            const { row, col } = square;
+
+            gameBoard[row][col] = player;
+          }
+
+
+* -> and now we can pass this gameTurns-state to output it in the "Log-component"
+ -->
+
+<!--======================================================-->
+<!--? output gameTurns in Log-component-->
