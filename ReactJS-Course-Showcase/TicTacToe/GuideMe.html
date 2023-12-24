@@ -410,7 +410,7 @@ function Player({ initialName, symbol,  * isActive }) {  👈
   -> THEREFORE; we lift the state that manages the current information about the progress of our game up from the "GameBoar-component" to the "App-component"
   -->
 
-  <!--? [in GameBoard.jsx] comment out or delete this state:
+<!--? [in GameBoard.jsx] comment out or delete this state, ALSO delete the "activePlayer-prop" :
  const [gameBoard, setGameBoard] = useState(initialGameBoard);
 
   function handleSelectSquare(rowIndex, colIndex) {
@@ -427,8 +427,8 @@ function Player({ initialName, symbol,  * isActive }) {  👈
 
     onSelectSquare();
   } -->
-  
-  <!--? [in App.jsx] add this state to manage info about different button clicks as a list and then derive both info we need for the "Log" and "GameBoard"
+
+<!--? [in App.jsx] add this state to manage info about different button clicks as a list and then derive both info we need for the "Log" and "GameBoard"
   function App() {
   const [gameTurns, setGameTurns] = useState([]);     👈
   
@@ -449,6 +449,91 @@ function Player({ initialName, symbol,  * isActive }) {  👈
 -> manage an array of turn-data
 -->
 
-
 <!--======================================================-->
 <!--? 10. working on the same button can't clicked multiple times  -->
+<!--? [GameBoard.jsx]-->
+<!-- 1-> changes on GameBoard
+  const initialGameBoard = [
+  [null, null, null],
+  [null, null, null],
+  [null, null, null],
+];
+
+function GameBoard({ onSelectSquare }) {   👈
+  return (
+    <ol id="game-board">
+      {gameBoard.map((row, rowIndex) => (
+        <li key={rowIndex}>
+          <ol>
+            {row.map((playerSymbol, colIndex) => (
+              <li key={colIndex}>
+                <button onClick={onSelectSquare}>{playerSymbol}</button> 👈
+              </li>
+            ))}
+          </ol>
+        </li>
+      ))}
+    </ol>
+  );
+}
+ -->
+
+<!--? [in App.jsx]-->
+<!-- 2-> setGameTurns-state
+ ! how should the information about a single turn in our game look like?
+
+  setGameTurns((prevTurns) => {
+      const updatedTurns = [{}, ...prevTurns];    👈
+    });
+
+  -> about this {} inside updatedTurns: 
+ * -> it makes sense to store an object here, so that our "gameTurns-state" will eventually be an array full of objects
+  -> we want to know which player clicked on which square and the square can be identified by "row and column" index
+ * -> so we add-> "rowIndex" and "colIndex" to the handleSelectSquare()
+
+ ? update state in a immutable-way and not merging with different state
+
+ function App() {
+*  const [gameTurns, setGameTurns] = useState([]);    👈
+  const [activePlayer, setActivePlayer] = useState('X');
+
+*  function handleSelectSquare(rowIndex, colIndex) {   👈
+    setActivePlayer((currActivePlayer) =>
+      .........
+    );
+
+ *   setGameTurns((prevTurns) => {         👈
+      let currentPlayer = 'X';        👈
+      if (prevTurns.length > 0 && prevTurns[0].player === 'X') {
+        currentPlayer = 'O';
+      }
+
+      const updatedTurns = [       👈
+        {
+          square: { row: rowIndex, col: colIndex },
+          player: currentPlayer,
+        },
+        ...prevTurns,
+      ];
+
+      return updatedTurns;       👈
+    });
+  }
+
+  return (
+    <main>
+      <div id="game-container">
+        .......
+      </div>
+
+      <Log />
+    </main>
+  );
+}
+
+* prevTurns[0].player === 'X' => 
+-> if in our previous turns array, if the first element in there, which will always be the latest turn as you know, if there the player is equal to "X" 
+ -->
+
+<!--======================================================-->
+<!--? 11. Using gameTurns-state for both GameBoar and Log components  -->
