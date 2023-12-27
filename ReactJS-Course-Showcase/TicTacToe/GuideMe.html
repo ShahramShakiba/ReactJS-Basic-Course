@@ -709,8 +709,131 @@ function GameBoard({ onSelectSquare }) {   👈
 
   * in the end , it's this "playerSymbol", if playerSymbol is an X or O that means that this button has already been clicked
 
- *=> disabled={playerSymbol !== null}
+ *=> disabled={playerSymbol !== null}    👈
  -->
 
  <!--======================================================-->
-<!--? 15. -->
+<!--? 15. Find out which Player win the game -->
+
+<!-- 
+  *-> one-way is check all possible winning combinations
+-> we need to that on every turn because every turn the game could be over
+
+-> the god place for that is the "App-component" because we need to show some "Game-Over" screen on top of this "GameBoard"
+-> therefore I need the information whether the game is over here in App
+ 
+*-> create a "winning-combinations.js" file
+-> I hard-code all my possible winning combinations in there
+
+-> to check all these winning-combinations on every turn, we could add some logic in "handleSelectSquare" because this function will be triggered when ever a square is selected
+
+* ❌ first-way to do that ❌
+add -> const [hasWinner, setHasWinner] = useState(false);
+
+-> then in "handleSelectSquare" we check whether one of our winning-combinations is active and if that the case we set "hasWinner to true" otherwise we set it to false
+
+
+* ✅ derive the information from "gameTurns" ✅
+-> we don't need to check for a winner in handleSelectSquare
+-> because App component function will also execute after every turn
+
+-> import "winning-combinations.js" file in App.jsx
+
+-> check all winning-combinations after every turn
+   for (const combination of WINNING_COMBINATIONS) {   
+    ....
+   }
+
+-> then store the symbol we got at a specific position
+     for (const combination of WINNING_COMBINATIONS) {   👈
+        const firstSquareSymbol =  
+        const secondSquareSymbol =
+        const thirdSquareSymbol =
+      }
+
+     => I simply extract the symbol I have on my gameBoard for the different elements that make up one winning combination
+
+-> the gameBoard is inside of the GameBoard-component, therefore I lift-up the code where we compute the gameBoard and I add it to App component (deriving the gameBoard in the App-component)
+
+    this code->  let gameBoard = initialGameBoard;       👈
+                 for (const turn of turns) {
+                    const { square, player } = turn;
+                    const { row, col } = square;
+
+                    gameBoard[row][col] = player;
+                  }
+
+    also this->  const initialGameBoard = [         👈
+                    [null, null, null],
+                    [null, null, null],
+                    [null, null, null],
+                  ];
+
+* do some small changes: 
+for (const turn of turns) into=> for (const turn of gameTurns){}     👈
+
+<GameBoard turns={gameTurns} /> into=> <GameBoard board={gameBoard}   👈
+   -> which gets the gameBoard which I'm now deriving here in the App-component as a value
+
+in GameBoard-component-> function GameBoard({ onSelectSquare, board }) {}   👈
+     <ol id="game-board">
+    👉 {board.map((row, rowIndex) => (
+        ......
+      ))}
+    </ol>
+
+    -> it's no longer computing that value inside of this component, instead we computing the value in the App component
+
+
+* the advantage of doing this:
+-> now we have that gameBoard here, and we can now extract the different symbols that are stored in that gameBoard in the positions that are "defined by our winning-combinations"
+
+-> we can get hold of the symbol that's stored in the first square of this specific winning combinations by accessing gameBoard which is that multi-dimensional array
+              ->  const firstSquareSymbol = gameBoard[]   👈
+
+
+*-> const firstSquareSymbol = gameBoard[combination[0].row]
+-> combination = is on of the combinations in "winning-combinations.js"
+-> [0] = is the first element  [
+                              👉 { row: 0, column: 0 }, 👈
+                                 { row: 0, column: 1 },
+                                 { row: 0, column: 2 },
+                               ],
+
+                               or this one and so on ....
+
+                               [
+                               👉 { row: 1, column: 0 }, 👈
+                                  { row: 1, column: 1 },
+                                  { row: 1, column: 2 },
+                               ],
+
+                               and now we're extracting the "row"
+
+          * -> we do this for "column" as well,like this:
+           for (const combination of WINNING_COMBINATIONS) {
+              const firstSquareSymbol =
+                gameBoard[combination[0].row][combination[0].column];
+              const secondSquareSymbol =
+                gameBoard[combination[1].row][combination[1].column];
+              const thirdSquareSymbol =
+                gameBoard[combination[2].row][combination[2].column];
+            }
+              
+            -> so that, step by step, we go through the different squares that make up one winning-combination and we take a look at the symbols that are stored in our gameBoard in these different squares
+
+*-> now check if they're all equal because we know that the game is over if for a possible winning-combination all symbols are equal :
+let winner;
+
+if (
+      firstSquareSymbol &&
+      firstSquareSymbol === secondSquareSymbol &&
+      firstSquareSymbol === thirdSquareSymbol
+    ) {
+      winner = firstSquareSymbol;
+}
+
+ -->
+
+ <!--======================================================-->
+<!--? 16.   -->
