@@ -926,5 +926,91 @@ function GameOver({ winner, onRestart }) {  👈
 -> so we need to create a deep copy of "initialGameBoard" before we "over writing the gameBoard"
 
 *=> let gameBoard = [...initialGameBoard.map((array) => [...array])];   👈
+ -->
 
+<!--======================================================-->
+<!--? 18. Showing the playerName who won!  -->
+<!-- 
+ * you may wanna lift up this state in Player.jsx:  ❌❌❌
+ * => const [playerName, setPlayerName] = useState(initialName);
+
+ * that would be wrong !!!
+
+ => because this playerName state is actually used to update this input-field on every keystroke:
+     <input type="text" required value={playerName} onChange={handleChange} />
+
+    -> if we move it out of the Player.jsx to the App.jsx, that would mean that the entire App-component is reevaluated on every keystroke
+    -> which means the entire gameBoard is reevaluated on every keystroke
+    -> and that's really "redundant" and not what we want to do
+ 
+
+ ✅  const [players, setPlayers] = useState({    👈  ✅✅✅
+        X: 'Player 1',
+        O: 'Player 2',
+     });
+
+  -> update my state based on previous state because only one name of one player changes here and I don't wanna lose the name and information for the other player :
+
+  function handlePlayerNameChange(symbol, newName) {    👈
+    setPlayers((prevPlayers) => {
+      return {
+        ...prevPlayers,
+        [symbol]: newName,
+      };
+    });
+  }
+
+  * => explanation-> [symbol]: newName,
+  -> I start by again setting both the X and O property to the respective old playerName  X: 'Player 1',
+              O: 'Player 2',
+
+  -> I wil then overwrite one of these two properties the property which I got here with help of that (symbol parameter)
+
+  -> [symbol] -> I dynamically set a property and we set this property which is either X or O depending on what's stored in symbol, to the new name  
+          => [symbol]: newName
+
+
+  *=> time to make sure "handlePlayerNameChange" trigger whenever in the Player-component this change is confirmed by clicking this button when it says "Save" :
+   <button onClick={handleEdiClick}>{isEditing ? 'Save' : 'Edit'}</button>
+
+   => pass "handlePlayerNameChange" as prop to those <Player/ > component:
+          <Player
+            initialName="Player 1"
+            symbol="X"
+            isActive={activePlayer === 'X'}
+            onChangeName={handlePlayerNameChange}    👈
+          />
+          <Player
+            initialName="Player 2"
+            symbol="O"
+            isActive={activePlayer === 'O'}
+            onChangeName={handlePlayerNameChange}    👈
+          />
+    ------------------------------------------------------------
+
+   ?=> [Player.jsx]
+       -> function Player({ initialName, symbol, isActive, onChangeName }) {} 👈
+
+       -> function handleEditing() {
+             .........
+
+             if (isEditing) {        👈
+             onChangeName(symbol, playerName);    👈
+            }
+          }
+
+    ?=> [App.jsx]
+    -> now we can show the playerName when the game is over :
+        for (const combination of WINNING_COMBINATIONS) {
+            ......
+
+            if (
+              ......
+            ) {
+              winner = players[firstSquareSymbol];    👈
+            }
+          }
+
+      *  winner = players-> 
+        => derive the name of the player who won by dynamically accessing the property -> the property we want to access is stored in "firstSquareSymbol", because that's either an X or an O
  -->
