@@ -877,3 +877,54 @@ if (
 </div>
 
  -->
+
+<!--======================================================-->
+<!--? 17. Rematch button  -->
+<!-- 
+  To restart the Game : 
+ *=> const [gameTurns, setGameTurns] = useState([]);
+   
+    it's this "gameTurns-state" which we use to derive -> the gameBoard
+    it's this "gameTurns-state" which we use to derive -> the activePlayer
+    it's this "gameTurns-state" which we use to -> check the winner
+
+-> so this is our single source of truth.
+
+for restarting the game -> we should reset gameTurns to an empty array[]
+that we should clear this log
+
+* inside the App-component => 
+function handleRestart() {       👈
+    setGameTurns([]);
+  }
+
+* then :
+ {(winner || hasDraw) && (
+    <GameOver winner={winner} onRestart={handleRestart} /> 👈
+  )}
+
+* then : 
+function GameOver({ winner, onRestart }) {  👈
+  return (
+    <div id="game-over">
+     ......
+      <p>
+        <button onClick={onRestart}>Rematch!</button>  👈
+      </p>
+    </div>
+  );
+}
+
+! we get a BUG
+-> THAT RELATED TO : how we're updating our gameBoard
+-> the gameBoard is based on "initialGameBoard"
+-> "initialGameBoard" is an array full of array
+-> as we mentioned before; arrays in JavaScript are reference-value
+
+*-> even if they're stored in different variables, we're always editing that same object or array in memory
+
+-> so we need to create a deep copy of "initialGameBoard" before we "over writing the gameBoard"
+
+*=> let gameBoard = [...initialGameBoard.map((array) => [...array])];   👈
+
+ -->
