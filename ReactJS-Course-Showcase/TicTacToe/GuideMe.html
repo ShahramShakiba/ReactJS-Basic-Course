@@ -697,3 +697,20 @@ function GameBoard({ onSelectSquare }) {   👈
 
  <!--======================================================-->
 <!--? 14. disable click the same button from multiple times click -->
+<!--? in GameBoard.jsx-->
+
+<!-- 
+  <button onClick={() => onSelectSquare(rowIndex, colIndex)} disabled={} >
+    {playerSymbol}
+  </button>
+ 
+  * set "disabled" dynamically
+  -> what could be our condition here to derive whether this should be disabled or not dynamically?
+
+  * in the end , it's this "playerSymbol", if playerSymbol is an X or O that means that this button has already been clicked
+
+ *=> disabled={playerSymbol !== null}
+ -->
+
+ <!--======================================================-->
+<!--? 15. -->
