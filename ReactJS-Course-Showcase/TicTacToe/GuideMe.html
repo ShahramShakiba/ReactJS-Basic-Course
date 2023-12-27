@@ -695,7 +695,7 @@ function GameBoard({ onSelectSquare }) {   👈
   *-> You NEED to manage as little state as possible, and derive and compute as many values as needed.
  -->
 
- <!--======================================================-->
+<!--======================================================-->
 <!--? 14. disable click the same button from multiple times click -->
 <!--? in GameBoard.jsx-->
 
@@ -712,7 +712,7 @@ function GameBoard({ onSelectSquare }) {   👈
  *=> disabled={playerSymbol !== null}    👈
  -->
 
- <!--======================================================-->
+<!--======================================================-->
 <!--? 15. Find out which Player win the game -->
 
 <!-- 
@@ -835,5 +835,45 @@ if (
 
  -->
 
- <!--======================================================-->
-<!--? 16.   -->
+<!--======================================================-->
+<!--? 16. ADDING GameOver Component  -->
+<!-- 
+  function GameOver({ winner }) {
+  return (
+    <div id="game-over">
+      <h2>Game Over!</h2>
+
+      <p>{winner} won!</p>
+
+      <p>
+        <button>Rematch!</button>
+      </p>
+    </div>
+  );
+}
+
+? [in App.jsx]
+{winner && <GameOver winner={winner} />}     👈
+<GameBoard onSelectSquare={handleSelectSquare} board={gameBoard} />
+
+* handle the "draw" condition
+-> we have draw if we populated all fields, we know that we'll always have exactly "9 fields"
+-> at most we have 9 gameTurns
+
+ => const hasDraw = gameTurns.length === 9 && !winner;
+
+ => {(winner || hasDraw) && <GameOver winner={winner} />}
+  
+? [in GameOver.jsx]
+<div id="game-over">
+      <h2>Game Over!</h2>
+
+      {winner && <p>{winner} won!</p>}        👈
+      {!winner && <p>It&apos;s a Draw!</p>}  👈
+
+      <p>
+        <button>Rematch!</button>
+      </p>
+</div>
+
+ -->
