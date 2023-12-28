@@ -14,11 +14,11 @@ body {
   min-height: 100vh;
 }
 
+/*============== Header ==================*/
 #header {
   text-align: center;
   margin: 3rem auto;
 }
-
 
 #header img {
   width: 5rem;
@@ -31,6 +31,7 @@ body {
   font-size: 1.5rem;
 }
 
+/*============== User-Input ==============*/
 #user-input {
   padding: 1rem;
   max-width: 30rem;
@@ -64,6 +65,7 @@ body {
   font-size: 1rem;
 }
 
+/*============== Result ===============*/
 #result {
   max-width: 50rem;
   margin: 2rem auto;
