@@ -75,15 +75,21 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/20b0b
  ***
  <!--===================== Investment Calculator =============================-->
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" height="30"  /> &nbsp; Investment Calculator <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" width="20"  />
-- In this project, ....
+- React-powered Investment Calculator
+- In this project, the website visitors can use to calculate the future value or multiple future values
+  for given investment parameters.
 
-- .....
-> Overall, .....
+> What Concepts Hav I Covered :  <br/>
+- ✔️ Build an "Investment Calculator" Web App <br/>
+- ✔️ Build, Configure & Combines Components <br/>
+- ✔️ Manage Application State &nbsp;&nbsp;&nbsp; ✔️ Output List & Conditional Content <br/>
+- ✔️ Handling Events | Using Two-Way-Binding &nbsp;&nbsp;&nbsp; ✔️ Lifting State Up <br/>
+- ✔️ Computing Values | Properly Handling Number Values
 
 <!-------- try it live -------->
  ### Give it a go in real-time and give me a Star <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Glowing%20Star.png" alt="Glowing Star" width="35"  />
  <a href="" target="_blank">
-   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Light%20Bulb.webp" alt="Light Bulb" width="25" height="25" /> 
+   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Light%20Bulb.webp" alt="Light Bulb" width="25" height="25" /> " Investment Calculator " Web App
 </a> <br/><br/>
   
 <!--------- Video --------->
