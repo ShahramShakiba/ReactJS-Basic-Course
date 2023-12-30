@@ -16,7 +16,7 @@ function App() {
       return {
         ...prevUserInput,
 
-        [inputIdentifier]: newValue,
+        [inputIdentifier]: +newValue,
       };
     });
   }
@@ -83,5 +83,16 @@ export default App;
 /* <Results input={userInput} />
 -> pass "userInput-state" to the Results.jsx as well
 
-=> now we can, "derive" the results-data in that Results-component
+=> now we can, "derive" the results-data in that Results-component :
+   with calculateInvestmentResults in investment.js
+*/
+
+/* ADD + to the "newValue": [inputIdentifier]: +newValue,
+-> when you're getting the value of an input-field
+-> that value when extracted will always be a "string"
+-> even if you set the type to "number"-> type="number"
+-> this does not influence the type of value, you're getting in JavaScript
+-> instead, you're always getting a value type "string"
+
+?=> simply adding this plus will force a conversion of this string value to a number value
 */
