@@ -70,6 +70,10 @@ body {
   font-size: 1rem;
 }
 
+#user-input input:focus {
+  outline: 2px solid #fde952b0;
+}
+
 /*============== Result ===============*/
 #result {
   max-width: 50rem;
