@@ -33,11 +33,16 @@ body {
 
 /*============== User-Input ==============*/
 #user-input {
-  padding: 1rem;
+  padding: 1.2rem;
   max-width: 30rem;
   margin: 2rem auto;
   border-radius: 4px;
-  background: linear-gradient(180deg, #307e6c, #2b996d);
+  background: radial-gradient(
+    circle at top,
+    rgba(250, 210, 33, 0.98),
+    rgba(255, 179, 103, 0.87)
+  );
+  color: rgba(153, 77, 0, 0.87);
 }
 
 .input-group {
@@ -50,18 +55,18 @@ body {
   display: block;
   margin-bottom: 0.25rem;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 0.5rem;
+  font-size: 0.8rem;
   font-weight: bold;
-  text-transform: uppercase;
+  letter-spacing: 0.7px;
 }
 
 #user-input input {
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid #76c0ae;
+  border: 1px solid #f6e35a;
   border-radius: 0.25rem;
   background-color: transparent;
-  color: #c2e9e0;
+  color: #413800;
   font-size: 1rem;
 }
 
@@ -76,14 +81,14 @@ body {
 }
 
 #result thead {
-  font-size: 0.7rem;
-  color: #83e6c0;
+  font-size: 0.9rem;
+  color: rgba(253, 213, 36, 0.98);
 }
 
 #result tbody {
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 0.85rem;
-  color: #c2e9e0;
+  font-size: 0.95rem;
+  color: rgba(255, 253, 240, 0.98);
 }
 
 .center {
