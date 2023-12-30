@@ -88,12 +88,14 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/20b0b
 
 <!-------- try it live -------->
  ### Give it a go in real-time and give me a Star <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Glowing%20Star.png" alt="Glowing Star" width="35"  />
- <a href="" target="_blank">
+ <a href="https://investment-calculator-shahram.netlify.app/" target="_blank">
    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Light%20Bulb.webp" alt="Light Bulb" width="25" height="25" /> " Investment Calculator " Web App
 </a> <br/><br/>
   
 <!--------- Video --------->
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Clapper%20Board.webp" alt="Clapper Board" width="35" />
+
+https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/3a177e59-5e14-4db4-aab2-bc8c35e9ce1a
 
 
   <br/> 
