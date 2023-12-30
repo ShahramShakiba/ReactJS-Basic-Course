@@ -1,23 +1,4 @@
-import { useState } from 'react';
-
-export default function UserInput() {
-  const [userInput, setUserInput] = useState({
-    initialInvestment: 10000,
-    annualInvestment: 1200,
-    expectedReturn: 6,
-    duration: 10,
-  });
-
-  function handleChange(inputIdentifier, newValue) {
-    setUserInput((prevUserInput) => {
-      return {
-        ...prevUserInput,
-
-        [inputIdentifier]: newValue,
-      };
-    });
-  }
-
+export default function UserInput({ onChange, userInput }) {
   return (
     <section id="user-input">
       <div className="input-group">
@@ -28,7 +9,7 @@ export default function UserInput() {
             required
             value={userInput.initialInvestment}
             onChange={(event) =>
-              handleChange('initialInvestment', event.target.value)
+              onChange('initialInvestment', event.target.value)
             }
           />
         </p>
@@ -40,7 +21,7 @@ export default function UserInput() {
             required
             value={userInput.annualInvestment}
             onChange={(event) =>
-              handleChange('annualInvestment', event.target.value)
+              onChange('annualInvestment', event.target.value)
             }
           />
         </p>
@@ -53,9 +34,7 @@ export default function UserInput() {
             type="number"
             required
             value={userInput.expectedReturn}
-            onChange={(event) =>
-              handleChange('expectedReturn', event.target.value)
-            }
+            onChange={(event) => onChange('expectedReturn', event.target.value)}
           />
         </p>
 
@@ -65,7 +44,7 @@ export default function UserInput() {
             type="number"
             required
             value={userInput.duration}
-            onChange={(event) => handleChange('duration', event.target.value)}
+            onChange={(event) => onChange('duration', event.target.value)}
           />
         </p>
       </div>
@@ -83,36 +62,6 @@ export default function UserInput() {
 
 *-> and this "input-group" css class 
     will simply make sure that these different paragraphs are showing up next to each other in the same row
-*/
-
-/* state
-?-> Now I need to some logic to get hold that value 
-    that's "entered" by the "user" and to reflect that value back into that input-field - so I need two-way-binding
-
-?-> manage all inputs with one state
-    that kind of merges all these different input values into "one-object"
-*/
-
-/* function
-?-> Then we need a function
-    that should be triggered whenever we change the value
-
-*-> why we update state based on previous state?
-     when this function executes, only one of these 4 properties will be updated, therefore, the other properties and their value shouldn't be lost
-*/
-
-/* function return
-?-> I need to override "one single property" of that object
-    by using "inputIdentifier"
-    -> inputIdentifier will get a "string" as a value
-    -> that is initially: 
-       - initialInvestment
-       - annualInvestment
-       - expectedReturn
-       - duration
-
-*-> [inputIdentifier]
-     dynamically set a property depending on which value is stored in "inputIdentifier"
 */
 
 /* input - onChange
@@ -136,6 +85,10 @@ export default function UserInput() {
 
     -> second argument, should be the value entered by the user
     -> we can get that with the help of "event-object"
+
+    ! AFTER lifting state up to the App component
+    -> change:  handleChange('initialInvestment', event.target.value)
+    -> to:  onChange('initialInvestment', event.target.value)
 */
 
 /* value-prop
@@ -144,4 +97,25 @@ export default function UserInput() {
 *-> value={}
  -> can be used to set the value that will be displayed on the screen
 
+*/
+
+/* lift the state up
+?=> To get the userInput as an input(as a props) in "Results.jsx", so in the "Result.jsx" I can calculate that results data and output that results table
+
+const [userInput, setUserInput] = useState({
+    initialInvestment: 10000,
+    annualInvestment: 1200,
+    expectedReturn: 6,
+    duration: 10,
+  });
+
+function handleChange(inputIdentifier, newValue) {
+    setUserInput((prevUserInput) => {
+      return {
+        ...prevUserInput,
+
+        [inputIdentifier]: newValue,
+      };
+    });
+  }
 */
