@@ -31,6 +31,7 @@ export default function AuthInputs() {
             onChange={(event) => handleInputChange('email', event.target.value)}
           />
         </p>
+        
         <p>
           <label>Password</label>
           <input
@@ -42,6 +43,7 @@ export default function AuthInputs() {
           />
         </p>
       </div>
+
       <div className="actions">
         <button type="button" className="text-button">
           Create a new account
