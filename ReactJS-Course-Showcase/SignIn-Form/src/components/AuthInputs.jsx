@@ -1,4 +1,12 @@
 import { useState } from 'react';
+import { styled } from 'styled-components';
+
+const ControlContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+`;
 
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState('');
@@ -22,7 +30,7 @@ export default function AuthInputs() {
 
   return (
     <div id="auth-inputs">
-      <div className="controls">
+      <ControlContainer>
         <p>
           <label className={`label ${emailNotValid ? 'invalid' : ''}`}>
             Email
@@ -46,7 +54,7 @@ export default function AuthInputs() {
             }
           />
         </p>
-      </div>
+      </ControlContainer>
 
       <div className="actions">
         <button type="button" className="text-button">
@@ -70,4 +78,37 @@ export default function AuthInputs() {
     -> permanently: label
     -> conditionally: ${emailNotValid ? 'invalid' : ''}
 
+*/
+
+/* Styled-Components | Third-Party-Package 
+
+-> npm install styled-components
+
+-> then: import { styled } from 'styled-components';
+
+? styled.div =>
+  -> it will create a div as a separate component but a component that will have any styles you want applied to it
+
+? styled.div`` => 
+  -> this code in the end is called "tagged-template" -> to parse template literals with a function
+
+? then apply all CSS classes you need:
+   styled.div`
+     display: flex;
+     flex-direction: column;
+     gap: 0.5rem;
+     margin-bottom: 1.5rem;
+    `;
+
+    *-> this is a React-Component that automatically returns a div that has these styles applied to it.
+
+    *-> also it will be a div that internally also uses the special children-prop so that it can be wrapped around other content
+    -> const ControlContainer = styled.div`
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        `;
+    
+    -> <ControlContainer> .... </ControlContainer>
 */
