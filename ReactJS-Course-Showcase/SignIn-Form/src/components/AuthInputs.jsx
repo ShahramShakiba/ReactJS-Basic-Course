@@ -8,6 +8,27 @@ const ControlContainer = styled.div`
   margin-bottom: 1.5rem;
 `;
 
+const Label = styled.label`
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6b7280;
+`;
+
+const Input = styled.input`
+  width: 100%;
+  padding: 0.75rem 1rem;
+  line-height: 1.5;
+  background-color: #d1d5db;
+  color: #374151;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+`;
+
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState('');
   const [enteredPassword, setEnteredPassword] = useState('');
@@ -32,10 +53,10 @@ export default function AuthInputs() {
     <div id="auth-inputs">
       <ControlContainer>
         <p>
-          <label className={`label ${emailNotValid ? 'invalid' : ''}`}>
+          <Label className={`label ${emailNotValid ? 'invalid' : ''}`}>
             Email
-          </label>
-          <input
+          </Label>
+          <Input
             type="email"
             className={emailNotValid ? 'invalid' : undefined}
             onChange={(event) => handleInputChange('email', event.target.value)}
@@ -43,10 +64,10 @@ export default function AuthInputs() {
         </p>
 
         <p>
-          <label className={`label ${emailNotValid ? 'invalid' : ''}`}>
+          <Label className={`label ${emailNotValid ? 'invalid' : ''}`}>
             Password
-          </label>
-          <input
+          </Label>
+          <Input
             type="password"
             className={passwordNotValid ? 'invalid' : undefined}
             onChange={(event) =>
@@ -111,4 +132,16 @@ export default function AuthInputs() {
         `;
     
     -> <ControlContainer> .... </ControlContainer>
+
+
+? <Label className={`label ${emailNotValid ? 'invalid' : ''}`}>
+?    Email
+? </Label>
+  => this styled-component still works because of this "dynamically added CSS class" here
+
+  *=> this styled-component, do not just use the "children-prop" so that you can wrap them around content
+
+  *=> they also, forward all props your setting on this styled-component to the underlying built-in JSX element (so the built-in "<label></label>" here)
+
+  *=> so this styled.label=> creates such a built-in "label" under the hood and it forwards all props you're setting on the styled-component(Label) to that built-in "label"
 */
