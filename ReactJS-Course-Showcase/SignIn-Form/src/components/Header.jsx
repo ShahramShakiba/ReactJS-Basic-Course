@@ -11,7 +11,7 @@ export default function Header() {
   );
 }
 
-/* Disadvantage of Vanilla CSS
+/* Disadvantage of Vanilla CSS and inline-css
 
 *-> Vanilla CSS styles are not "scoped" to Components 
 -> to which they belong !
