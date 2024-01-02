@@ -1,49 +1,14 @@
 import { useState } from 'react';
 import { styled } from 'styled-components';
 
+import Button from './Button.jsx';
+import Input from './Input.jsx';
+
 const ControlContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
-`;
-
-const Label = styled.label`
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-
-  color: ${({ $invalid }) => ($invalid ? '#f87171' : '#6b7280')};
-`;
-
-const Input = styled.input`
-  width: 100%;
-  padding: 0.75rem 1rem;
-  line-height: 1.5;
-  border-radius: 0.25rem;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-
-  color: ${({ $invalid }) => ($invalid ? '#ef4444' : '#374151')};
-  background-color: ${({ $invalid }) => ($invalid ? '#fed2d2' : '#d1d5db')};
-  border: 1px solid ${({ $invalid }) => ($invalid ? '#f73f3f' : 'transparent')};
-`;
-
-const Button = styled.button`
-  padding: 1rem 2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  border-radius: 0.25rem;
-  color: #1f2937;
-  background-color: #f0b322;
-  border-radius: 6px;
-  border: none;
-
-  &:hover {
-    background-color: #f0920e;
-  }
 `;
 
 export default function AuthInputs() {
@@ -69,25 +34,21 @@ export default function AuthInputs() {
   return (
     <div id="auth-inputs">
       <ControlContainer>
-        <p>
-          <Label $invalid={emailNotValid}>Email</Label>
-          <Input
-            type="email"
-            $invalid={emailNotValid}
-            onChange={(event) => handleInputChange('email', event.target.value)}
-          />
-        </p>
+        <Input
+          label="email"
+          type="email"
+          invalid={emailNotValid}
+          onChange={(event) => handleInputChange('email', event.target.value)}
+        />
 
-        <p>
-          <Label $invalid={passwordNotValid}>Password</Label>
-          <Input
-            type="password"
-            $invalid={passwordNotValid}
-            onChange={(event) =>
-              handleInputChange('password', event.target.value)
-            }
-          />
-        </p>
+        <Input
+          label="password"
+          type="password"
+          invalid={passwordNotValid}
+          onChange={(event) =>
+            handleInputChange('password', event.target.value)
+          }
+        />
       </ControlContainer>
 
       <div className="actions">
@@ -205,4 +166,18 @@ FOR EXAMPLE in "Label-component" :
 ? &:hover -> targeting the main(button or ...) element
 
 ? & :hover -> targeting "child-elements"
+*/
+
+/* pros and cos of Styled-Component
+
+* Advantages :
+-> quick & easy to add
+-> you can continue "thinking in React" because (you're working with configurable style function)
+-> styles are scoped to components -> no css rule clashes 
+
+* Disadvantages :
+-> you need to know css 
+-> no clear separation between React and CSS code
+-> you end up with many relatively small "wrapper" components
+
 */
