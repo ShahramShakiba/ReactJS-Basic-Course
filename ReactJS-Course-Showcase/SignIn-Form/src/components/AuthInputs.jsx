@@ -31,6 +31,21 @@ const Input = styled.input`
   border: 1px solid ${({ $invalid }) => ($invalid ? '#f73f3f' : 'transparent')};
 `;
 
+const Button = styled.button`
+  padding: 1rem 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  color: #1f2937;
+  background-color: #f0b322;
+  border-radius: 6px;
+  border: none;
+
+  &:hover {
+    background-color: #f0920e;
+  }
+`;
+
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState('');
   const [enteredPassword, setEnteredPassword] = useState('');
@@ -79,9 +94,7 @@ export default function AuthInputs() {
         <button type="button" className="text-button">
           Create a new account
         </button>
-        <button className="button" onClick={handleLogin}>
-          Sign In
-        </button>
+        <Button onClick={handleLogin}>Sign In</Button>
       </div>
     </div>
   );
@@ -142,8 +155,9 @@ export default function AuthInputs() {
   *=> they also, forward all props you're setting on this styled-component to the underlying built-in JSX element (so the built-in "<label></label>" here)
 
   *=> so this styled.label=> creates such a built-in "label" under the hood and it forwards all props you're setting on the styled-component(Label) to that built-in "label"
+*/
 
-  --------------------------------------------------------------
+/* Conditional styling with Styled-Component
 
   -> in styled-component, we don't wanna add CSS classes like this:
   ?  <Label className={`label ${emailNotValid ? 'invalid' : ''}`}>
@@ -184,4 +198,11 @@ FOR EXAMPLE in "Label-component" :
 
   ?=> we can prefix our prop with a " $ " sign
 
+*/
+
+/* Styled-Components-> Pseudo Selectors 
+
+? &:hover -> targeting the main(button or ...) element
+
+? & :hover -> targeting "child-elements"
 */
