@@ -80,7 +80,7 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/20b0b
 - In this project, the website visitors can use to calculate the future value or multiple future values
   for given investment parameters.
 
-> What Concepts Hav I Covered :  <br/>
+> What Concepts Have I Covered :  <br/>
 - ✔️ Build an "Investment Calculator" Web App <br/>
 - ✔️ Build, Configure & Combines Components <br/>
 - ✔️ Manage Application State &nbsp;&nbsp;&nbsp; ✔️ Output List & Conditional Content <br/>
@@ -104,13 +104,20 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/3a177
  ***
  <!--=====================  SignIn-Form =============================-->
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" height="30"  /> &nbsp; SIGN IN FORM <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" width="20"  />
-### 🚧 Under Maintenance .... 🚧
+> The main objective of this project is to enhance the visual appearance of "React applications" by applying various styling techniques. 
+ <br/><br/> ➖ The web page is not functional as clicking "Create a new account" or "SIGN IN" does not do anything. <br/>
+➖ However, entering invalid credentials will highlight the input fields with a red background color and border, indicating that conditional styles are present.
 
+- Initially, I will utilize Vanilla CSS to style the application. <br/>
+
+- After that, I will switch to CSS-in-JS styling using "Styled Components". <br/>
+
+- Finally, in the last step of the project, I will modify the style of the application using Tailwind CSS. <br/>
 
 <!-------- try it live -------->
  ### Give it a go in real-time and give me a Star <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Glowing%20Star.png" alt="Glowing Star" width="35"  />
- <a href="" target="_blank">
-   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Light%20Bulb.webp" alt="Light Bulb" width="25" height="25" /> 
+ <a href="https://sign-in-shahram.netlify.app/" target="_blank">
+   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Light%20Bulb.webp" alt="Light Bulb" width="25" height="25" /> Sign in Form
 </a> <br/><br/>
   
 <!--------- Video --------->
