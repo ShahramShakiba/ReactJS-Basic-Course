@@ -1,3 +1,19 @@
+import React from 'react';
+
+// to use CSS-Modules you need to import it like this
+import styles from './Button.module.css';
+
+const Button = (props) => {
+  return (
+    <button type={props.type} className={styles.button} onClick={props.onClick}>
+      {props.children}
+    </button>
+  );
+};
+
+export default Button;
+
+/* Styled-Component
 import styled from 'styled-components';
 
 // tagged template literal
@@ -26,21 +42,6 @@ const Button = styled.button`
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.26);
   }
 `;
-/*
- * the Button also by default applies all the "props" you might be passing to your own button-component
- */
 
-export default Button;
-
-/* 
-import React from 'react';
-import './Button.css';
-
-const Button = props => {
-  return (
-    <button type={props.type} className="button" onClick={props.onClick}>
-      {props.children}
-    </button>
-  );
-};
+ //* the Button also by default applies all the "props" you might be passing to your own button-component
 */
