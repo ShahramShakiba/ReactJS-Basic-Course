@@ -104,6 +104,7 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/3a177
  ***
  <!--=====================  SignIn-Form =============================-->
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" height="30"  /> &nbsp; SIGN IN FORM <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" width="20"  />
+### Styling React Components
 > The main objective of this project is to enhance the visual appearance of "React applications" by applying various styling techniques. 
  <br/><br/> ➖ The web page is not functional as clicking "Create a new account" or "SIGN IN" does not do anything. <br/>
 ➖ However, entering invalid credentials will highlight the input fields with a red background color and border, indicating that conditional styles are present.
