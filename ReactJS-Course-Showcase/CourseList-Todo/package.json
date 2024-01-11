@@ -1,5 +1,6 @@
 {
   "name": "course-list-todo",
+  "instructor": "Maximilian Schwarzmuller",
   "author": "Shahram Shakiba",
   "version": "0.1.0",
   "private": true,
