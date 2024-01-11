@@ -4,6 +4,7 @@
 ## 🚧 Under Maintenance <br/><br/>
 <!----------------------------------------- Description ---------------------------------------->
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Bubbles.png" alt="Bubbles" width="40" height="40" />&nbsp; Description
+> To begin with, it is important to note that, these projects have been sourced from an exceptional Udemy Course, which was taught by a highly skilled instructor, "Maximilian Schwarzmuller."
 - Step into my GitHub repository and witness the fruits of my labor in learning ReactJS. This array of projects chronicles my journey through the course and reflects my growth as a developer.
 - Each project has been carefully crafted to showcase my grasp of ReactJS concepts and best practices. Whether it's a basic application or a complex one, this repository attests to my unwavering commitment and zeal for web development.
   
