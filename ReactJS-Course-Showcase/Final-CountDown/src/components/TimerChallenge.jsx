@@ -20,7 +20,7 @@ function TimerChallenge({ title, targetTime }) {
       {timerExpired && <p>You lost!</p>}
 
       <p className="challenge-time">
-        {targetTime} second{targetTime > 1 ? 's' : ''}!
+        {targetTime} second{targetTime > 1 ? 's' : ''} !
       </p>
 
       <p>
@@ -30,7 +30,7 @@ function TimerChallenge({ title, targetTime }) {
       </p>
 
       <p className={timerStarted ? 'active' : undefined}>
-        {timerStarted ? 'Time is running...' : 'Timer inactive'}
+        {timerStarted ? 'Time is running...' : 'Timer inactive!'}
       </p>
     </section>
   );
