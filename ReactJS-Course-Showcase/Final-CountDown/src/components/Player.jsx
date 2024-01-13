@@ -23,7 +23,7 @@ export default function Player() {
   );
 }
 
-/*  *Step 1*
+/*  *Step-1*
 export default function Player() {
   const [enteredPlayerName, setEnteredPlayerName] = useState('');
   const [submitted, setSubmitted] = useState(false);
