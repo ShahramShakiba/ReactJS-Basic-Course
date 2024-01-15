@@ -1,16 +1,24 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 function TimerChallenge({ title, targetTime }) {
   const [timerStarted, setTimerStarted] = useState(false);
   // to know once the timer expired
   const [timerExpired, setTimerExpired] = useState(false);
 
+  // let timer;
+  // we use "ref" to avoid updating UI instead of "state" and "variable"
+  const timer = useRef();
+
   function handleStart() {
     setTimerStarted(true);
 
-    setTimeout(() => {
+    timer.current = setTimeout(() => {
       setTimerExpired(true);
     }, targetTime * 1000);
+  }
+
+  function handleStop() {
+    clearTimeout(timer.current);
   }
 
   return (
@@ -24,7 +32,7 @@ function TimerChallenge({ title, targetTime }) {
       </p>
 
       <p>
-        <button onClick={handleStart}>
+        <button onClick={timerStarted ? handleStop : handleStart}>
           {timerStarted ? 'Stop' : 'Start'} Challenge
         </button>
       </p>
