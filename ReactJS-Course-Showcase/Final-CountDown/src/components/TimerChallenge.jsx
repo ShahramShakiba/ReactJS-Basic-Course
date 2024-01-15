@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import ResultModal from './ResultModal';
+import ResultModal from './ResultModal.jsx';
 
 function TimerChallenge({ title, targetTime }) {
   const [timerStarted, setTimerStarted] = useState(false);
@@ -9,12 +9,15 @@ function TimerChallenge({ title, targetTime }) {
   // let timer;
   // we use "ref" to avoid updating UI instead of "state" and "variable"
   const timer = useRef();
+  const dialog = useRef();
 
   function handleStart() {
     setTimerStarted(true);
 
     timer.current = setTimeout(() => {
       setTimerExpired(true);
+
+      dialog.current.showModal();
     }, targetTime * 1000);
   }
 
@@ -24,7 +27,7 @@ function TimerChallenge({ title, targetTime }) {
 
   return (
     <>
-      {timerExpired && <ResultModal targetTime={targetTime} result="lost" />}
+      <ResultModal ref={dialog} targetTime={targetTime} result="lost" />
 
       <section className="challenge">
         <h2>{title}</h2>
