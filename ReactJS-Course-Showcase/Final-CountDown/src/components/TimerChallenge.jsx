@@ -6,8 +6,8 @@ function TimerChallenge({ title, targetTime }) {
   // to know once the timer expired
   const [timerExpired, setTimerExpired] = useState(false);
 
-  // let timer;
-  // we use "ref" to avoid updating UI instead of "state" and "variable"
+  /* let timer;
+     we use "ref" to avoid updating UI instead of "state" and "variable" */
   const timer = useRef();
   const dialog = useRef();
 
@@ -17,7 +17,7 @@ function TimerChallenge({ title, targetTime }) {
     timer.current = setTimeout(() => {
       setTimerExpired(true);
 
-      dialog.current.showModal();
+      dialog.current.open();
     }, targetTime * 1000);
   }
 
