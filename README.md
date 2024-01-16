@@ -1,12 +1,8 @@
 #  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" /> &nbsp; ReactJS Course Showcase   <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" height="40" width="36"  />
 
-
-## 🚧 Under Maintenance <br/><br/>
 <!----------------------------------------- Description ---------------------------------------->
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Bubbles.png" alt="Bubbles" width="40" height="40" />&nbsp; Description
 > To begin with, it is important to note that, these projects have been sourced from an exceptional Udemy Course. <br/>
-
- <img src="https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/067a6398-5c5b-4021-98a3-bbf1ecbc13bb" alt="5 Stars" width="75"  /> 
  
 > Instructed by a _proficient_ and _expert educator_, ` "Maximilian Schwarzmuller". `
 
@@ -20,7 +16,7 @@
  ### _List of projects :_ 
  > ✅ React Essentials &nbsp;&nbsp;&nbsp; ✅ Tic Tac Toe <br/>
  > ✅ Investment Calculator &nbsp;&nbsp;&nbsp; ✅ Sign in Form <br/>
- > ✅ Styling React Component &nbsp;&nbsp;&nbsp; ✅ Final CountDown
+ > ✅ Styling React Component &nbsp;&nbsp;&nbsp; ✅ Final CountDown  <br/>
  > ✅ .... &nbsp;&nbsp;&nbsp; 
     
 <br/>
@@ -111,8 +107,9 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/3a177
  ***
  <!--=====================  SignIn-Form =============================-->
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" height="30"  /> &nbsp; SIGN IN FORM <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" width="20"  />
-### Styling React Components
-> The main objective of this project is to enhance the visual appearance of "React applications" by applying various styling techniques. 
+### Styling React Components 
+> The main objective of this project 
+s to enhance the visual appearance of "React applications" by applying various styling techniques. 
  <br/><br/> ➖ The web page is not functional as clicking "Create a new account" or "SIGN IN" does not do anything. <br/>
 ➖ However, entering invalid credentials will highlight the input fields with a red background color and border, indicating that conditional styles are present.
 
@@ -129,7 +126,7 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/3a177
 </a> <br/><br/>
   
 <!--------- Video --------->
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Clapper%20Board.webp" alt="Clapper Board" width="35" />
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Clapper%20Board.webp" alt="Clapper Board" width="35" /> 
 
 https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/9143a0d3-7d0a-49c8-9388-306bb0d760ef
 
@@ -158,6 +155,31 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/347f2
   <br/> 
 
  ***
+ <!--=====================  Final CountDown =============================-->
+### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" height="30"  /> &nbsp; Final CountDown <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" width="20"  />
+This section is about ` Refs ` and ` Portals `. Two slightly more advanced React concepts which you definitely don't need in all React apps you are going to build.
+> In this project, I have undertaken some key concepts :
+- ✔️ Accessing _DOM Elements_ with ` Refs ` &nbsp;&nbsp;&nbsp; ✔️ _Managing Values_ with Refs <br/>
+- ✔️ _Exposing API Functions_ from Components <br/>
+- ✔️ Detaching DOM Rendering from JSX Structure with ` portals `
+  <br/><br/>
+  
+> It is kind of a Game where website visitors can start different timer challenges with the goal of estimating when time is up and stopping the timer early enough before it expires.
+
+<!-------- try it live -------->
+ ### Give it a go in real-time and give me a Star <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Glowing%20Star.png" alt="Glowing Star" width="35"  />
+ <a href="">
+   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Light%20Bulb.webp" alt="Light Bulb" width="25" height="25" /> Final CountDown
+</a> <br/><br/>
+  
+<!--------- Video --------->
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Clapper%20Board.webp" alt="Clapper Board" width="35" />
+
+
+
+  <br/> 
+
+ ***
  <!--======================= Social Media ===========================-->
  ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Telephone.webp" alt="Telephone" width="55"  /> Find me around the Web :
 <a href="https://www.linkedin.com/in/shahramshakiba/" target="_blank">
@@ -176,3 +198,11 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/347f2
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/twitter/default.svg" width="52" height="40" alt="twitter logo"  />
   </a>
 
+
+
+<!--------- Interactions
+ <img src="https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/62f092a8-87b5-448e-84ae-7250b65b6316" alt="Light Bulb" width="155"  />
+--------->
+<!--------- 5-Stars
+<img src="https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/067a6398-5c5b-4021-98a3-bbf1ecbc13bb" alt="5 Stars" width="75"  /> 
+--------->
