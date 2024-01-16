@@ -9,6 +9,7 @@ const ResultModal = forwardRef(function ResultModal(
   const userLost = remainingTime <= 0;
   // convert it to seconds
   const formattedRemainingTime = (remainingTime / 1000).toFixed(2);
+  const score = Math.round((1 - remainingTime / (targetTime * 1000)) * 100);
 
   useImperativeHandle(ref, () => {
     return {
@@ -21,6 +22,7 @@ const ResultModal = forwardRef(function ResultModal(
   return (
     <dialog ref={dialog} className="result-modal">
       {userLost && <h2>You lost!</h2>}
+      {!userLost && <h2>Your score: {score}</h2>}
 
       <p>
         The target time was <strong>{targetTime} seconds.</strong>
@@ -128,4 +130,9 @@ const ResultModal = forwardRef(function ResultModal(
 });
 
 export default ResultModal;
+*/
+
+/* const score = Math.round((1 - remainingTime / targetTime) * 100);
+
+ to get a score between zero and 100 | remainingTime is in milliseconds that's why we should multiplied targetTime with 1000
 */
