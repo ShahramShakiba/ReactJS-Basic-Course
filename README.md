@@ -135,6 +135,7 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/9143a
  ***
  <!--=====================  Styling React Component =============================-->
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" height="30"  /> &nbsp; Styling React Component <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" width="20"  />
+### pre-built project
 Throughout my work on this project, I focused solely on the ` styling of the React Component `, which had already _been developed_ and _provided to me_. <br/>
 > ### To accomplish this task <br/>
 
@@ -182,7 +183,16 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/83c59
  ***
  <!--=====================  JSX Limitations =============================-->
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" height="30"  /> &nbsp;  JSX Limitations <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" width="20"  />
+### pre-built project
 Throughout my work on this project, I focused solely on the ` JSX Limitations `, which had already _been developed_ and _provided to me_. <br/>
+
+> What Concepts Have I Covered :  <br/>
+
+- ✔️ JSX Limitations & How ` "Fragments" ` can help us overocome those limitations. <br/>
+- ✔️ Getting a Cleaner DOM with ` "Portals" ` <br/>
+- ✔️ Working with ` "Refs" ` <br/>
+
+> React Toolbox offers additional tools such as "Fragments", "Portals", and "Refs" that enable us to tackle a wider range of issues.
 
 <!-------- try it live -------->
  ### Give it a go in real-time and give me a Star <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Glowing%20Star.png" alt="Glowing Star" width="35"  />
