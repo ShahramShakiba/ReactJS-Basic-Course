@@ -17,7 +17,7 @@
  > ✅ React Essentials &nbsp;&nbsp;&nbsp; ✅ Tic Tac Toe <br/>
  > ✅ Investment Calculator &nbsp;&nbsp;&nbsp; ✅ Sign in Form <br/>
  > ✅ Styling React Component &nbsp;&nbsp;&nbsp; ✅ Final CountDown  <br/>
- > ✅ .... &nbsp;&nbsp;&nbsp; 
+ > ✅ JSX Limitations &nbsp;&nbsp;&nbsp; ✅ .....
     
 <br/>
 
@@ -109,7 +109,7 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/3a177
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" height="30"  /> &nbsp; SIGN IN FORM <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" width="20"  />
 ### Styling React Components 
 > The main objective of this project 
-s to enhance the visual appearance of "React applications" by applying various styling techniques. 
+is to enhance the visual appearance of "React applications" by applying various styling techniques. 
  <br/><br/> ➖ The web page is not functional as clicking "Create a new account" or "SIGN IN" does not do anything. <br/>
 ➖ However, entering invalid credentials will highlight the input fields with a red background color and border, indicating that conditional styles are present.
 
@@ -176,6 +176,24 @@ This section is about ` Refs ` and ` Portals `. Two slightly more advanced React
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Clapper%20Board.webp" alt="Clapper Board" width="35" />
 
 https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/83c59cec-cc06-4fab-b885-3e6aa61ba7f5
+
+  <br/> 
+
+ ***
+ <!--=====================  JSX Limitations =============================-->
+### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" height="30"  /> &nbsp;  JSX Limitations <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" width="20"  />
+Throughout my work on this project, I focused solely on the ` JSX Limitations `, which had already _been developed_ and _provided to me_. <br/>
+
+<!-------- try it live -------->
+ ### Give it a go in real-time and give me a Star <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Glowing%20Star.png" alt="Glowing Star" width="35"  />
+ <a href="" target="_blank">
+   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Light%20Bulb.webp" alt="Light Bulb" width="25" height="25" /> 
+</a> <br/><br/>
+  
+<!--------- Video --------->
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Clapper%20Board.webp" alt="Clapper Board" width="35" />
+
+
 
   <br/> 
 
