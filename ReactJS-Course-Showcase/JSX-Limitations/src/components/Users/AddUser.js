@@ -4,6 +4,7 @@ import Card from '../UI/Card';
 import Button from '../UI/Button';
 import ErrorModal from '../UI/ErrorModal';
 import classes from './AddUser.module.css';
+import Wrapper from '../Helpers/Wrapper';
 
 const AddUser = (props) => {
   const [enteredUsername, setEnteredUsername] = useState('');
@@ -44,7 +45,7 @@ const AddUser = (props) => {
   };
 
   return (
-    <div>
+    <Wrapper>
       {error && (
         <ErrorModal
           title={error.title}
@@ -74,7 +75,7 @@ const AddUser = (props) => {
           <Button type="submit">Add User</Button>
         </form>
       </Card>
-    </div>
+    </Wrapper>
   );
 };
 
@@ -146,3 +147,38 @@ return [
 
 * Rendering unnecessary content is generally never a good idea in programming!
 */
+
+/* "Custom Wrapper"
+create a folder in component named: "Helpers"
+create a file in Helpers named:  "Wrapper.js"
+
+add: const Wrapper = (props) => {
+       return props.children;
+      };
+
+      export default Wrapper;
+
+      * children props holds all the content you're passing between the opening and closing tag of your custom component
+
+Then: 
+import Wrapper from '../Helpers/Wrapper';
+
+? it's an empty component
+<Wrapper>
+      {error && (
+        <ErrorModal
+          title={error.title}
+          message={error.message}
+          onConfirm={errorHandler}
+        />
+      )}
+
+      <Card className={classes.input}>
+        <form onSubmit={addUserHandler}>
+          .....
+        </form>
+      </Card>
+    </Wrapper>
+*/
+
+
