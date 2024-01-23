@@ -226,3 +226,21 @@ import React, { Fragment } from 'react';
 </Fragment>
  
 */
+
+/* Controlled vs Uncontrolled Component 
+* Uncontrolled Component:
+if we access values with a ref
+    <input
+      id="username"
+      type="text"
+      ref={nameInputRef}
+    />
+    ? why uncontrolled?
+    ✅ because they're internal state, so to value which is reflected in them is not controlled by React.
+
+    ✅ we rely on the default behavior of the input where a user of course is able to enter something and that entered value is reflected and then we just fetch it with a react-feature (const nameInputRef = useRef();)
+    but we don't feed data back into the input
+
+
+    * When we work with "input-components" in React, that's why we typically have this controlled and uncontrolled thing
+*/
