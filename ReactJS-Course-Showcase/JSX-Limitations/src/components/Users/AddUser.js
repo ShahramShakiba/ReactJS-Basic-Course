@@ -181,4 +181,32 @@ import Wrapper from '../Helpers/Wrapper';
     </Wrapper>
 */
 
+/* "React.Fragment"
+* It's an empty wrapper component:
+  it doesn't render any real HTML element to the DOM.
+  BUT it fulfills React's/JSX requirement.
+? it's a built-in wrapper.
 
+* 01
+<>
+    <AddUser onAddUser={addUserHandler} />
+    <UsersList users={usersList} />
+</>
+---------------------------------------------------
+* 02
+import React from 'react';
+
+<React.Fragment>
+    <AddUser onAddUser={addUserHandler} />
+    <UsersList users={usersList} />
+</React.Fragment>
+---------------------------------------------------
+* 03
+import React, { Fragment } from 'react';
+
+<Fragment>
+    <AddUser onAddUser={addUserHandler} />
+    <UsersList users={usersList} />
+</Fragment>
+ 
+*/
