@@ -22,3 +22,29 @@ export default CoreConcepts;
 
 we give the title="Core Concepts" to the "custom Section-component" to specify the "title" in the Section-component
 */
+
+/* OPTION 01
+<ul>
+    <CoreConcept
+      title={CORE_CONCEPTS[0].title}
+      description={CORE_CONCEPTS[0].description}
+      image={CORE_CONCEPTS[0].image}
+    />
+    <CoreConcept
+      title={CORE_CONCEPTS[1].title}
+      description={CORE_CONCEPTS[1].description}
+      image={CORE_CONCEPTS[1].image}
+    />
+    ....
+</ul>
+*/
+
+/* OPTION 02
+* when your "Props" names are similar to the property names of the object
+<ul>
+    <CoreConcept {...CORE_CONCEPTS[0]} />
+    <CoreConcept {...CORE_CONCEPTS[1]} />
+    <CoreConcept {...CORE_CONCEPTS[2]} />
+    <CoreConcept {...CORE_CONCEPTS[3]} />
+</ul>
+*/
