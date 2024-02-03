@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import Player from './components/Player'; 
+import Player from './components/Player';
 import GameBoard from './components/GameBoard';
 import Log from './components/Log';
 import WINNING_COMBINATIONS from './winning-combination';
@@ -17,16 +17,16 @@ const INITIAL_GAME_BOARD = [
   [null, null, null],
 ];
 
-function deriveActivePlayer(gameTurns) {
+const deriveActivePlayer = (gameTurns) => {
   let currentPlayer = 'X';
   if (gameTurns.length > 0 && gameTurns[0].player === 'X') {
     currentPlayer = 'O';
   }
 
   return currentPlayer;
-}
+};
 
-function deriveGameBoard(gameTurns) {
+const deriveGameBoard = (gameTurns) => {
   let gameBoard = [...INITIAL_GAME_BOARD.map((array) => [...array])];
   for (const turn of gameTurns) {
     const { square, player } = turn;
@@ -36,9 +36,9 @@ function deriveGameBoard(gameTurns) {
   }
 
   return gameBoard;
-}
+};
 
-function deriveWinner(gameBoard, players) {
+const deriveWinner = (gameBoard, players) => {
   let winner;
   for (const combination of WINNING_COMBINATIONS) {
     const firstSquareSymbol =
@@ -58,9 +58,9 @@ function deriveWinner(gameBoard, players) {
   }
 
   return winner;
-}
+};
 
-function App() {
+export default function App() {
   const [gameTurns, setGameTurns] = useState([]);
   const [players, setPlayers] = useState(PLAYERS);
 
@@ -87,32 +87,32 @@ function App() {
     });
   };
 
-  function handleRestart() {
+  const handleRestart = () => {
     setGameTurns([]);
-  }
+  };
 
-  function handlePlayerNameChange(symbol, newName) {
+  const handlePlayerNameChange = (symbol, newName) => {
     setPlayers((prevPlayers) => {
       return {
         ...prevPlayers,
         [symbol]: newName,
       };
     });
-  }
+  };
 
   return (
     <main>
       <div id="game-container">
         <ol id="players" className="highlight-player">
-          <Player 
-            initialName={PLAYERS.X} 
-            symbol="X" 
+          <Player
+            initialName={PLAYERS.X}
+            symbol="X"
             isActive={activePlayer === 'X'}
             onChangeName={handlePlayerNameChange}
           />
-          <Player 
-            initialName={PLAYERS.O} 
-            symbol="O" 
+          <Player
+            initialName={PLAYERS.O}
+            symbol="O"
             isActive={activePlayer === 'O'}
             onChangeName={handlePlayerNameChange}
           />
@@ -129,8 +129,6 @@ function App() {
     </main>
   );
 }
-
-export default App;
 
 /* Reusing a Component - isolated instance:
 * Reusing a Component

@@ -46,8 +46,8 @@ export default GameBoard;
 
 ❌❌❌ NOT RECOMMENDED ❌❌❌
 ?-> prevGameBoard[rowIndex][colIndex] = "X"; 
-[rowIndex]-> select on of 3 arrays
-[colIndex]-> select on of the elements inside of that inner arrays
+[rowIndex]-> select one of the 3 arrays
+[colIndex]-> select one of the elements inside of that inner arrays
 
 ❌ -> if your state is an "Object" or "Array" you're dealing with a ->"ReferencE-Value"<- in JavaScript; 
 -> therefore if you would be updating like this you would be updating the "old value in-memory" immediately, even before  this scheduled state update was executed by React
