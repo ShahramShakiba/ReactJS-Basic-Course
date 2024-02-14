@@ -161,7 +161,8 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/347f2
 This section is about ` Refs ` and ` Portals `. Two slightly more advanced React concepts which you definitely don't need in all React apps you are going to build.
 > In this project, I have undertaken some key concepts :
 - ✔️ Accessing _DOM Elements_ with ` Refs ` &nbsp;&nbsp;&nbsp; ✔️ _Managing Values_ with Refs <br/>
-- ✔️ _Exposing API Functions_ from Components <br/>
+- ✔️ Forwarding Refs to Custom Components using ` forwardRef `  <br/>
+- ✔️ Exposing Component APIs via the ` useImperativeHandle ` Hook  <br/>
 - ✔️ Detaching DOM Rendering from JSX Structure with ` portals `
   <br/><br/>
   
