@@ -194,18 +194,11 @@ Throughout my work on this project, I focused solely on the ` JSX Limitations `,
   2. ` "Fragments" ` like React fragments can help us overocome JSX limitations. <br/>
 - ✔️ Getting a Cleaner DOM with ` "Portals" ` <br/>
 - ✔️ Working with ` "Refs" ` <br/>
-
-
-<!-------- try it live -------->
- ### Give it a go in real-time and give me a Star <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Glowing%20Star.png" alt="Glowing Star" width="35"  />
- <a href="" target="_blank">
-   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Light%20Bulb.webp" alt="Light Bulb" width="25" height="25" /> 
-</a> <br/><br/>
   
 <!--------- Video --------->
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Clapper%20Board.webp" alt="Clapper Board" width="35" />
+<img src="https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/ee0be71e-7956-42a6-bf46-220117f5e9b0" alt="Clapper Board" width="35" />
 
-
+![JSX-Limitations](https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/62adb840-4121-4804-8185-cfa91d279e34)
 
   <br/> 
 
