@@ -14,10 +14,11 @@
 <br/>
 
  ### _List of projects :_ 
- > ✅ React Essentials &nbsp;&nbsp;&nbsp; ✅ Tic Tac Toe <br/>
- > ✅ Investment Calculator &nbsp;&nbsp;&nbsp; ✅ Sign in Form <br/>
- > ✅ Styling React Component &nbsp;&nbsp;&nbsp; ✅ Final CountDown  <br/>
- > ✅ JSX Limitations &nbsp;&nbsp;&nbsp; ✅ .....
+ > ⭐ React Essentials &nbsp;&nbsp;&nbsp; ⭐ Tic Tac Toe <br/>
+ > ⭐ Investment Calculator &nbsp;&nbsp;&nbsp; ⭐ Sign in Form <br/>
+ > ⭐ Styling React Component &nbsp;&nbsp;&nbsp; ⭐ Final CountDown  <br/>
+ > ⭐ JSX Limitations &nbsp;&nbsp;&nbsp; ⭐ React Project Management <br/>
+ > ⭐ .... &nbsp;&nbsp;&nbsp; 
     
 <br/>
 
@@ -51,7 +52,7 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/8442b
 - Tic Tac Toe is a classic game that has been enjoyed by people of all ages for generations. It is a two-player game where each player takes turns marking a 3x3 grid with their symbol (either X or O) until one player successfully places three of their symbols in a row, column, or diagonal.
 - Overall, this Tic Tac Toe application is a fun and interactive way to experience the classic game while also demonstrating my proficiency in React development.
 
-> What Concepts Hav I Covered  <br/>
+> What Concepts Have I Covered  <br/>
 > In this project, I have undertaken an in-depth exploration of numerous key concepts :
 - ✔️ Splitting Components by feature &nbsp;&nbsp;&nbsp; ✔️ Reusing Components <br/>
 - ✔️ Conditional Content - A Suboptimal Way Of Updating State &nbsp;&nbsp;&nbsp; <br/>
@@ -199,6 +200,30 @@ Throughout my work on this project, I focused solely on the ` JSX Limitations `,
 <img src="https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/ee0be71e-7956-42a6-bf46-220117f5e9b0" alt="Clapper Board" width="35" />
 
 ![JSX-Limitations](https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/62adb840-4121-4804-8185-cfa91d279e34)
+
+  <br/> 
+
+ ***
+<!--=====================  React Project Management =============================-->
+### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" height="30"  /> &nbsp; React Project Management <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" width="20"  />
+- 
+
+> What Concepts Have I Covered  <br/>
+> In this project, I have undertaken an in-depth exploration of numerous key concepts :
+- ✔️ ..... &nbsp;&nbsp;&nbsp; ✔️ .... <br/>
+
+
+
+<!-------- try it live -------->
+ ### Give it a go in real-time and give me a Star <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Glowing%20Star.png" alt="Glowing Star" width="35"  />
+ <a href="https://tic-tac-toe-game-shahram.netlify.app/" target="_blank">
+   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Light%20Bulb.webp" alt="Light Bulb" width="25" height="25" /> 
+</a> <br/><br/>
+  
+<!--------- Video --------->
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Clapper%20Board.webp" alt="Clapper Board" width="35" />
+
+
 
   <br/> 
 
