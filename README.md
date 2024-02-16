@@ -161,7 +161,8 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/347f2
 This section is about ` Refs ` and ` Portals `. Two slightly more advanced React concepts which you definitely don't need in all React apps you are going to build.
 > In this project, I have undertaken some key concepts :
 - ✔️ Accessing _DOM Elements_ with ` Refs ` &nbsp;&nbsp;&nbsp; ✔️ _Managing Values_ with Refs <br/>
-- ✔️ _Exposing API Functions_ from Components <br/>
+- ✔️ Forwarding Refs to Custom Components using ` forwardRef ` function  <br/>
+- ✔️ Exposing Component APIs via the ` useImperativeHandle ` Hook  <br/>
 - ✔️ Detaching DOM Rendering from JSX Structure with ` portals `
   <br/><br/>
   
@@ -188,11 +189,12 @@ Throughout my work on this project, I focused solely on the ` JSX Limitations `,
 
 > What Concepts Have I Covered :  <br/>
 
-- ✔️ JSX Limitations & How ` "Fragments" ` can help us overocome those limitations. <br/>
+- ✔️ One JSX Limitations is you can't return more than one "root" JSX element : <br/>
+  1. Creating a custom Wrapper Component <br/>
+  2. ` "Fragments" ` like React fragments can help us overocome JSX limitations. <br/>
 - ✔️ Getting a Cleaner DOM with ` "Portals" ` <br/>
 - ✔️ Working with ` "Refs" ` <br/>
 
-> React Toolbox offers additional tools such as "Fragments", "Portals", and "Refs" that enable us to tackle a wider range of issues.
 
 <!-------- try it live -------->
  ### Give it a go in real-time and give me a Star <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Glowing%20Star.png" alt="Glowing Star" width="35"  />
