@@ -9,7 +9,7 @@ const ResultModal = forwardRef(function ResultModal(
 
   const userLost = remainingTime <= 0;
   // convert it to seconds
-  const formattedRemainingTime = (remainingTime / 1000).toFixed(2);
+  const displayTimeRemaining = (remainingTime / 1000).toFixed(2);
   const score = Math.round((1 - remainingTime / (targetTime * 1000)) * 100);
 
   useImperativeHandle(ref, () => {
@@ -26,11 +26,14 @@ const ResultModal = forwardRef(function ResultModal(
       {!userLost && <h2>Your score: {score}</h2>}
 
       <p>
-        The target time was <strong>{targetTime} seconds.</strong>
+        The target time was
+        <strong>
+          {targetTime} second{targetTime > 1 ? 's' : ''}.
+        </strong>
       </p>
       <p>
         You stopped the timer with
-        <strong> {formattedRemainingTime} seconds left.</strong>
+        <strong> {displayTimeRemaining} seconds left.</strong>
       </p>
 
       <form method="dialog" onSubmit={onReset}>

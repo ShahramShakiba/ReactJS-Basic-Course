@@ -4,14 +4,11 @@ import Card from '../UI/Card';
 import Button from '../UI/Button';
 import ErrorModal from '../UI/ErrorModal';
 import classes from './AddUser.module.css';
-import Wrapper from '../Helpers/Wrapper';
+// import Wrapper from '../Helpers/Wrapper';
 
-const AddUser = (props) => {
+export default function AddUser(props) {
   const nameInputRef = useRef();
   const ageInputRef = useRef();
-
-  // const [enteredUsername, setEnteredUsername] = useState('');
-  // const [enteredAge, setEnteredAge] = useState('');
   const [error, setError] = useState();
 
   const addUserHandler = (event) => {
@@ -35,31 +32,16 @@ const AddUser = (props) => {
     }
 
     props.onAddUser(enteredName, enteredUserAge);
-    // setEnteredUsername('');
-    // setEnteredAge('');
-
-    /* Reset value :
-     You shouldn't manipulate the DOM without React, but if you just
-     wanna reset the value entered by a user, 
-     it's something you can consider doing */
     nameInputRef.current.value = '';
     ageInputRef.current.value = '';
   };
-
-  // const usernameChangeHandler = (event) => {
-  //   setEnteredUsername(event.target.value);
-  // };
-
-  // const ageChangeHandler = (event) => {
-  //   setEnteredAge(event.target.value);
-  // };
 
   const errorHandler = () => {
     setError(null);
   };
 
   return (
-    <Wrapper>
+    <>
       {error && (
         <ErrorModal
           title={error.title}
@@ -71,31 +53,17 @@ const AddUser = (props) => {
       <Card className={classes.input}>
         <form onSubmit={addUserHandler}>
           <label htmlFor="username">Username</label>
-          <input
-            id="username"
-            type="text"
-            // value={enteredUsername}
-            // onChange={usernameChangeHandler}
-            ref={nameInputRef}
-          />
+          <input ref={nameInputRef} id="username" type="text" />
 
           <label htmlFor="age">Age (Years)</label>
-          <input
-            id="age"
-            type="number"
-            // value={enteredAge}
-            // onChange={ageChangeHandler}
-            ref={ageInputRef}
-          />
+          <input ref={ageInputRef} id="age" type="number" />
 
           <Button type="submit">Add User</Button>
         </form>
       </Card>
-    </Wrapper>
+    </>
   );
-};
-
-export default AddUser;
+}
 
 /* 01. One limitations of JSX {One JSX element to return}
 * You can't return more than one "root" JSX element (you also can't store more than one "root" JSX element in a variable).
@@ -107,14 +75,14 @@ export default AddUser;
 return [
     error && (
       <ErrorModal
-        key="error-modal"
+*       key="error-modal"
         title={error.title}
         message={error.message}
         onConfirm={errorHandler}
       />
     ),
 
-    <Card key="add-user-card" className={classes.input}>
+*   <Card key="add-user-card" className={classes.input}>
       <form onSubmit={addUserHandler}>
         <label htmlFor="username">Username</label>
         <input
@@ -243,4 +211,91 @@ if we access values with a ref
 
 
     * When we work with "input-components" in React, that's why we typically have this controlled and uncontrolled thing
+
+    ? Controlled : 
+    Where we manage our state and we updated that state on every keystroke and we feed that state back into the input with the "value" prop 
+*/
+
+/* Before using Refs :
+export default function AddUser(props) {
+  const [enteredUsername, setEnteredUsername] = useState('');
+  const [enteredAge, setEnteredAge] = useState('');
+  const [error, setError] = useState();
+
+  const addUserHandler = (event) => {
+    event.preventDefault();
+
+    if (enteredUserName.trim().length === 0 || enteredAge.trim().length === 0) {
+      setError({
+        title: 'Invalid input',
+        message: 'Please enter a valid name and age (non-empty values).',
+      });
+      return;
+    }
+    if (+enteredAge < 1) {
+      setError({
+        title: 'Invalid age',
+        message: 'Please enter a valid age (> 0).',
+      });
+      return;
+    }
+
+    props.onAddUser(enteredUsername, enteredAge);
+    setEnteredUsername('');
+    setEnteredAge('');
+
+    (_____Reset value :
+     You shouldn't manipulate the DOM without React, but if you just
+     wanna reset the value entered by a user, 
+     it's something you can consider doing_______) 
+    setEnteredUsername('');
+    setEnteredAge('');
+  };
+
+  const usernameChangeHandler = (event) => {
+    setEnteredUsername(event.target.value);
+  };
+
+  const ageChangeHandler = (event) => {
+    setEnteredAge(event.target.value);
+  };
+
+  const errorHandler = () => {
+    setError(null);
+  };
+
+  return (
+    <>
+      {error && (
+        <ErrorModal
+          title={error.title}
+          message={error.message}
+          onConfirm={errorHandler}
+        />
+      )}
+
+      <Card className={classes.input}>
+        <form onSubmit={addUserHandler}>
+          <label htmlFor="username">Username</label>
+          <input
+            id="username"
+            type="text"
+          />
+
+          <label htmlFor="age">Age (Years)</label>
+          <input
+            id="age"
+            type="number"
+            value={enteredAge}
+            onChange={ageChangeHandler}
+          />
+
+          <Button type="submit">Add User</Button>
+        </form>
+      </Card>
+    </>
+  );
+}
+
+
 */

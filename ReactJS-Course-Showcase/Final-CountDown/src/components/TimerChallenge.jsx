@@ -6,11 +6,11 @@ function TimerChallenge({ title, targetTime }) {
   const dialog = useRef();
 
   // targetTime * 1000 => in milliseconds
-  const [timeRemaining, setTimeRemaining] = useState(targetTime * 1000);
+  const [timeLeft, setTimeLeft] = useState(targetTime * 1000);
 
-  const timerIsActive = timeRemaining > 0 && timeRemaining < targetTime * 1000;
+  const timerIsActive = timeLeft > 0 && timeLeft < targetTime * 1000;
 
-  if (timeRemaining <= 0) {
+  if (timeLeft <= 0) {
     clearInterval(timer.current);
 
     // the timer expired | we lost
@@ -18,12 +18,12 @@ function TimerChallenge({ title, targetTime }) {
   }
 
   function handleReset() {
-    setTimeRemaining(targetTime * 1000);
+    setTimeLeft(targetTime * 1000);
   }
 
   function handleStart() {
     timer.current = setInterval(() => {
-      setTimeRemaining((prevTimeRemaining) => prevTimeRemaining - 10);
+      setTimeLeft((prevTimeLeft) => prevTimeLeft - 10);
     }, 10);
   }
 
@@ -39,7 +39,7 @@ function TimerChallenge({ title, targetTime }) {
       <ResultModal
         ref={dialog}
         targetTime={targetTime}
-        remainingTime={timeRemaining}
+        remainingTime={timeLeft}
         onReset={handleReset}
       />
 
@@ -127,22 +127,22 @@ function TimerChallenge({ title, targetTime }) {
 export default TimerChallenge;
 */
 
-/* setTimeRemaining((prevTimeRemaining) => prevTimeRemaining - 10);
+/* setTimeLeft((prevTimeLeft) => prevTimeLeft - 10);
 ?this state here gets updated every 10 milliseconds with the updated time remaining
  */
 
-/*  if (timeRemaining <= 0) {
+/*  if (timeLeft <= 0) {
     clearInterval(timer.current);
   }
 
   * "setInterval" won't stop on it's own because it has no end date, so to say,it just keep s on firing every 10 milliseconds 
   function handleStart() {
     timer.current = setInterval(() => {
-      setTimeRemaining((prevTimeRemaining) => prevTimeRemaining - 10);
+      setTimeLeft((prevTimeLeft) => prevTimeLeft - 10);
     }, 10);
   }
 
-  ? so we have to clear this "interval" if we determine that the time is up, which is the case if the timeRemaining is zero or smaller than that
+  ? so we have to clear this "interval" if we determine that the time is up, which is the case if the timeLeft is zero or smaller than that
 
   ? that's why we call "clearInterval" here
 */
