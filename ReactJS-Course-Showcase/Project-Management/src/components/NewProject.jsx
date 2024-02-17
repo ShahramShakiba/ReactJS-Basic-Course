@@ -1,3 +1,5 @@
+import Input from './Input';
+
 export default function NewProject() {
   return (
     <div className="w-[35rem] mt-16">
@@ -15,18 +17,9 @@ export default function NewProject() {
       </menu>
 
       <div>
-        <p className="flex flex-col gap-1 my-4">
-          <label>Title</label>
-          <input />
-        </p>
-        <p className="flex flex-col gap-1 my-4">
-          <label>Description</label>
-          <textarea />
-        </p>
-        <p className="flex flex-col gap-1 my-4">
-          <label>Due Date</label>
-          <input />
-        </p>
+        <Input label="Title" />
+        <Input label="Description" textarea />
+        <Input label="Due Date" />
       </div>
     </div>
   );
