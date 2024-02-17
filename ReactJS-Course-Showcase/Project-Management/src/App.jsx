@@ -22,7 +22,7 @@ export default function App() {
     });
   };
 
-  const handleAddProject = ( projectData ) => {
+  const handleAddProject = (projectData) => {
     setProjectsState((prevState) => {
       const newProject = {
         ...projectData,
@@ -32,6 +32,8 @@ export default function App() {
       return {
         ...prevState,
         projects: [...prevState.projects, newProject],
+        selectedProjectID: undefined,
+        // back to NoProjectSelected page
       };
     });
   };
@@ -46,7 +48,11 @@ export default function App() {
   console.log(projectsState);
   return (
     <main className="h-screen my-8 flex gap-8">
-      <ProjectSideBar onStartAddProject={handleStartAddProject} />
+      <ProjectSideBar
+        onStartAddProject={handleStartAddProject}
+        projects={projectsState.projects}
+      />
+
       {content}
     </main>
   );
