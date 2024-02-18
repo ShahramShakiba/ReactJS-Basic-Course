@@ -4,7 +4,7 @@
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Bubbles.png" alt="Bubbles" width="40" height="40" />&nbsp; Description
 > To begin with, it is important to note that, these projects have been sourced from an exceptional Udemy Course. <br/>
  
-> Instructed by a _proficient_ and _expert educator_, ` "Maximilian Schwarzmuller". `
+> 👤 Instructed by a _proficient_ and _expert educator_, ` "Maximilian Schwarzmuller". `
 
 - Step into my GitHub repository and witness the fruits of my labor in learning ReactJS. This array of projects chronicles my journey through the course and reflects my growth as a developer.
 - Each project has been carefully crafted to showcase my grasp of ReactJS concepts and best practices. Whether it's a basic application or a complex one, this repository attests to my unwavering commitment and zeal for web development.
@@ -52,16 +52,16 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/8442b
 - Tic Tac Toe is a classic game that has been enjoyed by people of all ages for generations. It is a two-player game where each player takes turns marking a 3x3 grid with their symbol (either X or O) until one player successfully places three of their symbols in a row, column, or diagonal.
 - Overall, this Tic Tac Toe application is a fun and interactive way to experience the classic game while also demonstrating my proficiency in React development.
 
-> What Concepts Have I Covered  <br/>
+> 🔑 What Concepts Have I Covered  <br/>
 > In this project, I have undertaken an in-depth exploration of numerous key concepts :
-- ✔️ Splitting Components by feature &nbsp;&nbsp;&nbsp; ✔️ Reusing Components <br/>
-- ✔️ Conditional Content - A Suboptimal Way Of Updating State &nbsp;&nbsp;&nbsp; <br/>
-- ✔️ Updating State Based On Old State &nbsp;&nbsp;&nbsp; <br/>
-- ✔️ Rendering Multi-Dimensional Lists &nbsp;&nbsp;&nbsp; <br/>
-- ✔️ Updating Object State Immutably &nbsp;&nbsp;&nbsp; ✔️ Lifting State Up <br/>
-- ✔️ Computed Values - Avoid Unnecessary State Management &nbsp;&nbsp;&nbsp; <br/>
-- ✔️  Deriving State From Props &nbsp;&nbsp;&nbsp; ✔️ Sharing State Across Components <br/>
-- ✔️  Lifting Computed Values Up &nbsp;&nbsp;&nbsp; ✔️ and several other concepts as well. <br/>
+- 🔓 Splitting Components by feature &nbsp;&nbsp;&nbsp; 🔓 Reusing Components <br/>
+- 🔓 Conditional Content - A Suboptimal Way Of Updating State <br/>
+- 🔓 Updating State Based On Old State <br/>
+- 🔓 Rendering Multi-Dimensional Lists <br/>
+- 🔓 Updating Object State Immutably &nbsp;&nbsp;&nbsp; 🔓 Lifting State Up <br/>
+- 🔓 Computed Values - Avoid Unnecessary State Management <br/>
+- 🔓  Deriving State From Props &nbsp;&nbsp;&nbsp; 🔓 Sharing State Across Components <br/>
+- 🔓  Lifting Computed Values Up &nbsp;&nbsp;&nbsp; 🔓 and several other concepts as well. <br/>
 
 
 <!-------- try it live -------->
@@ -84,12 +84,12 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/20b0b
 - In this project, the website visitors can use to calculate the future value or multiple future values
   for given investment parameters.
 
-> What Concepts Have I Covered :  <br/>
-- ✔️ Build an "Investment Calculator" Web App <br/>
-- ✔️ Build, Configure & Combines Components <br/>
-- ✔️ Manage Application State &nbsp;&nbsp;&nbsp; ✔️ Output List & Conditional Content <br/>
-- ✔️ Handling Events | Using Two-Way-Binding &nbsp;&nbsp;&nbsp; ✔️ Lifting State Up <br/>
-- ✔️ Computing Values | Properly Handling Number Values
+> 🔑 What Concepts Have I Covered :  <br/>
+- 🔓 Build an "Investment Calculator" Web App <br/>
+- 🔓 Build, Configure & Combines Components <br/>
+- 🔓 Manage Application State &nbsp;&nbsp;&nbsp; 🔓 Output List & Conditional Content <br/>
+- 🔓 Handling Events | Using Two-Way-Binding &nbsp;&nbsp;&nbsp; 🔓 Lifting State Up <br/>
+- 🔓 Computing Values | Properly Handling Number Values
 
 <!-------- try it live -------->
  ### Give it a go in real-time and give me a Star <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Glowing%20Star.png" alt="Glowing Star" width="35"  />
@@ -160,11 +160,11 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/347f2
  <!--=====================  Final CountDown =============================-->
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" height="30"  /> &nbsp; Final CountDown <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" width="20"  />
 This section is about ` Refs ` and ` Portals `. Two slightly more advanced React concepts which you definitely don't need in all React apps you are going to build.
-> In this project, I have undertaken some key concepts :
-- ✔️ Accessing _DOM Elements_ with ` Refs ` &nbsp;&nbsp;&nbsp; ✔️ _Managing Values_ with Refs <br/>
-- ✔️ Forwarding Refs to Custom Components using ` forwardRef ` function  <br/>
-- ✔️ Exposing Component APIs via the ` useImperativeHandle ` Hook  <br/>
-- ✔️ Detaching DOM Rendering from JSX Structure with ` portals `
+> 🔑 In this project, I have undertaken some key concepts :
+- 🔓 Accessing _DOM Elements_ with ` Refs ` &nbsp;&nbsp;&nbsp; 🔓 _Managing Values_ with Refs <br/>
+- 🔓 Forwarding Refs to Custom Components using ` forwardRef ` function  <br/>
+- 🔓 Exposing Component APIs via the ` useImperativeHandle ` Hook  <br/>
+- 🔓 Detaching DOM Rendering from JSX Structure with ` portals `
   <br/><br/>
   
 > It is kind of a Game where website visitors can start different timer challenges with the goal of estimating when time is up and stopping the timer early enough before it expires.
@@ -188,13 +188,13 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/83c59
 ### Pre-built Project
 Throughout my work on this project, I focused solely on the ` JSX Limitations `, which had already _been developed_ and _provided to me_. <br/>
 
-> What Concepts Have I Covered :  <br/>
+> 🔑 What Concepts Have I Covered :  <br/>
 
-- ✔️ One JSX Limitations is you can't return more than one "root" JSX element : <br/>
+- 🔓 One JSX Limitations is you can't return more than one "root" JSX element : <br/>
   1. Creating a custom Wrapper Component <br/>
   2. ` "Fragments" ` like React fragments can help us overocome JSX limitations. <br/>
-- ✔️ Getting a Cleaner DOM with ` "Portals" ` <br/>
-- ✔️ Working with ` "Refs" ` <br/>
+- 🔓 Getting a Cleaner DOM with ` "Portals" ` <br/>
+- 🔓 Working with ` "Refs" ` <br/>
   
 <!--------- Video --------->
 <img src="https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/ee0be71e-7956-42a6-bf46-220117f5e9b0" alt="Clapper Board" width="35" />
@@ -208,9 +208,9 @@ Throughout my work on this project, I focused solely on the ` JSX Limitations `,
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" height="30"  /> &nbsp; React Project Management <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" width="20"  />
 - 
 
-> What Concepts Have I Covered  <br/>
+> 🔑 What Concepts Have I Covered  <br/>
 > In this project, I have undertaken an in-depth exploration of numerous key concepts :
-- ✔️ ..... &nbsp;&nbsp;&nbsp; ✔️ .... <br/>
+- 🔓 ..... &nbsp;&nbsp;&nbsp; 🔓 .... <br/>
 
 
 
