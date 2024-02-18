@@ -18,20 +18,20 @@ export default function ProjectSideBar({
 
       <ul className="mt-8">
         {projects.map((project) => {
-          let onSelectedCSS =
+          let selectedCSS =
             'w-full text-left px-2 py-1 rounded-sm my-1 hover:text-amber-200 hover:bg-stone-800';
 
           if (project.id === selectedProjectID) {
-            onSelectedCSS += ' bg-stone-800 text-amber-200';
+            selectedCSS += ' bg-stone-800 text-amber-200';
           } else {
-            onSelectedCSS += ' text-stone-400';
+            selectedCSS += ' text-stone-400';
           }
 
           return (
             <li id={project.id}>
               <button
                 onClick={() => onSelectProject(project.id)}
-                className={onSelectedCSS}
+                className={selectedCSS}
               >
                 {project.title}
               </button>

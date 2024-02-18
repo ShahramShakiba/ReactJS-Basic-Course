@@ -48,10 +48,26 @@ export default function App() {
     });
   };
 
-  // Derive selectedProjectID
-  const selectedProjectID = projectsState.projects.find(project => project.id === projectsState.selectedProjectID);
+  const handleDelete = () => {
+    setProjectsState((prevState) => {
+      return {
+        ...prevState,
+        selectedProjectID: undefined,
+        projects: prevState.projects.filter(
+          (project) => project.id !== prevState.selectedProjectID
+        ),
+      };
+    });
+  };
 
-  let content = <SelectedProject project={selectedProjectID} />;
+  // Derive selectedProjectID
+  const selectedProjectID = projectsState.projects.find(
+    (project) => project.id === projectsState.selectedProjectID
+  );
+
+  let content = (
+    <SelectedProject project={selectedProjectID} onDelete={handleDelete} />
+  );
   if (projectsState.selectedProjectID === null) {
     content = <NewProject onAdd={handleAddProject} onCancel={handleCancel} />;
   } else if (projectsState.selectedProjectID === undefined) {
