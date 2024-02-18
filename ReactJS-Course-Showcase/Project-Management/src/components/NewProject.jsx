@@ -33,7 +33,7 @@ export default function NewProject({ onAdd, onCancel }) {
   return (
     <>
       <Modal ref={modal} buttonCaption="Okay">
-        <h2 className="text-xl font-bold text-stone-700 my-4">Invalid Input</h2>
+        <h2 className="text-xl font-bold text-rose-500 my-4">Invalid Input</h2>
         <p className="text-stone-600 mb-4">
           Oops... looks like you forgot to enter a value.
         </p>
@@ -47,7 +47,7 @@ export default function NewProject({ onAdd, onCancel }) {
           <li>
             <button
               onClick={onCancel}
-              className="text-stone-600 hover:text-rose-500 hover:border-b hover:border-rose-600 transition-color ease-in-out duration-200"
+              className="px-1 text-stone-600 hover:text-rose-500 hover:border-r-8 hover:font-medium hover:border-rose-600 transition-color ease-in-out duration-200"
             >
               Cancel
             </button>
@@ -56,7 +56,7 @@ export default function NewProject({ onAdd, onCancel }) {
           <li>
             <button
               onClick={handleSave}
-              className="px-6 py-2 rounded-md bg-amber-300 text-stone-700 font-semibold hover:bg-amber-400 transition-all ease-in duration-150 shadow-md"
+              className="px-4 py-1 rounded-md bg-amber-300 text-stone-700 font-semibold hover:bg-amber-400 transition-all ease-in duration-150 shadow-md"
             >
               Save
             </button>

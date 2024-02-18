@@ -19,10 +19,11 @@ export default function ProjectSideBar({
       <ul className="mt-8">
         {projects.map((project) => {
           let selectedCSS =
-            'w-full text-left px-2 py-1 rounded-sm my-1 hover:text-amber-200 hover:bg-stone-800';
+            'w-full text-left px-2 py-1 rounded-md my-1 hover:text-amber-200 hover:bg-stone-800';
 
           if (project.id === selectedProjectID) {
-            selectedCSS += ' bg-stone-800 text-amber-200';
+            selectedCSS +=
+              ' bg-stone-700 text-amber-400 hover:text-amber-400 hover:bg-stone-700';
           } else {
             selectedCSS += ' text-stone-400';
           }

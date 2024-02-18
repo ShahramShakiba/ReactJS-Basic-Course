@@ -21,7 +21,7 @@ export default function NewTask({ onAdd }) {
         type="text"
         onChange={handleChange}
         value={enteredTask}
-        className="w-64 px-2 py-1 rounded-sm bg-stone-200 focus:outline-white "
+        className="w-64 px-2 py-1 rounded-sm bg-stone-200 focus:outline-white shadow-sm "
       />
 
       <button

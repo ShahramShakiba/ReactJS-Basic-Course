@@ -8,7 +8,7 @@ export default function Tasks({ tasks, onAdd, onDelete }) {
   );
 
   const tasksList = (
-    <ul className="p-4 mt-8 rounded-md bg-stone-100 shadow-lg divide-y-2 divide-amber-200 divide-opacity-45 ">
+    <ul className="py-1 px-4 mt-8 rounded-md bg-stone-100 shadow-lg divide-y-2 divide-amber-200 divide-opacity-45 ">
       {tasks.map((task) => (
         <li id={task.id} className="flex justify-between my-2 py-2">
           <span> {task.text} </span>
