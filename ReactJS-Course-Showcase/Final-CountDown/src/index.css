@@ -185,8 +185,7 @@ header p {
 .result-modal h2 {
   font-family: 'Handjet', monospace;
   margin: 0 0 0.25rem 0;
-  font-size: 3rem;
-  text-transform: uppercase;
+  font-size: 2.5rem;
 }
 
 .result-modal progress {

@@ -22,11 +22,11 @@ const ResultModal = forwardRef(function ResultModal(
 
   return createPortal(
     <dialog ref={dialog} className="result-modal">
-      {userLost && <h2>You lost!</h2>}
-      {!userLost && <h2>Your score: {score}</h2>}
+      {userLost && <h2>Oops... &nbsp; You lost 😓</h2>}
+      {!userLost && <h2>Your score: &nbsp; {score} 🎊</h2>}
 
       <p>
-        The target time was
+        The target time was &nbsp;
         <strong>
           {targetTime} second{targetTime > 1 ? 's' : ''}.
         </strong>
