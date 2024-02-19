@@ -210,7 +210,7 @@ Throughout my work on this project, I focused solely on the ` JSX Limitations `,
 - Project management is a system that allows users to create and manage multiple projects in one place. Users can add new projects, select a desired project to open, and then add tasks within the project. Tasks and projects can be cleared, or deleted as needed. <br/>
 This system helps users stay organized and on track with their project goals.
 
-> For this project, I plan to incorporate all the concepts covered in the course up to this point.
+> For this project, I plan to incorporate all the concepts covered in the course up to this point.<br/>
 > 🔑 Which Concepts Have I Covered : 
 - 🔓 Configure & Re-use ` Components ` <br/>
 - 🔓 Managing ` State ` to Switch Between Components <br/>
