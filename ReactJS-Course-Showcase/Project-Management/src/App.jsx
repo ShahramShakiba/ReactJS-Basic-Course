@@ -91,6 +91,9 @@ export default function App() {
   const selectedProjectID = projectsState.projects.find(
     (project) => project.id === projectsState.selectedProjectID
   );
+  const filteredTasks = projectsState.tasks.filter(
+    (task) => task.projectID === projectsState.selectedProjectID
+  );
 
   let content = (
     <SelectedProject
@@ -98,7 +101,7 @@ export default function App() {
       onDelete={handleDelete}
       onAddTask={handleAddTask}
       onDeleteTask={handleDeleteTask}
-      tasks={projectsState.tasks}
+      tasks={filteredTasks}
     />
   );
   if (projectsState.selectedProjectID === null) {
