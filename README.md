@@ -52,8 +52,9 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/8442b
 - Tic Tac Toe is a classic game that has been enjoyed by people of all ages for generations. It is a two-player game where each player takes turns marking a 3x3 grid with their symbol (either X or O) until one player successfully places three of their symbols in a row, column, or diagonal.
 - Overall, this Tic Tac Toe application is a fun and interactive way to experience the classic game while also demonstrating my proficiency in React development.
 
-> 🔑 What Concepts Have I Covered  <br/>
-> In this project, I have undertaken an in-depth exploration of numerous key concepts :
+> In this project, I have undertaken an in-depth exploration of numerous key concepts. <br/>
+
+> 🔑 Which Concepts Have I Covered :  
 - 🔓 Splitting Components by feature &nbsp;&nbsp;&nbsp; 🔓 Reusing Components <br/>
 - 🔓 Conditional Content - A Suboptimal Way Of Updating State <br/>
 - 🔓 Updating State Based On Old State <br/>
@@ -84,7 +85,7 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/20b0b
 - In this project, the website visitors can use to calculate the future value or multiple future values
   for given investment parameters.
 
-> 🔑 What Concepts Have I Covered :  <br/>
+> 🔑 Which Concepts Have I Covered :  <br/>
 - 🔓 Build an "Investment Calculator" Web App <br/>
 - 🔓 Build, Configure & Combines Components <br/>
 - 🔓 Manage Application State &nbsp;&nbsp;&nbsp; 🔓 Output List & Conditional Content <br/>
@@ -178,7 +179,7 @@ This section is about ` Refs ` and ` Portals `. Two slightly more advanced React
 <!--------- Video --------->
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Clapper%20Board.webp" alt="Clapper Board" width="35" />
 
-https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/83c59cec-cc06-4fab-b885-3e6aa61ba7f5
+https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/7c820fee-0d50-4dac-b4c0-d85242c1f377
 
   <br/> 
 
@@ -188,7 +189,7 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/83c59
 ### Pre-built Project
 Throughout my work on this project, I focused solely on the ` JSX Limitations `, which had already _been developed_ and _provided to me_. <br/>
 
-> 🔑 What Concepts Have I Covered :  <br/>
+> 🔑 Which Concepts Have I Covered :  :  <br/>
 
 - 🔓 One JSX Limitations is you can't return more than one "root" JSX element : <br/>
   1. Creating a custom Wrapper Component <br/>
@@ -206,11 +207,17 @@ Throughout my work on this project, I focused solely on the ` JSX Limitations `,
  ***
 <!--=====================  React Project Management =============================-->
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" height="30"  /> &nbsp; React Project Management <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" width="20"  />
-- 
+- Project management is a system that allows users to create and manage multiple projects in one place. Users can add new projects, select a desired project to open, and then add tasks within the project. Tasks and projects can be cleared, or deleted as needed. <br/>
+This system helps users stay organized and on track with their project goals.
 
-> 🔑 What Concepts Have I Covered  <br/>
-> In this project, I have undertaken an in-depth exploration of numerous key concepts :
-- 🔓 ..... &nbsp;&nbsp;&nbsp; 🔓 .... <br/>
+> For this project, I plan to incorporate all the concepts covered in the course up to this point.
+> 🔑 Which Concepts Have I Covered : 
+- 🔓 Configure & Re-use ` Components ` <br/>
+- 🔓 Managing ` State ` to Switch Between Components <br/>
+- 🔓 Access DOM Elements & Browser APIs with ` Refs ` <br/>
+- 🔓 Collecting User Input with Refs, using ` ForwardRef ` <br/>
+- 🔓 Validating User Input & Showing an Error Modal via ` useImperativeHandle ` <br/>
+- 🔓 ` Prop Drilling ` &nbsp;&nbsp;&nbsp; 🔓 Styling via ` Tailwind CSS ` <br/>
 
 
 
