@@ -1,6 +1,6 @@
 import { useRef } from 'react';
-import Input from '../Input';
-import Modal from '../Modal';
+import Input from '../Helpers/Input';
+import Modal from '../Helpers/Modal';
 import './newProject.css';
 
 export default function NewProject({ onAdd, onCancel }) {
@@ -59,7 +59,7 @@ export default function NewProject({ onAdd, onCancel }) {
 
         <div>
           <Input type="text" label="Title" ref={title} />
-          <Input label="Description" textarea ref={description} />
+          <Input textarea label="Description" ref={description} />
           <Input type="date" label="Due Date" ref={dueDate} />
         </div>
       </div>
