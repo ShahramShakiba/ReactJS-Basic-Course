@@ -210,7 +210,7 @@ Throughout my work on this project, I focused solely on the ` JSX Limitations `,
 - Project management is a system that allows users to create and manage multiple projects in one place. Users can add new projects, select a desired project to open, and then add tasks within the project. Tasks and projects can be cleared, or deleted as needed. <br/>
 This system helps users stay organized and on track with their project goals.
 
-> For this project, I plan to incorporate all the concepts covered in the course up to this point.
+> For this project, I plan to incorporate all the concepts covered in the course up to this point.<br/>
 > 🔑 Which Concepts Have I Covered : 
 - 🔓 Configure & Re-use ` Components ` <br/>
 - 🔓 Managing ` State ` to Switch Between Components <br/>
@@ -223,14 +223,14 @@ This system helps users stay organized and on track with their project goals.
 
 <!-------- try it live -------->
  ### Give it a go in real-time and give me a Star <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Glowing%20Star.png" alt="Glowing Star" width="35"  />
- <a href="https://tic-tac-toe-game-shahram.netlify.app/" target="_blank">
-   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Light%20Bulb.webp" alt="Light Bulb" width="25" height="25" /> 
+ <a href="https://react-project-management-shahram.netlify.app/" target="_blank">
+   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Light%20Bulb.webp" alt="Light Bulb" width="25" height="25" /> React Project Management
 </a> <br/><br/>
   
 <!--------- Video --------->
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Clapper%20Board.webp" alt="Clapper Board" width="35" />
 
-
+https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/933d2ab3-3e8a-4b81-bf6f-abf56138f9fe
 
   <br/> 
 
