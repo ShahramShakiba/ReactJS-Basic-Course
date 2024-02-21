@@ -1,6 +1,7 @@
 import { useRef } from 'react';
-import Input from './Input';
-import Modal from './Modal';
+import Input from '../Input';
+import Modal from '../Modal';
+import './newProject.css';
 
 export default function NewProject({ onAdd, onCancel }) {
   const title = useRef();
@@ -33,7 +34,7 @@ export default function NewProject({ onAdd, onCancel }) {
   return (
     <>
       <Modal ref={modal} buttonCaption="Okay">
-        <h2 className="text-xl font-bold text-rose-500 my-4">Invalid Input</h2>
+        <h2 className="modalHeader">Invalid Input</h2>
         <p className="text-stone-600 mb-4">
           Oops... looks like you forgot to enter a value.
         </p>
@@ -43,21 +44,14 @@ export default function NewProject({ onAdd, onCancel }) {
       </Modal>
 
       <div className="w-[35rem] mt-16">
-        <menu className="flex items-center justify-end gap-4 my-4">
+        <menu className="menu">
           <li>
-            <button
-              onClick={onCancel}
-              className="px-1 text-stone-600 hover:text-rose-500 hover:border-r-8 hover:font-medium hover:border-rose-600 transition-color ease-in-out duration-200"
-            >
+            <button onClick={onCancel} className="cancelCSS">
               Cancel
             </button>
           </li>
-
           <li>
-            <button
-              onClick={handleSave}
-              className="px-4 py-1 rounded-md bg-amber-300 text-stone-700 font-semibold hover:bg-amber-400 transition-all ease-in duration-150 shadow-md"
-            >
+            <button onClick={handleSave} className="saveCSS">
               Save
             </button>
           </li>

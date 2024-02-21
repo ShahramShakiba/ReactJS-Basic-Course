@@ -1,0 +1,15 @@
+.saveCSS {
+  @apply px-4 py-1 rounded-md bg-amber-300 text-stone-700 font-semibold hover:bg-amber-400 transition-all ease-in duration-150 shadow-md;
+}
+
+.cancelCSS {
+  @apply px-1 text-stone-600 hover:text-rose-500 hover:border-r-8 hover:font-medium hover:border-rose-600 transition-all ease-in-out duration-200;
+}
+
+.menu {
+  @apply flex items-center justify-end gap-4 my-4
+}
+
+.modalHeader {
+  @apply text-xl font-bold text-rose-500 my-4;
+}

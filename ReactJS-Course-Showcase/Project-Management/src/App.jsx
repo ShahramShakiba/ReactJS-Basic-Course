@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import NewProject from './components/NewProject';
+import NewProject from './components/NewProject/NewProject';
 import NoProjectSelected from './components/NoProjectSelected';
 import ProjectSideBar from './components/ProjectSideBar';
 import SelectedProject from './components/SelectedProject';
 
 const project = {
-  // undefined: not adding a new project & not select any project
   selectedProjectID: undefined,
   projects: [],
   tasks: [],
@@ -44,7 +43,6 @@ export default function App() {
       return {
         ...prevState,
         selectedProjectID: null,
-        // null: this's a signal that we're going to add a new project
       };
     });
   };
@@ -132,3 +130,22 @@ export default function App() {
     </main>
   );
 }
+
+/* undefined & null, meaning
+const project = {
+  => undefined: not adding a new project & not select any project
+* selectedProjectID: undefined,
+  projects: [],
+  tasks: [],
+};
+
+ const handleStartAddProject = () => {
+    setProjectsState((prevState) => {
+      return {
+        ...prevState,
+*       selectedProjectID: null,
+        => null: this's a signal that we're going to add a new project
+      };
+    });
+  };
+*/
