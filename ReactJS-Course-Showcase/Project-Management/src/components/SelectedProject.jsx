@@ -2,7 +2,7 @@ import Tasks from './Tasks';
 
 export default function SelectedProject({
   project,
-  onDelete,
+  onDeleteProject,
   onAddTask,
   onDeleteTask,
   tasks,
@@ -20,9 +20,9 @@ export default function SelectedProject({
           <h1 className="text-3xl font-bold text-stone-600 mb-2">
             {project.title}
           </h1>
-          
+
           <button
-            onClick={onDelete}
+            onClick={onDeleteProject}
             className="px-1 text-stone-400 text-sm hover:text-base hover:font-semibold hover:text-rose-500 hover:border-r-8 hover:border-rose-600 transition-color ease-in-out duration-200 "
           >
             Delete

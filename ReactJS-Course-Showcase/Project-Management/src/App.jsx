@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import NewProject from './components/NewProject/NewProject';
+import NewProject from './components/AddNewProject/NewProject';
 import NoProjectSelected from './components/NoProjectSelected';
 import ProjectSideBar from './components/ProjectSideBar';
 import SelectedProject from './components/SelectedProject';
@@ -12,6 +12,15 @@ const project = {
 
 export default function App() {
   const [projectsState, setProjectsState] = useState(project);
+
+  const handleStartProject = () => {
+    setProjectsState((prevState) => {
+      return {
+        ...prevState,
+        selectedProjectID: null,
+      };
+    });
+  };
 
   const handleAddTask = (taskText) => {
     setProjectsState((prevState) => {
@@ -34,15 +43,6 @@ export default function App() {
       return {
         ...prevState,
         tasks: prevState.tasks.filter((task) => task.id !== id),
-      };
-    });
-  };
-
-  const handleStartAddProject = () => {
-    setProjectsState((prevState) => {
-      return {
-        ...prevState,
-        selectedProjectID: null,
       };
     });
   };
@@ -73,7 +73,7 @@ export default function App() {
     });
   };
 
-  const handleDelete = () => {
+  const handleDeleteProject = () => {
     setProjectsState((prevState) => {
       return {
         ...prevState,
@@ -85,29 +85,6 @@ export default function App() {
     });
   };
 
-  // Derive selectedProjectID
-  const selectedProjectID = projectsState.projects.find(
-    (project) => project.id === projectsState.selectedProjectID
-  );
-  const filteredTasks = projectsState.tasks.filter(
-    (task) => task.projectID === projectsState.selectedProjectID
-  );
-
-  let content = (
-    <SelectedProject
-      project={selectedProjectID}
-      onDelete={handleDelete}
-      onAddTask={handleAddTask}
-      onDeleteTask={handleDeleteTask}
-      tasks={filteredTasks}
-    />
-  );
-  if (projectsState.selectedProjectID === null) {
-    content = <NewProject onAdd={handleAddProject} onCancel={handleCancel} />;
-  } else if (projectsState.selectedProjectID === undefined) {
-    content = <NoProjectSelected onStartAddProject={handleStartAddProject} />;
-  }
-
   const handleSelectProject = (id) => {
     setProjectsState((prevState) => {
       return {
@@ -117,10 +94,34 @@ export default function App() {
     });
   };
 
+  // Derive selectedProjectID
+  const selectedProjectID = projectsState.projects.find(
+    (project) => project.id === projectsState.selectedProjectID
+  );
+
+  const filteredTasks = projectsState.tasks.filter(
+    (task) => task.projectID === projectsState.selectedProjectID
+  );
+
+  let content = (
+    <SelectedProject
+      project={selectedProjectID}
+      onDeleteProject={handleDeleteProject}
+      onAddTask={handleAddTask}
+      onDeleteTask={handleDeleteTask}
+      tasks={filteredTasks}
+    />
+  );
+  if (projectsState.selectedProjectID === null) {
+    content = <NewProject onAdd={handleAddProject} onCancel={handleCancel} />;
+  } else if (projectsState.selectedProjectID === undefined) {
+    content = <NoProjectSelected onStartProject={handleStartProject} />;
+  }
+
   return (
     <main className="h-screen my-8 flex gap-8">
       <ProjectSideBar
-        onStartAddProject={handleStartAddProject}
+        onStartProject={handleStartProject}
         projects={projectsState.projects}
         onSelectProject={handleSelectProject}
         selectedProjectID={projectsState.selectedProjectID}
@@ -131,21 +132,14 @@ export default function App() {
   );
 }
 
-/* undefined & null, meaning
+/* Control what's being displayed
 const project = {
-  => undefined: not adding a new project & not select any project
+  => to Store the ID of the project that was selected
+  => "undefined" : not adding a new project & not select any project
+  => "null" : this's a signal that we're going to add a new project
 * selectedProjectID: undefined,
+
   projects: [],
   tasks: [],
 };
-
- const handleStartAddProject = () => {
-    setProjectsState((prevState) => {
-      return {
-        ...prevState,
-*       selectedProjectID: null,
-        => null: this's a signal that we're going to add a new project
-      };
-    });
-  };
 */

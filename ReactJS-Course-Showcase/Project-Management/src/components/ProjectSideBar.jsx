@@ -1,7 +1,7 @@
 import Button from './Helpers/Button';
 
 export default function ProjectSideBar({
-  onStartAddProject,
+  onStartProject,
   projects,
   onSelectProject,
   selectedProjectID,
@@ -13,7 +13,7 @@ export default function ProjectSideBar({
       </h2>
 
       <div>
-        <Button onClick={onStartAddProject}> + Add Project </Button>
+        <Button onClick={onStartProject}> + Add Project </Button>
       </div>
 
       <ul className="mt-8">
