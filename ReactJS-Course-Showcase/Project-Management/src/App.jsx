@@ -48,6 +48,27 @@ export default function App() {
     });
   };
 
+  const handleSelectProject = (id) => {
+    setProjectsState((prevState) => {
+      return {
+        ...prevState,
+        selectedProjectID: id,
+      };
+    });
+  };
+
+  const handleDeleteProject = () => {
+    setProjectsState((prevState) => {
+      return {
+        ...prevState,
+        selectedProjectID: undefined,
+        projects: prevState.projects.filter(
+          (project) => project.id !== prevState.selectedProjectID
+        ),
+      };
+    });
+  };
+
   const handleAddTask = (taskText) => {
     setProjectsState((prevState) => {
       const taskID = Math.random();
@@ -73,28 +94,7 @@ export default function App() {
     });
   };
 
-  const handleDeleteProject = () => {
-    setProjectsState((prevState) => {
-      return {
-        ...prevState,
-        selectedProjectID: undefined,
-        projects: prevState.projects.filter(
-          (project) => project.id !== prevState.selectedProjectID
-        ),
-      };
-    });
-  };
-
-  const handleSelectProject = (id) => {
-    setProjectsState((prevState) => {
-      return {
-        ...prevState,
-        selectedProjectID: id,
-      };
-    });
-  };
-
-  // Derive selectedProjectID
+  // Derive selectedProjectID - find selected Project to display
   const selectedProjectID = projectsState.projects.find(
     (project) => project.id === projectsState.selectedProjectID
   );
