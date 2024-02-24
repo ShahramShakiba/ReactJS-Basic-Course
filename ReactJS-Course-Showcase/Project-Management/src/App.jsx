@@ -2,7 +2,7 @@ import { useState } from 'react';
 import NewProject from './components/Projects/NewProject';
 import NoProjectSelected from './components/Projects/NoProjectSelected';
 import ProjectSideBar from './components/Projects/ProjectSideBar';
-import SelectedProject from './components/Projects/SelectedProject';
+import SelectedProject from './components/SelectedProject';
 
 const project = {
   selectedProjectID: undefined,
@@ -69,11 +69,11 @@ export default function App() {
     });
   };
 
-  const handleAddTask = (taskText) => {
+  const handleAddTask = (text) => {
     setProjectsState((prevState) => {
       const taskID = Math.random();
       const newTask = {
-        text: taskText,
+        text: text,
         projectID: prevState.selectedProjectID,
         id: taskID,
       };
@@ -98,7 +98,7 @@ export default function App() {
   const selectedProjectID = projectsState.projects.find(
     (project) => project.id === projectsState.selectedProjectID
   );
-
+  // Filter Tasks by selected Project
   const filteredTasks = projectsState.tasks.filter(
     (task) => task.projectID === projectsState.selectedProjectID
   );

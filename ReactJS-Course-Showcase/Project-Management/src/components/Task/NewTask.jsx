@@ -9,7 +9,7 @@ export default function NewTask({ onAdd }) {
 
   const handleClick = () => {
     if (enteredTask.trim() === '') {
-      return alert('🚨 Enter a task to proceed');
+      return alert('🚨 Please Enter A Task To Proceed');
     }
     onAdd(enteredTask);
     setEnteredTask('');
