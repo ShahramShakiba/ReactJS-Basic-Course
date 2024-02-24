@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import NewProject from './components/AddNewProject/NewProject';
-import NoProjectSelected from './components/NoProjectSelected';
-import ProjectSideBar from './components/ProjectSideBar';
-import SelectedProject from './components/SelectedProject';
+import NewProject from './components/Projects/NewProject';
+import NoProjectSelected from './components/Projects/NoProjectSelected';
+import ProjectSideBar from './components/Projects/ProjectSideBar';
+import SelectedProject from './components/Projects/SelectedProject';
 
 const project = {
   selectedProjectID: undefined,

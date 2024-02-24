@@ -1,4 +1,4 @@
-import Button from './Helpers/Button';
+import Button from '../Helpers/Button';
 
 export default function ProjectSideBar({
   onStartProject,
