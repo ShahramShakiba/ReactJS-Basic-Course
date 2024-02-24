@@ -3,16 +3,16 @@ import Input from '../Helpers/Input';
 import Modal from '../Helpers/Modal';
 import './newProject.css';
 
-export default function NewProject({ onAdd, onCancel }) {
-  const title = useRef();
-  const description = useRef();
-  const dueDate = useRef();
-  const modal = useRef();
+export default function NewProject({ onAddProject, onCancel }) {
+  const title = useRef(),
+    description = useRef(),
+    dueDate = useRef(),
+    modal = useRef();
 
   const handleSave = () => {
-    const enteredTitle = title.current.value;
-    const enteredDescription = description.current.value;
-    const enteredDueDate = dueDate.current.value;
+    const enteredTitle = title.current.value,
+      enteredDescription = description.current.value,
+      enteredDueDate = dueDate.current.value;
 
     //  validation ....
     if (
@@ -23,8 +23,8 @@ export default function NewProject({ onAdd, onCancel }) {
       modal.current.open();
       return;
     }
-
-    onAdd({
+    
+    onAddProject({
       title: enteredTitle,
       description: enteredDescription,
       dueDate: enteredDueDate,
@@ -43,6 +43,7 @@ export default function NewProject({ onAdd, onCancel }) {
         </p>
       </Modal>
 
+      {/*  Project Buttons */}
       <div className="w-[35rem] mt-16">
         <menu className="menu">
           <li>
@@ -56,7 +57,7 @@ export default function NewProject({ onAdd, onCancel }) {
             </button>
           </li>
         </menu>
-
+        {/* Project Inputs */}
         <div>
           <Input type="text" label="Title" ref={title} />
           <Input textarea label="Description" ref={description} />

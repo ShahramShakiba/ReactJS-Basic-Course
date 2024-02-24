@@ -4,7 +4,6 @@ import Button from './Button';
 
 const Modal = forwardRef(function Modal({ children, buttonCaption }, ref) {
   const dialog = useRef();
-
   useImperativeHandle(ref, () => {
     return {
       open() {

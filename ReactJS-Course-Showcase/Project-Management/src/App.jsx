@@ -22,6 +22,32 @@ export default function App() {
     });
   };
 
+  const handleAddProject = (projectData) => {
+    setProjectsState((prevState) => {
+      const projectID = Math.random();
+      const newProject = {
+        ...projectData,
+        id: projectID,
+      };
+
+      return {
+        ...prevState,
+        projects: [...prevState.projects, newProject],
+        selectedProjectID: projectID,
+        // back to Newly created project
+      };
+    });
+  };
+
+  const handleCancelProject = () => {
+    setProjectsState((prevState) => {
+      return {
+        ...prevState,
+        selectedProjectID: undefined,
+      };
+    });
+  };
+
   const handleAddTask = (taskText) => {
     setProjectsState((prevState) => {
       const taskID = Math.random();
@@ -43,32 +69,6 @@ export default function App() {
       return {
         ...prevState,
         tasks: prevState.tasks.filter((task) => task.id !== id),
-      };
-    });
-  };
-
-  const handleCancel = () => {
-    setProjectsState((prevState) => {
-      return {
-        ...prevState,
-        selectedProjectID: undefined,
-      };
-    });
-  };
-
-  const handleAddProject = (projectData) => {
-    setProjectsState((prevState) => {
-      const projectID = Math.random();
-      const newProject = {
-        ...projectData,
-        id: projectID,
-      };
-
-      return {
-        ...prevState,
-        projects: [...prevState.projects, newProject],
-        selectedProjectID: undefined,
-        // back to NoProjectSelected page
       };
     });
   };
@@ -113,7 +113,12 @@ export default function App() {
     />
   );
   if (projectsState.selectedProjectID === null) {
-    content = <NewProject onAdd={handleAddProject} onCancel={handleCancel} />;
+    content = (
+      <NewProject
+        onAddProject={handleAddProject}
+        onCancel={handleCancelProject}
+      />
+    );
   } else if (projectsState.selectedProjectID === undefined) {
     content = <NoProjectSelected onStartProject={handleStartProject} />;
   }
