@@ -3,7 +3,7 @@ import Header from './components/Header.jsx';
 import Shop from './components/Shop.jsx';
 import { DUMMY_PRODUCTS } from './dummy-products.js';
 import Product from './components/Product.jsx';
-import { CartContext } from './Context/Shopping-Cart-Context.jsx';
+import { CartContext } from './Context/Cart-Context.jsx';
 
 export default function App() {
   const [shoppingCart, setShoppingCart] = useState({
@@ -65,7 +65,8 @@ export default function App() {
   };
 
   return (
-    <CartContext.Provider>
+    // Context
+    <CartContext.Provider value={{ items: [] }}>
       <Header
         cart={shoppingCart}
         onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
