@@ -22,7 +22,6 @@ export const DUMMY_PRODUCTS = [
     description:
       'Bask in the glow of elegance with our Enchanting Blush Dream Gown. Embody the regality of a queen with a sweet touch of pink that whispers enchantment. This is the perfect piece for those seeking to create unforgettable moments.',
   },
-
   {
     id: 'p3',
     image: rainJacket,
