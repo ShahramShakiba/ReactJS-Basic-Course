@@ -3,6 +3,7 @@ import Header from './components/Header.jsx';
 import Shop from './components/Shop.jsx';
 import { DUMMY_PRODUCTS } from './dummy-products.js';
 import Product from './components/Product.jsx';
+import { CartContext } from './Context/Shopping-Cart-Context.jsx';
 
 export default function App() {
   const [shoppingCart, setShoppingCart] = useState({
@@ -64,11 +65,13 @@ export default function App() {
   };
 
   return (
-    <>
+    <CartContext.Provider>
       <Header
         cart={shoppingCart}
         onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
       />
+
+      {/* Component Composition */}
       <Shop>
         {DUMMY_PRODUCTS.map((product) => (
           <li key={product.id}>
@@ -76,6 +79,6 @@ export default function App() {
           </li>
         ))}
       </Shop>
-    </>
+    </CartContext.Provider>
   );
 }
