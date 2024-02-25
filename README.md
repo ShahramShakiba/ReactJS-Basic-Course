@@ -238,15 +238,13 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/933d2
  <!--=====================  Online Clothing Shop =============================-->
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" height="30"  /> &nbsp; Online Clothing Shop <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" width="20"  />
 ### Pre-built Project <img src="https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/794bdde2-7446-4df1-86dd-85775d5d4455" alt="Yellow Gear" width="35"  />
-- In this project,
+- During the course of this project, my primary focus was dedicated to devising solutions for the issue of Shared-State (` Prop Drilling `), which had already been developed and provided to me.
+- It is important to note that this establishment does not constitute a comprehensive online retail platform, rather, it serves solely as a shop with functionality limited to the cart feature.
 
-
-> For this project, ....<br/>
 > 🔑 Which Concepts Have I Covered : 
 - 🔓 Working on solutions for the problem of Shared-State(` Prop Drilling `)  <br/>
 - 🔓 Embracing ` Component Composition ` &nbsp;&nbsp;&nbsp; 🔓 Sharing State with ` Context ` <br/> 
 - 🔓 Managing complex state with ` Redusers `
-- 🔓 ....
 
 <!-------- try it live -------->
  ### Give it a go in real-time and give me a Star <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Glowing%20Star.png" alt="Glowing Star" width="35"  />
