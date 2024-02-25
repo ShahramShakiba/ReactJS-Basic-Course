@@ -109,7 +109,7 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/3a177
  ***
  <!--=====================  SignIn-Form =============================-->
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" height="30"  /> &nbsp; SIGN IN FORM <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" width="20"  />
-### Styling React Components 
+### Styling React Components <img src="https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/794bdde2-7446-4df1-86dd-85775d5d4455" alt="Yellow Gear" width="35"  />
 > The main objective of this project 
 is to enhance the visual appearance of "React applications" by applying various styling techniques. 
  <br/><br/> ➖ The web page is not functional as clicking "Create a new account" or "SIGN IN" does not do anything. <br/>
@@ -137,7 +137,7 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/9143a
  ***
  <!--=====================  Styling React Component =============================-->
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" height="30"  /> &nbsp; Styling React Component <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" width="20"  />
-### Pre-built Project
+### Pre-built Project <img src="https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/794bdde2-7446-4df1-86dd-85775d5d4455" alt="Yellow Gear" width="35"  />
 Throughout my work on this project, I focused solely on the ` styling of the React Component `, which had already _been developed_ and _provided to me_. <br/>
 > ### To accomplish this task <br/>
 
@@ -186,7 +186,7 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/7c820
  ***
  <!--=====================  JSX Limitations =============================-->
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" height="30"  /> &nbsp;  JSX Limitations <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" width="20"  />
-### Pre-built Project
+### Pre-built Project <img src="https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/794bdde2-7446-4df1-86dd-85775d5d4455" alt="Yellow Gear" width="35"  />
 Throughout my work on this project, I focused solely on the ` JSX Limitations `, which had already _been developed_ and _provided to me_. <br/>
 
 > 🔑 Which Concepts Have I Covered :  :  <br/>
@@ -237,11 +237,15 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/933d2
  ***
  <!--=====================  Online Clothing Shop =============================-->
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" height="30"  /> &nbsp; Online Clothing Shop <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" width="20"  />
+### Pre-built Project <img src="https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/794bdde2-7446-4df1-86dd-85775d5d4455" alt="Yellow Gear" width="35"  />
 - In this project,
+
 
 > For this project, ....<br/>
 > 🔑 Which Concepts Have I Covered : 
-- 🔓 .... <br/>
+- 🔓 Working on solutions for the problem of Shared-State(` Prop Drilling `)  <br/>
+- 🔓 Embracing ` Component Composition ` &nbsp;&nbsp;&nbsp; 🔓 Sharing State with ` Context ` <br/> 
+- 🔓 Managing complex state with ` Redusers `
 - 🔓 ....
 
 <!-------- try it live -------->
