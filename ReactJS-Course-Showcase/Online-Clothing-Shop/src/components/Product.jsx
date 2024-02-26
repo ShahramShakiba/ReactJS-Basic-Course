@@ -1,8 +1,14 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { CartContext } from '../Context/Cart-Context';
 
 export default function Product({ id, image, title, price, description }) {
   const { addItemToCart } = useContext(CartContext);
+  const [addedItem, setAddedItem] = useState(false);
+
+  const handleAddToCart = () => {
+    addItemToCart(id);
+    setAddedItem(true);
+  };
 
   return (
     <article className="product">
@@ -16,7 +22,9 @@ export default function Product({ id, image, title, price, description }) {
         </div>
 
         <p className="product-actions">
-          <button onClick={() => addItemToCart(id)}> + Add to Cart </button>
+          <button onClick={handleAddToCart} disabled={addedItem}>
+            {addedItem ? 'Already Added' : '+ Add to Cart'}
+          </button>
         </p>
       </div>
     </article>

@@ -43,7 +43,7 @@ function shoppingCartReducer(state, action) {
   }
 
   /*_____ Update Cart Item _____*/
-  if (action.type === 'UPDATE-ITEM') {
+  if (action.type === 'UPDATE_ITEM') {
     const updatedItems = [...state.items];
 
     const updatedItemIndex = updatedItems.findIndex(
