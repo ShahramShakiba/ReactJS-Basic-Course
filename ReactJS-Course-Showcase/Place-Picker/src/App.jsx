@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Places from './components/Places.jsx';
 import { AVAILABLE_PLACES } from './data.js';
 import Modal from './components/Modal.jsx';
@@ -9,16 +9,41 @@ import { sortPlacesByDistance } from './loc.js';
 export default function App() {
   const modal = useRef();
   const selectedPlace = useRef();
+  const [availablePlaces, setAvailablePlaces] = useState([]);
   const [pickedPlaces, setPickedPlaces] = useState([]);
 
   // Get user location
-  navigator.geolocation.getCurrentPosition((position) => {
-    const sortedPlaces = sortPlacesByDistance(
-      AVAILABLE_PLACES,
-      position.coords.latitude,
-      position.coords.longitude
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const sortedPlaces = sortPlacesByDistance(
+          AVAILABLE_PLACES,
+          position.coords.latitude,
+          position.coords.longitude
+        );
+
+        setAvailablePlaces(sortedPlaces);
+      },
+      (error) => {
+        console.error('Error getting location: ', error);
+        // Set a default location if the geolocation fails
+        let defaultPosition = {
+          coords: {
+            latitude: 36.7651,
+            longitude: 45.7218,
+          },
+        };
+
+        let sortedPlaces = sortPlacesByDistance(
+          AVAILABLE_PLACES,
+          defaultPosition.coords.latitude,
+          defaultPosition.coords.longitude
+        );
+
+        setAvailablePlaces(sortedPlaces);
+      }
     );
-  });
+  }, []);
 
   const handleStartRemovePlace = (id) => {
     modal.current.open();
@@ -74,7 +99,8 @@ export default function App() {
 
         <Places
           title="Available Places"
-          places={AVAILABLE_PLACES}
+          places={availablePlaces}
+          fallbackText="Sorting places by distance..."
           onSelectPlace={handleSelectPlace}
         />
       </main>
@@ -84,4 +110,14 @@ export default function App() {
 
 /* Side Effects
 Side Effects are "tasks" that don't impact the current component render cycle
+
+* useEffect() - do not return a value, instead ...
+* useEffect( 
+  () => {},  // function to run when dependencies change
+  []     // array of values/dependencies that cause re-run 
+ )          (if we define it and empty: the function will execute only once )
+            (if we omit the second parameter ([]) then it will execute every time)
+
+? the code inside this function won't execute right away | this function will be executed by React after every component execution | 
+
 */
