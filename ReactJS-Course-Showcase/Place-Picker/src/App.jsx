@@ -62,6 +62,14 @@ export default function App() {
       const place = AVAILABLE_PLACES.find((place) => place.id === id);
       return [place, ...prevPickedPlaces];
     });
+
+    const storedIDs = JSON.parse(localStorage.getItem('selectedPlaces')) || [];
+    if (storedIDs.indexOf(id) === -1) {
+      localStorage.setItem(
+        'selectedPlaces',
+        JSON.stringify([id, ...storedIDs])
+      );
+    }
   };
 
   const handleRemovePlace = () => {
@@ -119,5 +127,14 @@ Side Effects are "tasks" that don't impact the current component render cycle
             (if we omit the second parameter ([]) then it will execute every time)
 
 ? the code inside this function won't execute right away | this function will be executed by React after every component execution | 
+*/
 
+/* indexOf(id) === -1
+* /// it means this ID is not part of storedIDs yet
+if (storedIDs.indexOf(id) === -1) {
+      localStorage.setItem(
+        'selectedPlaces',
+        JSON.stringify([id, ...storedIDs])
+      );
+    }
 */
