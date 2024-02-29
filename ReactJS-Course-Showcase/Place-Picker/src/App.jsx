@@ -6,11 +6,17 @@ import DeleteConfirmation from './components/DeleteConfirmation.jsx';
 import logoImg from './assets/logo.png';
 import { sortPlacesByDistance } from './loc.js';
 
+// Display all stored places when the app loads
+const storedIDs = JSON.parse(localStorage.getItem('selectedPlaces')) || [];
+const storedPlaces = storedIDs.map((id) =>
+  AVAILABLE_PLACES.find((place) => place.id === id)
+);
+
 export default function App() {
   const modal = useRef();
   const selectedPlace = useRef();
   const [availablePlaces, setAvailablePlaces] = useState([]);
-  const [pickedPlaces, setPickedPlaces] = useState([]);
+  const [pickedPlaces, setPickedPlaces] = useState(storedPlaces);
 
   // Get user location
   useEffect(() => {
@@ -77,6 +83,12 @@ export default function App() {
       prevPickedPlaces.filter((place) => place.id !== selectedPlace.current)
     );
     modal.current.close();
+
+    const storedIDs = JSON.parse(localStorage.getItem('selectedPlaces')) || [];
+    localStorage.setItem(
+      'selectedPlaces',
+      JSON.stringify(storedIDs.filter((id) => id !== selectedPlace.current))
+    );
   };
 
   return (
