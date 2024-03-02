@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Places from './components/Places.jsx';
 import { AVAILABLE_PLACES } from './data.js';
 import Modal from './components/Modal.jsx';
@@ -78,7 +78,8 @@ export default function App() {
     }
   };
 
-  const handleRemovePlace = () => {
+  // use "useCallback" when passing functions as dependencies to useEffect to avoid infinite loop
+  const handleRemovePlace = useCallback(function handleRemovePlace() {
     setPickedPlaces((prevPickedPlaces) =>
       prevPickedPlaces.filter((place) => place.id !== selectedPlace.current)
     );
@@ -89,7 +90,7 @@ export default function App() {
       'selectedPlaces',
       JSON.stringify(storedIDs.filter((id) => id !== selectedPlace.current))
     );
-  };
+  }, []);
 
   return (
     <>
