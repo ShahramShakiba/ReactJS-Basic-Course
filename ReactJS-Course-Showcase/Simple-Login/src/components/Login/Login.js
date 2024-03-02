@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-
 import Card from '../UI/Card/Card';
-import classes from './Login.module.css';
 import Button from '../UI/Button/Button';
+import classes from './Login.module.css';
 
-const Login = (props) => {
+export default function Login(props) {
   const [enteredEmail, setEnteredEmail] = useState('');
   const [emailIsValid, setEmailIsValid] = useState();
   const [enteredPassword, setEnteredPassword] = useState('');
@@ -48,7 +47,7 @@ const Login = (props) => {
             emailIsValid === false ? classes.invalid : ''
           }`}
         >
-          <label htmlFor="email">E-Mail</label>
+          <label htmlFor="email"> E-Mail </label>
           <input
             type="email"
             id="email"
@@ -57,12 +56,13 @@ const Login = (props) => {
             onBlur={validateEmailHandler}
           />
         </div>
+
         <div
           className={`${classes.control} ${
             passwordIsValid === false ? classes.invalid : ''
           }`}
         >
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password"> Password </label>
           <input
             type="password"
             id="password"
@@ -71,6 +71,7 @@ const Login = (props) => {
             onBlur={validatePasswordHandler}
           />
         </div>
+        
         <div className={classes.actions}>
           <Button type="submit" className={classes.btn} disabled={!formIsValid}>
             Login
@@ -79,6 +80,4 @@ const Login = (props) => {
       </form>
     </Card>
   );
-};
-
-export default Login;
+}
