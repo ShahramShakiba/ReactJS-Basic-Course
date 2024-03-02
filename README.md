@@ -19,7 +19,7 @@
  > ⭐ Styling React Component &nbsp;&nbsp;&nbsp; ⭐ Final CountDown  <br/>
  > ⭐ JSX Limitations &nbsp;&nbsp;&nbsp; ⭐ React Project Management <br/>
  > ⭐ Online Clothing Shop &nbsp;&nbsp;&nbsp; ⭐ Place Picker App <br/>
- > ⭐ .... &nbsp;&nbsp;&nbsp; 
+ > ⭐ Simple Login &nbsp;&nbsp;&nbsp; ⭐ ....
     
 <br/>
 
@@ -284,6 +284,32 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/3921b
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Clapper%20Board.webp" alt="Clapper Board" width="35" />
 
 https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/b0ccf5d6-9c07-4f20-98b8-8111c4eef2f2
+
+  <br/> 
+
+ ***
+<!--=====================  Simple Login =============================-->
+### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" height="30"  /> &nbsp; Simple Login <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" width="20"  />
+### Pre-built Project <img src="https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/794bdde2-7446-4df1-86dd-85775d5d4455" alt="Yellow Gear" width="35"  />
+- In this project, the authentication process is not authentic.
+- All you need is a valid email address and a password with a minimum length of 7 characters.
+- Once you click on the login button, you will be directed to the welcome screen, and the log out button will return you to the previous page.
+
+> 🔑 Which Concepts Have I Covered : 
+- 🔓 ....  <br/>
+- 🔓 ....  &nbsp;&nbsp;&nbsp; 🔓 ..... <br/> 
+- 🔓 ....
+
+<!-------- try it live -------->
+ ### Give it a go in real-time and give me a Star <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Glowing%20Star.png" alt="Glowing Star" width="35"  />
+ <a href="" target="_blank">
+   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Light%20Bulb.webp" alt="Light Bulb" width="25" height="25" /> 
+</a> <br/><br/>
+  
+<!--------- Video --------->
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Clapper%20Board.webp" alt="Clapper Board" width="35" />
+
+
 
   <br/> 
 
