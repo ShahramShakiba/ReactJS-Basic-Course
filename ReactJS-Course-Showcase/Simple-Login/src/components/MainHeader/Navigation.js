@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import AuthContext from '../../context/auth-context';
 import classes from './Navigation.module.css';
 
-export default function Navigation({ onLogout }) {
+export default function Navigation() {
   // just to make sure we have  the context
   const authCtx = useContext(AuthContext);
 
@@ -23,7 +23,7 @@ export default function Navigation({ onLogout }) {
 
         {authCtx.isLoggedIn && (
           <li>
-            <button onClick={onLogout}> Logout </button>
+            <button onClick={authCtx.onLogout}> Logout </button>
           </li>
         )}
       </ul>

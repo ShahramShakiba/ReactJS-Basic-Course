@@ -29,11 +29,12 @@ export default function App() {
 
   const contextValue = {
     isLoggedIn: isLoggedIn,
+    onLogout: logoutHandler,
   };
 
   return (
     <AuthContext.Provider value={contextValue}>
-      <MainHeader onLogout={logoutHandler} />
+      <MainHeader />
 
       <main>
         {!isLoggedIn && <Login onLogin={loginHandler} />}
