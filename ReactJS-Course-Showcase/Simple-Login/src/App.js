@@ -54,7 +54,7 @@ export default function App() {
     }
   }, [dependencies]); 
 
-  * this function 👆 here is executed by React and it is executed after every component re-evaluation | and only if the "dependencies" here changed
+  * this function 👆 here is executed by React and it is executed after every component re-evaluation - runs after every component render cycle | and only if the "dependencies" here changed
 
   ? if dependencies were empty [] :
   this function would only run ONCE when the App starts, because there after the dependencies never changed and this here has no dependencies.
