@@ -11,35 +11,48 @@ const emailReducer = (state, action) => {
     return { value: state.value, isValid: state.value.includes('@') };
   }
 
-  return { value: '', isValid: false };
+  return { value: '', isValid: undefined };
+};
+
+const passwordReducer = (state, action) => {
+  if (action.type === 'USER_PASSWORD') {
+    return { value: action.val, isValid: action.val.trim().length > 6 };
+  }
+  if (action.type === 'PASSWORD_BLUR') {
+    return { value: state.value, isValid: state.value.trim().length > 6 };
+  }
+  return { value: '', isValid: undefined };
 };
 
 export default function Login(props) {
-  // const [enteredEmail, setEnteredEmail] = useState('');
-  // const [emailIsValid, setEmailIsValid] = useState();
-  const [enteredPassword, setEnteredPassword] = useState('');
-  const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
 
   const [emailState, dispatchEmail] = useReducer(emailReducer, {
     value: '',
     isValid: undefined,
   });
+  const [passwordState, dispatchPassword] = useReducer(passwordReducer, {
+    value: '',
+    isValid: undefined,
+  });
+
+  const { isValid: emailIsValid } = emailState;
+  const { isValid: passwordIsValid } = passwordState;
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setFormIsValid(emailIsValid && passwordIsValid);
+    }, 500);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [emailIsValid, passwordIsValid]);
 
   const emailChangeHandler = (e) => {
     dispatchEmail({
       type: 'USER_INPUT',
       val: e.target.value,
     });
-
-    setFormIsValid(
-      e.target.value.includes('@') && enteredPassword.trim().length > 6
-    );
-  };
-
-  const passwordChangeHandler = (e) => {
-    setEnteredPassword(e.target.value);
-    setFormIsValid(e.target.value.trim().length > 6 && emailState.isValid);
   };
 
   const validateEmailHandler = () => {
@@ -48,13 +61,22 @@ export default function Login(props) {
     });
   };
 
+  const passwordChangeHandler = (e) => {
+    dispatchPassword({
+      type: 'USER_PASSWORD',
+      val: e.target.value,
+    });
+  };
+
   const validatePasswordHandler = () => {
-    setPasswordIsValid(enteredPassword.trim().length > 6);
+    dispatchPassword({
+      type: 'PASSWORD_BLUR',
+    });
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    props.onLogin(emailState.value, enteredPassword);
+    props.onLogin(emailState.value, passwordState.value);
   };
 
   return (
@@ -77,14 +99,14 @@ export default function Login(props) {
 
         <div
           className={`${classes.control} ${
-            passwordIsValid === false ? classes.invalid : ''
+            passwordState.isValid === false ? classes.invalid : ''
           }`}
         >
           <label htmlFor="password"> Password </label>
           <input
             type="password"
             id="password"
-            value={enteredPassword}
+            value={passwordState.value}
             onChange={passwordChangeHandler}
             onBlur={validatePasswordHandler}
           />
@@ -116,4 +138,24 @@ useEffect(() => {
       clearTimeout(timer);
     };
   }, [enteredEmail, enteredPassword]);
+*/
+
+/* useReducer()
+const [state, dispatch] = useReducer(reducerFn, initialState, initFn);
+* state: 
+  the state snapshot used in the component re-render
+
+* dispatch: 
+  dispatch a new action(trigger on update of the state)
+
+* reducerFn: 
+  is triggered automatically once an action is dispatched | it receives the latest state snapshot and should return the new, updated state
+
+  it can be created "outside of the component function", because inside of this reducerFn we won't need any data that's generated inside of the component fun, all the data which will be required and used will be passed into this function when it's executed by React automatically
+
+* initialState:
+  the initial state
+
+* initFn:
+  a function to set the initial state programmatically in case the initial state is a bit complex, like the results of HTTP request
 */
