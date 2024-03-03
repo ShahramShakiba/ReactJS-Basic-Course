@@ -24,7 +24,7 @@ const passwordReducer = (state, action) => {
   return { value: '', isValid: undefined };
 };
 
-export default function Login(props) {
+export default function Login({ onLogin }) {
   const [formIsValid, setFormIsValid] = useState(false);
 
   const [emailState, dispatchEmail] = useReducer(emailReducer, {
@@ -76,7 +76,7 @@ export default function Login(props) {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    props.onLogin(emailState.value, passwordState.value);
+    onLogin(emailState.value, passwordState.value);
   };
 
   return (
@@ -138,6 +138,16 @@ useEffect(() => {
       clearTimeout(timer);
     };
   }, [enteredEmail, enteredPassword]);
+_____________________________________________________________
+
+  * we use the useEffect above due to the form validity
+  setFormIsValid(
+    e.target.value.includes('@') && passwordState.isValid
+  )
+
+  -this approach is not optimal
+  - we derive the form validity of other state due to react scheduling the state updates so we must refer to an old state here 
+  - and we can not use ()=>{} for passwordState to get the latest state because using ()=>{} will give us the latest state for the "setFormIsValid"
 */
 
 /* useReducer()
@@ -158,4 +168,13 @@ const [state, dispatch] = useReducer(reducerFn, initialState, initFn);
 
 * initFn:
   a function to set the initial state programmatically in case the initial state is a bit complex, like the results of HTTP request
+*/
+
+/* "INPUT_BLUR"
+ if (action.type === 'INPUT_BLUR') {
+    return { value: state.value, isValid: state.value.includes('@') };
+  }
+
+  * value: state.value
+   the value should be the value we had before, that's why we use the last state snapshot
 */
