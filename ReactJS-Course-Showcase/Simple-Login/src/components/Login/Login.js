@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from '../UI/Card/Card';
 import Button from '../UI/Button/Button';
 import classes from './Login.module.css';
@@ -10,20 +10,18 @@ export default function Login(props) {
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
 
-  const emailChangeHandler = (event) => {
-    setEnteredEmail(event.target.value);
-
+  useEffect(() => {
     setFormIsValid(
-      event.target.value.includes('@') && enteredPassword.trim().length > 6
+      enteredEmail.includes('@') && enteredPassword.trim().length > 6
     );
+  }, [enteredEmail, enteredPassword]);
+
+  const emailChangeHandler = (e) => {
+    setEnteredEmail(e.target.value);
   };
 
-  const passwordChangeHandler = (event) => {
-    setEnteredPassword(event.target.value);
-
-    setFormIsValid(
-      event.target.value.trim().length > 6 && enteredEmail.includes('@')
-    );
+  const passwordChangeHandler = (e) => {
+    setEnteredPassword(e.target.value);
   };
 
   const validateEmailHandler = () => {
@@ -34,8 +32,8 @@ export default function Login(props) {
     setPasswordIsValid(enteredPassword.trim().length > 6);
   };
 
-  const submitHandler = (event) => {
-    event.preventDefault();
+  const submitHandler = (e) => {
+    e.preventDefault();
     props.onLogin(enteredEmail, enteredPassword);
   };
 
@@ -71,7 +69,7 @@ export default function Login(props) {
             onBlur={validatePasswordHandler}
           />
         </div>
-        
+
         <div className={classes.actions}>
           <Button type="submit" className={classes.btn} disabled={!formIsValid}>
             Login
