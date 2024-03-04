@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { forwardRef, useImperativeHandle, useRef } from 'react';
 import classes from './Input.module.css';
 
-export default function Input({
-  isValid,
-  label,
-  id,
-  type,
-  value,
-  onChange,
-  onBlur,
-}) {
+const Input = forwardRef(function Input(
+  { isValid, label, id, type, value, onChange, onBlur },
+  ref
+) {
+  const inputRef = useRef();
+  useImperativeHandle(ref, () => ({
+    focus: () => inputRef.current.focus(),
+  }));
+
   return (
     <div
       className={`${classes.control} ${
@@ -23,7 +23,10 @@ export default function Input({
         value={value}
         onChange={onChange}
         onBlur={onBlur}
+        ref={inputRef}
       />
     </div>
   );
-}
+});
+
+export default Input;
