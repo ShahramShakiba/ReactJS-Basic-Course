@@ -1,46 +1,21 @@
-import { useEffect, useState } from 'react';
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
 import MainHeader from './components/MainHeader/MainHeader';
 import AuthContext from './context/auth-context';
+import { useContext } from 'react';
 
 export default function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  // keep the user logged in after reloading the page
-  useEffect(() => {
-    const loggedInInformation = localStorage.getItem('isLoggedIn');
-    if (loggedInInformation === '1') {
-      setIsLoggedIn(true);
-    }
-  }, []);
-
-  const loginHandler = (email, password) => {
-    /* We should of course check email and password
-      But it's just a dummy|demo anyways */
-    localStorage.setItem('isLoggedIn', '1');
-    setIsLoggedIn(true);
-  };
-
-  const logoutHandler = () => {
-    localStorage.removeItem('isLoggedIn');
-    setIsLoggedIn(false);
-  };
-
-  const contextValue = {
-    isLoggedIn: isLoggedIn,
-    onLogout: logoutHandler,
-  };
+  const ctx = useContext(AuthContext);
 
   return (
-    <AuthContext.Provider value={contextValue}>
+    <>
       <MainHeader />
 
       <main>
-        {!isLoggedIn && <Login onLogin={loginHandler} />}
-        {isLoggedIn && <Home onLogout={logoutHandler} />}
+        {!ctx.isLoggedIn && <Login />}
+        {ctx.isLoggedIn && <Home />}
       </main>
-    </AuthContext.Provider>
+    </>
   );
 }
 
