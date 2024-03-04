@@ -27,13 +27,13 @@
 
 .control input:focus {
   outline: none;
-  border-color: #4f005f;
-  background: #f6dbfc;
+  border-color: #fad840;
+  background: #fff8d2;
 }
 
 .control.invalid input {
-  border-color: red;
-  background: #fbdada;
+  border-color: #f78f5ee5;
+  background: #f0d8cde5;
 }
 
 @media (min-width: 768px) {

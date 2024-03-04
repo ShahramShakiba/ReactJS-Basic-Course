@@ -4,13 +4,15 @@
 
 html {
   font-family: sans-serif;
-  background: #fff;
+  background: linear-gradient(to bottom, #000000, #c7c7c7) no-repeat;
+  height: 100vh;
 }
 
 body {
   margin: 0;
+  
 }
 
 main {
-  margin-top: 6rem;
+  margin-top: 9rem;
 }

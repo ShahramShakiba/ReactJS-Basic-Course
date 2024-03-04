@@ -18,18 +18,19 @@
 
 .nav a:hover,
 .nav a:active {
-  color: #f3cafb;
+  color: #fad840;
 }
 
 .nav button {
   font: inherit;
-  background: #dd0db0;
-  border: 1px solid #dd0db0;
+  font-weight: 600;
+  background: #fad840;
   padding: 0.5rem 1.5rem;
-  color: white;
+  color: rgb(53, 53, 53);
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.26);
   border-radius: 20px;
+  border: 1px solid #fad840;
 }
 
 .nav button:focus {
@@ -38,6 +39,7 @@
 
 .nav button:hover,
 .nav button:active {
-  color: #f3cafb;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.26);
+  color: #fad840;
+  background: transparent;
+  border: 1px solid #fad840;
 }
