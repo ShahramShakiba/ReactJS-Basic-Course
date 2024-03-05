@@ -9,13 +9,14 @@ export default function Quiz() {
   const activeQuestionIndex = userAnswers.length;
   const quizIsComplete = activeQuestionIndex === QUESTIONS.length;
 
-  const handleSelectAnswer =
-    (function handleSelectAnswer(selectedAnswer) {
-      setUserAnswers((prevAnswers) => {
-        return [...prevAnswers, selectedAnswer];
-      });
-    },
-    []);
+  const handleSelectAnswer = useCallback(function handleSelectAnswer(
+    selectedAnswer
+  ) {
+    setUserAnswers((prevAnswers) => {
+      return [...prevAnswers, selectedAnswer];
+    });
+  },
+  []);
 
   // when the timer on QuestionTimer expired
   const handleSkipAnswer = useCallback(
@@ -39,7 +40,11 @@ export default function Quiz() {
   return (
     <div id="quiz">
       <div id="question">
-        <QuestionTimer timeout={18000} onTimeout={handleSkipAnswer} />
+        <QuestionTimer
+          key={activeQuestionIndex}
+          timeout={10000}
+          onTimeout={handleSkipAnswer}
+        />
 
         <h2> {QUESTIONS[activeQuestionIndex].title} </h2>
 
@@ -80,4 +85,9 @@ We will end up with a negative value in 50 of 100 cases or with a positive value
 
 const handleSelectAnswer = useCallback(fn, []);
 ? it does not get any dependencies because we are not using any state or props
+*/
+
+/* Reset QuestionTimer when we switch to a new question
+
+
 */
