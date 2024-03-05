@@ -1,0 +1,1 @@
+export {hi} from './hi';
