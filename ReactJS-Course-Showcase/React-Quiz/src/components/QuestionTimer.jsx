@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function QuestionTimer({ timeout, onTimeout }) {
+export default function QuestionTimer({ onTimeout, timeout }) {
   const [remainingTime, setRemainingTime] = useState(timeout);
 
   // to not have multiple timers up and running when interval is updating
