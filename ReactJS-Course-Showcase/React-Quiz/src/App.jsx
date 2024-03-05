@@ -1,5 +1,11 @@
-function App() {
-  return <div>Hello World</div>;
-}
+import Header from './components/Header';
+import Quiz from './components/Quiz';
 
-export default App;
+export default function App() {
+  return (
+    <>
+      <Header />
+      <Quiz />
+    </>
+  );
+}
