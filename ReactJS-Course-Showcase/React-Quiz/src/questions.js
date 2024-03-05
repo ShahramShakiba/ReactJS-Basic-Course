@@ -1,7 +1,7 @@
 export default [
   {
     id: 'q1',
-    text: 'Which of the following definitions best describes React.js?',
+    title: 'Which of the following definitions best describes React.js?',
     answers: [
       'A library to build user interfaces with help of declarative code.',
       'A library for managing state in web applications.',
@@ -11,7 +11,7 @@ export default [
   },
   {
     id: 'q2',
-    text: 'What purpose do React hooks serve?',
+    title: 'What purpose do React hooks serve?',
     answers: [
       'Enabling the use of state and other React features in functional components.',
       'Creating responsive layouts in React applications.',
@@ -21,7 +21,7 @@ export default [
   },
   {
     id: 'q3',
-    text: 'Can you identify what JSX is?',
+    title: 'Can you identify what JSX is?',
     answers: [
       'A JavaScript extension that adds HTML-like syntax to JavaScript.',
       'A JavaScript library for building dynamic user interfaces.',
@@ -31,7 +31,7 @@ export default [
   },
   {
     id: 'q4',
-    text: 'What is the most common way to create a component in React?',
+    title: 'What is the most common way to create a component in React?',
     answers: [
       'By defining a JavaScript function that returns a renderable value.',
       'By defining a custom HTML tag in JavaScript.',
@@ -41,7 +41,7 @@ export default [
   },
   {
     id: 'q5',
-    text: 'What does the term "React state" imply?',
+    title: 'What does the term "React state" imply?',
     answers: [
       'An object in a component that holds values and may cause the component to render on change.',
       'The lifecycle phase a React component is in.',
@@ -51,7 +51,7 @@ export default [
   },
   {
     id: 'q6',
-    text: 'How do you typically render list content in React apps?',
+    title: 'How do you typically render list content in React apps?',
     answers: [
       'By using the map() method to iterate over an array of data and returning JSX.',
       'By using the for() loop to iterate over an array of data and returning JSX.',
@@ -61,7 +61,7 @@ export default [
   },
   {
     id: 'q7',
-    text: 'Which approach can NOT be used to render content conditionally?',
+    title: 'Which approach can NOT be used to render content conditionally?',
     answers: [
       'Using a the #if template syntax.',
       'Using a ternary operator.',
