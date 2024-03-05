@@ -296,14 +296,14 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/b0ccf
 - Once you click on the login button, you will be directed to the welcome screen, and the log out button will return you to the previous page.
 
 > 🔑 Which Concepts Have I Covered : 
-- 🔓 ....  <br/>
-- 🔓 ....  &nbsp;&nbsp;&nbsp; 🔓 ..... <br/> 
-- 🔓 ....
+- 🔓 Working with (Side) Effects &nbsp;&nbsp;&nbsp; 🔓 Managing more complex State with Reducers <br/>
+- 🔓 Managing App-Wide or Component-Wide State with Context API  <br/> 
+- 🔓 Working with forwardRef & useImperativeHandle
 
 <!-------- try it live -------->
  ### Give it a go in real-time and give me a Star <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Glowing%20Star.png" alt="Glowing Star" width="35"  />
- <a href="" target="_blank">
-   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Light%20Bulb.webp" alt="Light Bulb" width="25" height="25" /> 
+ <a href="https://simple-login-shahram.netlify.app/" target="_blank">
+   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Light%20Bulb.webp" alt="Light Bulb" width="25" height="25" /> Simple Login
 </a> <br/><br/>
   
 <!--------- Video --------->
