@@ -325,8 +325,11 @@ https://github.com/ShahramShakiba/ReactJS-Course-Showcase/assets/110089830/383aa
 > In this project, I have undertaken an in-depth exploration of numerous key concepts. <br/>
 
 > 🔑 Which Concepts Have I Covered :  
-- 🔓 ..... &nbsp;&nbsp;&nbsp; 🔓 .... <br/>
-- 🔓 .... <br/>
+- 🔓 Deriving ` Computed-Values ` from State &nbsp;&nbsp;&nbsp; 🔓 Updating State based on Old-State <br/>
+- 🔓 Working with ` useEffect ` to Manage setTimeout and setInterval <br/>
+- 🔓 Workin with ` useCallback ` to Skipping re-rendering of components  <br/>
+- 🔓 Using Effect ` Cleanup Functions ` &nbsp;&nbsp;&nbsp; 🔓 Using ` Keys ` for Resetting Components <br/>
+- 🔓 Splitting Components Up &nbsp;&nbsp;&nbsp; 🔓 .... <br/>
 
 
 
