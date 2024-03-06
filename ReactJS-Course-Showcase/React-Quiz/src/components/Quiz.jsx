@@ -9,6 +9,7 @@ export default function Quiz() {
   const activeQuestionIndex = userAnswers.length;
   const quizIsComplete = activeQuestionIndex === QUESTIONS.length;
 
+  // the ANSWER SELECTED
   const handleSelectAnswer = useCallback(function handleSelectAnswer(
     selectedAnswer
   ) {
@@ -18,7 +19,7 @@ export default function Quiz() {
   },
   []);
 
-  // when the timer on QuestionTimer expired
+  // the ANSWER SKIPPED because the timer on QuestionTimer expired
   const handleSkipAnswer = useCallback(
     () => handleSelectAnswer(null),
     [handleSelectAnswer]

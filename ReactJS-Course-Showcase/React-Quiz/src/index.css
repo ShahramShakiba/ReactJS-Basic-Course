@@ -115,15 +115,15 @@ header h1 {
   border-radius: 24px;
 }
 
-#question progress.answered {
+#question progress.pending {
   background: #f8e59c;
 }
 
-#question progress.answered::-webkit-progress-value {
+#question progress.pending::-webkit-progress-value {
   background: #f8e59c;
 }
 
-#question progress.answered::-webkit-progress-bar {
+#question progress.pending::-webkit-progress-bar {
   background: #6a558a;
 }
 

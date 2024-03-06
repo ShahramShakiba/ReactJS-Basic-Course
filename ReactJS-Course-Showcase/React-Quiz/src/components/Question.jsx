@@ -13,6 +13,16 @@ export default function Question({
     isCorrect: null,
   });
 
+  let timer = 15000;
+  // we have a selected answer
+  if (answer.selectedAnswer) {
+    timer = 15000;
+  }
+  // the time to move to the next Q
+  if (answer.isCorrect !== null) {
+    timer = 2000;
+  }
+
   const handleSelectAnswer = (answer) => {
     setAnswer({
       selectedAnswer: answer,
@@ -40,7 +50,12 @@ export default function Question({
 
   return (
     <div id="question">
-      <QuestionTimer timeout={15000} onTimeout={onSkipAnswer} />
+      <QuestionTimer
+        timeout={timer}
+        // skip to the next Q if no answer has been selected otherwise don't execute the onSkipAnswer fn
+        onTimeout={answer.selectedAnswer === '' ? onSkipAnswer : null}
+        mode={answerState}
+      />
 
       <h2> {QUESTIONS[questionIndex].title} </h2>
 

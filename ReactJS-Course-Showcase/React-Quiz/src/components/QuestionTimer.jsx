@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function QuestionTimer({ onTimeout, timeout }) {
+export default function QuestionTimer({ onTimeout, timeout, mode }) {
   const [remainingTime, setRemainingTime] = useState(timeout);
 
   // to not have multiple timers up and running when interval is updating
@@ -12,7 +12,7 @@ export default function QuestionTimer({ onTimeout, timeout }) {
 
     // cleanup fn | cleanup timer when the game completed
     return () => clearTimeout(timer);
-  }, [onTimeout, timeout]);
+  }, [timeout, onTimeout]);
 
   // prevent infinite loop
   useEffect(() => {
@@ -25,9 +25,16 @@ export default function QuestionTimer({ onTimeout, timeout }) {
 
     /* cleanup fn : 
        01. to move on next Q instantly after timer expired 
-       02. prevent the timer goes twice time as faster as it should be */ 
+       02. prevent the timer goes twice time as faster as it should be */
     return () => clearInterval(interval);
   }, []);
 
-  return <progress id="question-time" max={timeout} value={remainingTime} />;
+  return (
+    <progress
+      id="question-time"
+      max={timeout}
+      value={remainingTime}
+      className={mode}
+    />
+  );
 }
