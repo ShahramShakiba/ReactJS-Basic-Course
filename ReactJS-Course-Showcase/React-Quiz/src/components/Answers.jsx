@@ -20,7 +20,7 @@ export default function Answers({
         const isSelected = selectedAnswer === answer;
 
         let cssClass = '';
-        if (answerState === 'answered' && isSelected) {
+        if (answerState === 'pending' && isSelected) {
           cssClass = 'selected';
         }
         if (
@@ -32,7 +32,11 @@ export default function Answers({
 
         return (
           <li key={answer} className="answer">
-            <button className={cssClass} onClick={() => onSelect(answer)}>
+            <button
+              className={cssClass}
+              onClick={() => onSelect(answer)}
+              disabled={answerState !== ''}
+            >
               {answer}
             </button>
           </li>
@@ -41,3 +45,15 @@ export default function Answers({
     </ul>
   );
 }
+
+/* useRefs & prevent shuffling the answers when they get selected
+
+  - managing values that are stored and managed independently from the component fn lifecycle to which they belong
+
+  if (!shuffledAnswers.current) {
+    .....
+  }
+   - when it's undefined | if it's undefined it means it does not have any shuffled answer because that will be the initial state
+
+   - but when it has been defined it won't shuffled the answers again
+*/
