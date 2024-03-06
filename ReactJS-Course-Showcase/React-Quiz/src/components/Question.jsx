@@ -13,10 +13,10 @@ export default function Question({
     isCorrect: null,
   });
 
-  let timer = 15000;
+  let timer = 12000;
   // we have a selected answer
   if (answer.selectedAnswer) {
-    timer = 15000;
+    timer = 12000;
   }
   // the time to move to the next Q
   if (answer.isCorrect !== null) {
