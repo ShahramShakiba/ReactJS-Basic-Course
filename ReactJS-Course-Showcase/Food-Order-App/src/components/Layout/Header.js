@@ -7,7 +7,7 @@ export default function Header({ children }) {
     <>
       <header className={classes.header}>
         <h1> Meals </h1>
-        <HeaderCartBtn> Cart </HeaderCartBtn>
+        <HeaderCartBtn />
       </header>
 
       <div className={classes['main-image']}>

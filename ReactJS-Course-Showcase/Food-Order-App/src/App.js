@@ -1,11 +1,13 @@
 import Header from './components/Layout/Header';
+import Meals from './components/Meals/Meals';
 
-function App() {
+export default function App() {
   return (
     <>
       <Header />
+      <main>
+        <Meals />
+      </main>
     </>
   );
 }
-
-export default App;

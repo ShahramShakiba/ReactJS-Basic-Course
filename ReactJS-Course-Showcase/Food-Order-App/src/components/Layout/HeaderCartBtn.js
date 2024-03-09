@@ -1,7 +1,7 @@
 import CartIcon from '../Cart/CartIcon';
 import classes from './HeaderCartBtn.module.css';
 
-export default function HeaderCartBtn({ children }) {
+export default function HeaderCartBtn() {
   return (
     <button className={classes.button}>
       <span className={classes.icon}>
