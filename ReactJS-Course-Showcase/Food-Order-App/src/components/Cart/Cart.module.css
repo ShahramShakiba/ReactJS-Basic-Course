@@ -1,0 +1,48 @@
+.cart-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 20rem;
+  overflow: auto;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.actions {
+  text-align: right;
+}
+
+.actions button {
+  font: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #d6b239;
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  margin-left: 1rem;
+  transition: all 0.2s ease-in;
+}
+
+.actions button:hover,
+.actions button:active {
+  background-color: #d6b239;
+}
+
+.actions .button--alt {
+  color: rgb(24, 24, 24);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.actions .button {
+  background-color: #d6b1396b;
+  color: rgb(24, 24, 24);
+  font-weight: bold;
+  box-shadow: 0 6px 15px rgba(121, 116, 79, 0.486);
+}

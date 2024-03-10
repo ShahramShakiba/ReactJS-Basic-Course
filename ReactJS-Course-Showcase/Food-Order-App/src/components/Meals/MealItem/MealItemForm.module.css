@@ -12,6 +12,7 @@
   border-radius: 70% / 15%;
   font-weight: bold;
   transition: all 0.2s ease-in;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
 .form button:hover,
