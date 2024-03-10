@@ -9,18 +9,17 @@ export default function MealItemForm({ onAddToCart }) {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    const enteredAmount = amountInputRef.current.value;
-    const enteredAmountNumber = +enteredAmount;
+    const enteredAmount = +amountInputRef.current.value;
     if (
-      enteredAmount.trim().length === 0 ||
-      enteredAmountNumber < 1 ||
-      enteredAmountNumber > 10
+      enteredAmount.length === 0 ||
+      enteredAmount < 1 ||
+      enteredAmount > 10
     ) {
       setAmountIsValid(false);
       return;
     }
 
-    onAddToCart(enteredAmountNumber);
+    onAddToCart(enteredAmount);
   };
 
   return (

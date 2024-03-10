@@ -15,7 +15,7 @@
   width: 90%;
   background-color: rgb(243, 243, 243);
   padding: 2rem 1.5rem;
-  border-radius: 70% / 15%;
+  border-radius: 90% / 10%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   z-index: 30;
   animation: slide-down 300ms ease-out forwards;
