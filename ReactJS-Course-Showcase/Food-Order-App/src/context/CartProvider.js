@@ -6,7 +6,7 @@ export default function CartProvider({ children }) {
   const removeItemHandler = (id) => {};
 
   const cartContext = {
-    item: [],
+    items: [],
     totalAmount: 0,
     addItem: addItemHandler,
     removeItem: removeItemHandler,
