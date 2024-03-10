@@ -355,8 +355,8 @@ https://github.com/ShahramShakiba/ReactJS-Basic-Course/assets/110089830/2424ac28
 > In this project, I have undertaken an in-depth exploration of numerous key concepts. <br/>
 
 > 🔑 Which Concepts Have I Covered :  
-- 🔓 .... &nbsp;&nbsp;&nbsp; 🔓 .... <br/>
-- 🔓 .... <br/>
+- 🔓 Set up the components and then isolate them. &nbsp;&nbsp;&nbsp; 🔓 .... <br/>
+- 🔓 Using CSS Modul for Styling <br/>
 
 
 
