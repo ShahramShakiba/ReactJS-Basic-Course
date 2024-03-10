@@ -21,3 +21,9 @@ export default function HeaderCartBtn({ onShow }) {
     </button>
   );
 }
+
+/* reduce()
+- is a method that reduces the array to a single value. 
+- to add 1 item to the cart but for example set the amount for that item to 3 -
+  show 1 on the cart but we have 3 item in the cart
+*/
