@@ -355,8 +355,16 @@ https://github.com/ShahramShakiba/ReactJS-Basic-Course/assets/110089830/2424ac28
 > In this project, I have undertaken an in-depth exploration of numerous key concepts. <br/>
 
 > 🔑 Which Concepts Have I Covered :  
-- 🔓 Set up the components and then isolate them. &nbsp;&nbsp;&nbsp; 🔓 .... <br/>
-- 🔓 Using CSS Modul for Styling <br/>
+- 🔓 Set up the Components and then Isolate them. <br/>
+- 🔓 Working with ` re-usable & pre-styled ` Utilities Component <br/>
+- 🔓 Adding a Modal via a ` React Portal `  <br/>
+- 🔓 Managing State & Props with ` Prop Drilling ` instead of  using Context to make Modal more _re-useable_ & does not tie it to one specific case. <br/>
+- 🔓 Work with ` Context ` to Manage all Cart Data through Context  <br/>
+- 🔓 Utilizing the ` Reducer ` Hook to handle the Addition and Removal of items from the Cart <br/>
+- 🔓 State & Conditional Rendering &nbsp;&nbsp;&nbsp; 🔓 Working with ` Refs ` & ` Forward Refs ` <br/>
+- 🔓  &nbsp;&nbsp;&nbsp; 🔓 .... <br/>
+- 🔓 Using ` CSS Modul ` for Styling  &nbsp;&nbsp;&nbsp;  <br/>
+
 
 
 
