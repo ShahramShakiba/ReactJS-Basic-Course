@@ -1,16 +1,38 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import CartIcon from '../Cart/CartIcon';
 import classes from './HeaderCartBtn.module.css';
 import cartContext from '../../context/cart-context';
 
 export default function HeaderCartBtn({ onShow }) {
+  const [highlightBtn, setHighlightBtn] = useState(false);
   const cartCtx = useContext(cartContext);
-  const numberOfCartItems = cartCtx.items.reduce((curr, item) => {
+
+  const { items } = cartCtx;
+  const numberOfCartItems = items.reduce((curr, item) => {
     return curr + item.amount;
   }, 0);
 
+  const btnClasses = `${classes.button} ${highlightBtn ? classes.bump : ''}`;
+
+  useEffect(() => {
+    if (items.length === 0) {
+      return;
+    }
+
+    setHighlightBtn(true);
+
+    // to repeat the bump css class
+    const timer = setTimeout(() => {
+      setHighlightBtn(false);
+    }, 300);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [items]);
+
   return (
-    <button onClick={onShow} className={classes.button}>
+    <button onClick={onShow} className={btnClasses}>
       <span className={classes.icon}>
         <CartIcon />
       </span>
