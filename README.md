@@ -361,17 +361,15 @@ https://github.com/ShahramShakiba/ReactJS-Basic-Course/assets/110089830/2424ac28
 - 🔓 Managing State & Props with ` Prop Drilling ` instead of  using Context to make Modal more _re-useable_ & does not tie it to one specific case. <br/>
 - 🔓 Work with ` Context ` to Manage all Cart Data through Context  <br/>
 - 🔓 Utilizing the ` Reducer ` Hook to handle the Addition and Removal of items from the Cart <br/>
-- 🔓 State & Conditional Rendering &nbsp;&nbsp;&nbsp; 🔓 Working with ` Refs ` & ` Forward Refs ` <br/>
-- 🔓  &nbsp;&nbsp;&nbsp; 🔓 .... <br/>
-- 🔓 Using ` CSS Modul ` for Styling  &nbsp;&nbsp;&nbsp;  <br/>
-
-
-
+- 🔓 State & Conditional Rendering <br/>
+- 🔓 Working with ` Refs ` & ` Forward Refs ` <br/>
+- 🔓 Using the ` useEffect ` Hook <br/>
+- 🔓 Using ` CSS Modul ` for Styling <br/>
 
 <!-------- try it live -------->
  ### Give it a go in real-time and give me a Star <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Glowing%20Star.png" alt="Glowing Star" width="35"  />
- <a href="" target="_blank">
-   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Light%20Bulb.webp" alt="Light Bulb" width="25" height="25" /> 
+ <a href="https://food-order-app-shahram.netlify.app/" target="_blank">
+   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Light%20Bulb.webp" alt="Light Bulb" width="25" height="25" /> Food Order Application
 </a> <br/><br/>
   
 <!--------- Video --------->
