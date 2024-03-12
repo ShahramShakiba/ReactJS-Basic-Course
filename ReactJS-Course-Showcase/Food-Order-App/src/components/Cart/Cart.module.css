@@ -4,6 +4,7 @@
   padding: 0;
   max-height: 25rem;
   overflow: scroll;
+  overflow-x: hidden;
 }
 
 .total {
